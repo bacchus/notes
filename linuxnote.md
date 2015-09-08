@@ -222,7 +222,7 @@ history, then !*num-in-hist*
 //------------------------------------------------------------------------------
 ## GREP
 #### Finds "word" in files in subdirs
-    grep -rl ‘*text*’ *directory*/*
+    grep -rl ‘text’ directory/*
     grep -r word *
 
 ###### -r recursive, -n line number, -w whole word
