@@ -1,6 +1,6 @@
 ## Ubuntu tricks
 #### Open from terminal
-gnome-open <filename>
+gnome-open *filename*
 
 #### Unmount tatra
 udisks --unmount /dev/sdb1  
@@ -8,7 +8,7 @@ udisks --detach /dev/sdb
 
 #### Dropbox encfs
 sudo apt-get install encfs  
-~~sudo addgroup <your username> fuse~~  
+~~sudo addgroup *username* fuse~~  
 encfs ~/Dropbox/.encrypted ~/private  
 sudo install ~/gnome-encfs /usr/local/bin  
 gnome-encfs -a ~/Dropbox/.encrypted ~/private
@@ -71,7 +71,7 @@ sudo rm /var/crash/*
 
 #### Conky
 sudo apt-get remove indicator-appmenu  
-xdg-open <open-def-app-file>  
+xdg-open *open-def-app-file*  
 ~/.gconf/apps/gnome-settings/gedit/%gconf.xml
 
 #### brightness gamma
@@ -146,7 +146,7 @@ patch -Np0 --dry-run < boost-droid-bcpd.diff
 grep -c ^processor /proc/cpuinfo  
 
 #### Show first 5 errors
-<make> 2>&1|grep error|head -5|tee log.txt
+make 2>&1|grep error|head -5|tee log.txt
 
 #### eclipse crash: add following lines to eclipse.ini
 -Dorg.eclipse.swt.browser.DefaultType=mozilla  
@@ -156,7 +156,7 @@ grep -c ^processor /proc/cpuinfo
 sloccount directoryname
 
 #### Building android project on linux project root:
-<PathToSDK>/tools/android update project --name <ProjectName> --target "android-15" --path .  
+*PathToSDK*/tools/android update project --name *ProjectName* --target "android-15" --path .  
 ndk-build  
 ant debug
 
@@ -164,7 +164,7 @@ ant debug
 -o qMakefile  
 -f qMakefile
 
-LD_LIBRARY_PATH=`pwd` ./<executable>
+LD_LIBRARY_PATH=\`pwd\` ./*executable*
 
 gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
 
@@ -201,7 +201,7 @@ nl - numering lines
 
 pushd/popd
 
-history, then !<num-in-hist>
+history, then !*num-in-hist*
 
 //------------------------------------------------------------------------------
 ## FIND
@@ -209,8 +209,8 @@ history, then !<num-in-hist>
 find . -type f -exec dos2unix {} +
 
 #### Find in files
-find <directory to search> -type f | xargs grep -rl '<text to search for>'  
-find <directory to search> -type f -exec grep -l ‘<text to search for>’ {} +  
+find *directory* -type f | xargs grep -rl '*text*'  
+find *directory* -type f -exec grep -l ‘*text*’ {} +  
 find /path -name "name" -type d
 
 #### Find and replace in files foo -> bar
@@ -223,7 +223,7 @@ find from/ -name *.orig -exec mv {} to/ \;
 //------------------------------------------------------------------------------
 ## GREP
 #### Finds "word" in files in subdirs
-grep -rl ‘<text to search for>’ <directory to search>/*  
+grep -rl ‘*text*’ *directory*/*  
 grep -r word *
 
 ###### -r recursive, -n line number, -w whole word
@@ -231,7 +231,7 @@ grep -r word *
 ###### -B before, -A after, -C context
 ###### --include-dir=dir0
 ###### --exclude-dir={dir1,dir2,*.dst}
-###### --include=\*.{c,h}
+###### --include=\\*.{c,h}
 ###### --exclude=*.o
 grep -rnw 'directory' -e "pattern"
 
@@ -246,13 +246,13 @@ grep -c "^$" - count empty lines
 
 '1*' matches zero or more '1'  
 . any symb  
-\+ one or more of prev symb  
-\? zero or one  
-\b words boundary
+\\+ one or more of prev symb  
+\\? zero or one  
+\\b words boundary
 
-grep "[0-9]\+ times"  
+grep "[0-9]\\+ times"  
 grep -i "^[^aeiou]" - starts with non matching aeiou  
-grep -v "^\#\|^\/\/" - do not show comments
+grep -v "^\\#\\|^\\/\\/" - do not show comments
 
 [:digit:] [:alnum:] [:alpha:] [:blank:]
 
@@ -268,8 +268,8 @@ grep -E 'pattern1|pattern2'
 grep -e pattern1 -e pattern2
 
 AND  
-grep -E 'pattern1.*pattern2'  
-grep -E 'pattern1.*pattern2|pattern2.*pattern1'  
+grep -E 'pattern1.\*pattern2'  
+grep -E 'pattern1.\*pattern2|pattern2.\*pattern1'  
 grep 'pattern1' | grep 'pattern2'
 
 NOT  
@@ -324,7 +324,7 @@ cd .ssh
 cat id_rsa.pub > authorized_keys  
 exit
 
-#### mount remote ssh dir: sshfs <ssh-dir> <local-dir>
+#### mount remote ssh dir: sshfs *ssh-dir* *local-dir*
 sshfs bacchus@106.125.32.44:/surc/Projects/ve/share ~/shares/ve_share
 
 //------------------------------------------------------------------------------
@@ -344,8 +344,8 @@ sudo update-alternatives --config java
 
 #### if key error occures
 sudo apt-key update
-#### or manualy if error received: NO_PUBKEY <key number>
-sudo apt-key adv --recv-key --keyserver keyserver.ubuntu.com <key number>
+#### or manualy if error received: NO_PUBKEY *key-number*
+sudo apt-key adv --recv-key --keyserver keyserver.ubuntu.com *key-number*
 #### after this try
 sudo apt-get update
 
