@@ -98,8 +98,8 @@ http://www.google.com/search?q=inurl:indexFrame.shtml?newstyle=Quad
     git rebase -i HEAD~3
 
 git stash -> git pull -> git stash apply -> fix conflicts  
-or just  
-    git rebase --autostash
+or just
+    git rebase --autostash  
 or in config  
 rebase.autostash
 
@@ -121,17 +121,17 @@ rebase.autostash
 //------------------------------------------------------------------------------
 ## Killing process
 #### Getting id
-    ps aux | grep [name]  
+    ps aux | grep [name]
     pidof [name]
 
 #### Killing
-    kill [id]  
-    kill -9 [id]  
-    killall -9 [name]  
+    kill [id]
+    kill -9 [id]
+    killall -9 [name]
     pkill [name]
 
 #### Kill with mouse
-alt+f2 xkill 
+alt+f2 xkill
 
 //------------------------------------------------------------------------------
 ## Patching
@@ -155,8 +155,8 @@ alt+f2 xkill
     sloccount directoryname
 
 #### Building android project on linux project root:
-    <PathToSDK>/tools/android update project --name <ProjectName> --target "android-15" --path .  
-    ndk-build  
+    <PathToSDK>/tools/android update project --name <ProjectName> --target "android-15" --path .
+    ndk-build
     ant debug
 
 #### Qt setting custom makefile
@@ -170,15 +170,15 @@ alt+f2 xkill
 //------------------------------------------------------------------------------
 ## Bash
 #### Scroll up and down the list. 'q' to quit
-    ls | less  
-    more  
+    ls | less
+    more
     head <filename>
 
 #### Rename
-    rename 'y/A-Z/a-z/' *  
-    rename 's/.df/.txt/g' *.df  
-    rename 's/aa/12/g' *  
-    sed -i 's/old-word/new-word/g' *.txt  
+    rename 'y/A-Z/a-z/' *
+    rename 's/.df/.txt/g' *.df
+    rename 's/aa/12/g' *
+    sed -i 's/old-word/new-word/g' *.txt
 
 #### delimeters - in: vmlinuz-3.13.0-40-generic; out: 3.13.0-40
     cut -d '-' -f2,3
@@ -208,21 +208,21 @@ history, then !*num-in-hist*
     find . -type f -exec dos2unix {} +
 
 #### Find in files
-    find *directory* -type f | xargs grep -rl '*text*'  
-    find *directory* -type f -exec grep -l ‘*text*’ {} +  
+    find *directory* -type f | xargs grep -rl '*text*'
+    find *directory* -type f -exec grep -l ‘*text*’ {} +
     find /path -name "name" -type d
 
 #### Find and replace in files foo -> bar
     find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
 
 #### Move all the files and directories to the parent directory
-    find . -maxdepth 1 -exec mv {} .. \;  
+    find . -maxdepth 1 -exec mv {} .. \;
     find from/ -name *.orig -exec mv {} to/ \;
 
 //------------------------------------------------------------------------------
 ## GREP
 #### Finds "word" in files in subdirs
-    grep -rl ‘*text*’ *directory*/*  
+    grep -rl ‘*text*’ *directory*/*
     grep -r word *
 
 ###### -r recursive, -n line number, -w whole word
@@ -259,13 +259,13 @@ grep  "^[0-9]\\{1,5\\}$" - [0-9] number 1-5 times
 grep -e '^\\(abc\\)\\1$' - back references (\\n): ^; \\(abc\\); \\1; $;
 
 OR  
-    grep 'pattern1\|pattern2'  
-    grep -E 'pattern1|pattern2'  
+    grep 'pattern1\|pattern2'
+    grep -E 'pattern1|pattern2'
     grep -e pattern1 -e pattern2
 
 AND  
-    grep -E 'pattern1.*pattern2'  
-    grep -E 'pattern1.*pattern2|pattern2.*pattern1'  
+    grep -E 'pattern1.*pattern2'
+    grep -E 'pattern1.*pattern2|pattern2.*pattern1'
     grep 'pattern1' | grep 'pattern2'
 
 NOT  
@@ -311,16 +311,16 @@ NOT
 //------------------------------------------------------------------------------
 ## SSH tricks
 #### Generate and set key
-    cd ~/.ssh  
-    ssh-keygen -t rsa  
-    sftp bacchus@106.125.32.44  
-    mkdir .ssh  
-    cd .ssh  
-    put id_rsa.pub  
-    exit  
-    ssh bacchus@106.125.32.44  
-    cd .ssh  
-    cat id_rsa.pub > authorized_keys  
+    cd ~/.ssh
+    ssh-keygen -t rsa
+    sftp bacchus@106.125.32.44
+    mkdir .ssh
+    cd .ssh
+    put id_rsa.pub
+    exit
+    ssh bacchus@106.125.32.44
+    cd .ssh
+    cat id_rsa.pub > authorized_keys
     exit
 
 #### mount remote ssh dir: sshfs *ssh-dir* *local-dir*
@@ -373,10 +373,10 @@ interface=wlan0
 dhcp-range=192.168.150.2,192.168.150.10
 
 #### in bash
-sudo service hostapd stop  
-sudo service dnsmasq stop  
-sudo update-rc.d hostapd disable  
-sudo update-rc.d dnsmasq disable  
+    sudo service hostapd stop
+    sudo service dnsmasq stop
+    sudo update-rc.d hostapd disable
+    sudo update-rc.d dnsmasq disable
 
 #### file: hostapd.conf
 interface=wlan0  
@@ -415,7 +415,8 @@ sudo service hostapd stop
 //--------------------------------------------------------------
 ## SSD settings
 #### tools
-    swapon -s  
+
+    swapon -s
     sudo blkid 
 
 #### folders
@@ -423,11 +424,15 @@ sudo service hostapd stop
 /media/home
 
 #### commands
-    sudo gedit /etc/fstab &  
+    sudo gedit /etc/fstab &
+    
 UUID=????????   /media/home    ext4          defaults       0       2   
-    sudo mkdir /media/home  
-    sudo mount -a  
-    sudo rsync -aXS /home/. /media/home/.  
+
+    sudo mkdir /media/home
+    sudo mount -a
+    sudo rsync -aXS /home/. /media/home/.
+    
 UUID=????????   /home    ext4          defaults       0       2  
-    cd / && sudo mv /home /old_home && sudo mkdir /home  
+
+    cd / && sudo mv /home /old_home && sudo mkdir /home
     sudo mount -a
