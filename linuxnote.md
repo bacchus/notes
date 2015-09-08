@@ -1,52 +1,52 @@
 ## Ubuntu tricks
 #### Open from terminal
-gnome-open *filename*
+    gnome-open <filename>
 
 #### Unmount tatra
-udisks --unmount /dev/sdb1  
-udisks --detach /dev/sdb
+    udisks --unmount /dev/sdb1  
+    udisks --detach /dev/sdb
 
 #### Dropbox encfs
-sudo apt-get install encfs  
-~~sudo addgroup *username* fuse~~  
-encfs ~/Dropbox/.encrypted ~/private  
-sudo install ~/gnome-encfs /usr/local/bin  
-gnome-encfs -a ~/Dropbox/.encrypted ~/private
+    sudo apt-get install encfs  
+    ~~sudo addgroup <username> fuse~~  
+    encfs ~/Dropbox/.encrypted ~/private  
+    sudo install ~/gnome-encfs /usr/local/bin  
+    gnome-encfs -a ~/Dropbox/.encrypted ~/private
 
 #### Alt mouse move window
-sudo apt-get install dconf-tools  
+    sudo apt-get install dconf-tools  
 dconf-editor → org → gnome → desktop → wm → preferences → mouse-button-modifier
 
 #### Change pdf encoding
-gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER  -sOutputFile=output.pdf input.pdf  
+    gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER  -sOutputFile=output.pdf input.pdf  
 int pdf viewer: file\save as\format\settings\UTF-8\save
 
 #### Restart ui
-sudo service lightdm restart
+    sudo service lightdm restart
 #### Restart network
-sudo service network-manager restart
+    sudo service network-manager restart
 
 #### Enable WebGL
 chrome://flags - Override software rendering list - Enable
 
 #### Disable touchpad
-xinput list | grep Touch  
-xinput set-prop 13 "Device Enabled" 0
+    xinput list | grep Touch  
+    xinput set-prop 13 "Device Enabled" 0
 
 #### Unzip
-tar -zxvf {file.tar.gz}  
-tar -jxvf {file.tar.bz2}
+    tar -zxvf <file.tar.gz>
+    tar -jxvf <file.tar.bz2>
 
 #### See progress bar: md5sum filename
-pv filename | md5sum
+    pv filename | md5sum
 
 #### Hardware info
-lspci - VGA  
-lsusb  
-demidecode  
-cat /proc/meminfo  
-cat /proc/cpuinfo  
-cat /proc/partitions
+    lspci - VGA  
+    lsusb  
+    demidecode  
+    cat /proc/meminfo  
+    cat /proc/cpuinfo  
+    cat /proc/partitions
 
 #### Install
 nautilus-open-terminal  
@@ -58,28 +58,27 @@ libalut-dev
 libopenal-dev
 
 #### Desktop message
-notify-send "Title" "Text"
+    notify-send "Title" "Text"
 
 #### System Program Problem Detected
-1. disable apport  
-sudo gedit /etc/default/apport  
-    enabled=1 to enabled=0  
-sudo restart apport  
-    or just reboot  
+1. disable apport enabled=1 to enabled=0  
+    sudo gedit /etc/default/apport  
+    sudo restart apport  
+or just reboot  
 2. remove old crash reports  
-sudo rm /var/crash/*
+    sudo rm /var/crash/*
 
 #### Conky
-sudo apt-get remove indicator-appmenu  
-xdg-open *open-def-app-file*  
-~/.gconf/apps/gnome-settings/gedit/%gconf.xml
+    sudo apt-get remove indicator-appmenu
+    xdg-open <open-def-app-file>
+    ~/.gconf/apps/gnome-settings/gedit/%gconf.xml
 
 #### brightness gamma
-xrandr --output LVDS1 --brightness 0.8  
-xgamma -gamma 0.5
+    xrandr --output LVDS1 --brightness 0.8  
+    xgamma -gamma 0.5
 
 #### sticky-bit
-chmod +t sticky-bit
+    chmod +t sticky-bit
 
 #### Find online printers
 inurl:hp/device/this.LCDispatcher?nav=hp.Print  
@@ -91,45 +90,45 @@ http://www.google.com/search?q=inurl:indexFrame.shtml?newstyle=Quad
 //------------------------------------------------------------------------------
 ## GIT
 #### Save direct commits history
-git pull --rebase  
-git fetch origin  
-git status  
-git fsck  
-git reflog  
-git rebase -i HEAD~3  
+    git pull --rebase  
+    git fetch origin  
+    git status  
+    git fsck  
+    git reflog  
+    git rebase -i HEAD~3  
 
 git stash -> git pull -> git stash apply -> fix conflicts  
 or just  
-git rebase --autostash  
+    git rebase --autostash  
 or in config  
 rebase.autostash.
 
 #### List git-ignored files
-git ls-files . --ignored --exclude-standard --others  
+    git ls-files . --ignored --exclude-standard --others  
 
 #### List untracked files
-git ls-files . --exclude-standard --others  
-git diff --name-status
+    git ls-files . --exclude-standard --others  
+    git diff --name-status
 
 //------------------------------------------------------------------------------
 ## Certificates
-sudo apt-get install libnss3-tools  
-sudo cp SRK\ *.cer /usr/share/ca-certificates/  
-sudo dpkg-reconfigure ca-certificates  
-certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Interseption" -i SRK\ Interseption.cer  
-certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Root Cert" -i SRK\ Root\ Cert.cer
+    sudo apt-get install libnss3-tools  
+    sudo cp SRK\ *.cer /usr/share/ca-certificates/  
+    sudo dpkg-reconfigure ca-certificates  
+    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Interseption" -i SRK\ Interseption.cer  
+    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Root Cert" -i SRK\ Root\ Cert.cer
 
 //------------------------------------------------------------------------------
 ## Killing process
 #### Getting id
-ps aux | grep [name]  
-pidof [name]
+    ps aux | grep [name]  
+    pidof [name]
 
 #### Killing
-kill [id]  
-kill -9 [id]  
-killall -9 [name]  
-pkill [name]
+    kill [id]  
+    kill -9 [id]  
+    killall -9 [name]  
+    pkill [name]
 
 #### Kill with mouse
 alt+f2 xkill 
@@ -137,60 +136,60 @@ alt+f2 xkill
 //------------------------------------------------------------------------------
 ## Patching
 #### Make patch
-diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff
+    diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff
 #### Apply patch
-patch -Np0 --dry-run < boost-droid-bcpd.diff
+    patch -Np0 --dry-run < boost-droid-bcpd.diff
 
 //------------------------------------------------------------------------------
 #### Show number of CPU cores
-grep -c ^processor /proc/cpuinfo  
+    grep -c ^processor /proc/cpuinfo  
 
 #### Show first 5 errors
-make 2>&1|grep error|head -5|tee log.txt
+    <make> 2>&1|grep error|head -5|tee log.txt
 
 #### eclipse crash: add following lines to eclipse.ini
 -Dorg.eclipse.swt.browser.DefaultType=mozilla  
 -Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xullrunner
 
 #### Physical Source Lines of Code (SLOC)
-sloccount directoryname
+    sloccount directoryname
 
 #### Building android project on linux project root:
-*PathToSDK*/tools/android update project --name *ProjectName* --target "android-15" --path .  
-ndk-build  
-ant debug
+    <PathToSDK>/tools/android update project --name <ProjectName> --target "android-15" --path .  
+    ndk-build  
+    ant debug
 
 #### Qt setting custom makefile
 -o qMakefile  
 -f qMakefile
 
-LD_LIBRARY_PATH=\`pwd\` ./*executable*
+    LD_LIBRARY_PATH=\`pwd\` ./<executable>
 
-gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
+    gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
 
 //------------------------------------------------------------------------------
 ## Bash
 #### Scroll up and down the list. 'q' to quit
-ls | less  
-more  
-head filename
+    ls | less  
+    more  
+    head <filename>
 
 #### Rename
-rename 'y/A-Z/a-z/' *  
-rename 's/.df/.txt/g' *.df  
-rename 's/aa/12/g' *  
-sed -i 's/old-word/new-word/g' *.txt  
+    rename 'y/A-Z/a-z/' *  
+    rename 's/.df/.txt/g' *.df  
+    rename 's/aa/12/g' *  
+    sed -i 's/old-word/new-word/g' *.txt  
 
 #### delimeters - in: vmlinuz-3.13.0-40-generic; out: 3.13.0-40
-cut -d '-' -f2,3
+    cut -d '-' -f2,3
 
 #### mtr - traceroute & ping
-mtr [hostname]
+    mtr [hostname]
 
 #### jot - generates text
-jot [count] [begin with]
+    jot [count] [begin with]
 #### random
-jot -r [count] [min] [max]
+    jot -r [count] [min] [max]
 
 df - disk free  
 cal - calendar  
@@ -206,25 +205,25 @@ history, then !*num-in-hist*
 //------------------------------------------------------------------------------
 ## FIND
 #### Apply command to find files
-find . -type f -exec dos2unix {} +
+    find . -type f -exec dos2unix {} +
 
 #### Find in files
-find *directory* -type f | xargs grep -rl '*text*'  
-find *directory* -type f -exec grep -l ‘*text*’ {} +  
-find /path -name "name" -type d
+    find *directory* -type f | xargs grep -rl '*text*'  
+    find *directory* -type f -exec grep -l ‘*text*’ {} +  
+    find /path -name "name" -type d
 
 #### Find and replace in files foo -> bar
-find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
+    find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
 
 #### Move all the files and directories to the parent directory
-find . -maxdepth 1 -exec mv {} .. \;  
-find from/ -name *.orig -exec mv {} to/ \;
+    find . -maxdepth 1 -exec mv {} .. \;  
+    find from/ -name *.orig -exec mv {} to/ \;
 
 //------------------------------------------------------------------------------
 ## GREP
 #### Finds "word" in files in subdirs
-grep -rl ‘*text*’ *directory*/*  
-grep -r word *
+    grep -rl ‘*text*’ *directory*/*  
+    grep -r word *
 
 ###### -r recursive, -n line number, -w whole word
 ###### -i ignore-case, -v non-matching,  -l print files matches
@@ -233,7 +232,7 @@ grep -r word *
 ###### --exclude-dir={dir1,dir2,*.dst}
 ###### --include=\\*.{c,h}
 ###### --exclude=*.o
-grep -rnw 'directory' -e "pattern"
+    grep -rnw 'directory' -e "pattern"
 ###### -iwrvn -locb
 
 #### EXPRESSIONS
@@ -260,69 +259,72 @@ grep  "^[0-9]\\{1,5\\}$" - [0-9] number 1-5 times
 grep -e '^\\(abc\\)\\1$' - back references (\\n): ^; \\(abc\\); \\1; $;
 
 OR  
-grep 'pattern1\|pattern2'  
-grep -E 'pattern1|pattern2'  
-grep -e pattern1 -e pattern2
+    grep 'pattern1\|pattern2'  
+    grep -E 'pattern1|pattern2'  
+    grep -e pattern1 -e pattern2
 
 AND  
-grep -E 'pattern1.\*pattern2'  
-grep -E 'pattern1.\*pattern2|pattern2.\*pattern1'  
-grep 'pattern1' | grep 'pattern2'
+    grep -E 'pattern1.*pattern2'  
+    grep -E 'pattern1.*pattern2|pattern2.*pattern1'  
+    grep 'pattern1' | grep 'pattern2'
 
 NOT  
-grep -v 'pattern1'
+    grep -v 'pattern1'
 
 //------------------------------------------------------------------------------
 #### nl - number lines
 ###### -i5 increase cnt, -s. add string '.' after cnt, -w2     column for cnt
 ###### -b style: a all lines,  t nonempty lines, n no lines, pREG lines for regexp (-bpA - only with A)
 ###### -n format: ln left justified no leading zeros, rn right -same-,  rz right j lead z
-nl file.txt
+    nl file.txt
 
 #### wc - coun lines, words, bytes
 ###### -w words, -L length of longest line, -l new lines, -c bytes
-wc file.txt
+    wc file.txt
 #### lines words bytes
-  5     5     41     sort.txt
+5     5     41     sort.txt
 
 #### sed
 ###### a\ append, i\ insert, c\ replace, = print line number
 ###### ADDRESS line number, PATTERN reg, $ end of file
 
-sed 'ADDRESS a\  
+    sed 'ADDRESS a\  
         Line which you want to append' filename
 
-sed '/PATTERN/ a\  
+    sed '/PATTERN/ a\  
         Line which you want to append' filename
 
-sed '$ a\  
-    Line which you want to append to end of file' filename
+    sed '$ a\  
+        Line which you want to append to end of file' filename
 
-sed '/PATTERN/=' filename
+    sed '/PATTERN/=' filename
 
 #### multiply lines
-sed -n '/PATTERN/,/PATTERN/ { = p }' filename
+    sed -n '/PATTERN/,/PATTERN/ {
+    =
+    p
+    }' filename
 
 #### total lines
-sed -n '$=' thegeekstuff.txt
+    sed -n '$=' thegeekstuff.txt
 
 //------------------------------------------------------------------------------
 ## SSH tricks
 #### Generate and set key
-cd ~/.ssh  
-ssh-keygen -t rsa  
-sftp bacchus@106.125.32.44  
-mkdir .ssh  
-cd .ssh  
-put id_rsa.pub  
-exit  
-ssh bacchus@106.125.32.44  
-cd .ssh  
-cat id_rsa.pub > authorized_keys  
-exit
+    cd ~/.ssh  
+    ssh-keygen -t rsa  
+    sftp bacchus@106.125.32.44  
+    mkdir .ssh  
+    cd .ssh  
+    put id_rsa.pub  
+    exit  
+    ssh bacchus@106.125.32.44  
+    cd .ssh  
+    cat id_rsa.pub > authorized_keys  
+    exit
 
 #### mount remote ssh dir: sshfs *ssh-dir* *local-dir*
-sshfs bacchus@106.125.32.44:/surc/Projects/ve/share ~/shares/ve_share
+    sshfs bacchus@106.125.32.44:/surc/Projects/ve/share ~/shares/ve_share
 
 //------------------------------------------------------------------------------
 ## Java
@@ -337,17 +339,17 @@ sudo apt-get update
 sudo apt-get install update-sun-jre  
 
 #### choose default java version in system
-sudo update-alternatives --config java
+    sudo update-alternatives --config java
 
 #### if key error occures
-sudo apt-key update
+    sudo apt-key update
 #### or manualy if error received: NO_PUBKEY *key-number*
-sudo apt-key adv --recv-key --keyserver keyserver.ubuntu.com *key-number*
+    sudo apt-key adv --recv-key --keyserver keyserver.ubuntu.com *key-number*
 #### after this try
-sudo apt-get update
+    sudo apt-get update
 
 #### helps if notveryfied sources error doesnt allow to update
-sudo apt-get upgrade
+    sudo apt-get upgrade
 
 //------------------------------------------------------------------------------
 #### Evolution maill settings
@@ -363,7 +365,7 @@ no enc
 
 //------------------------------------------------------------------------------
 ## Setup WIFI
-sudo apt-get install hostapd dnsmasq
+    sudo apt-get install hostapd dnsmasq
 
 #### file: /etc/dnsmasq.conf
 bind-interfaces  
@@ -413,19 +415,19 @@ sudo service hostapd stop
 //--------------------------------------------------------------
 ## SSD settings
 #### tools
-swapon -s  
-sudo blkid 
+    swapon -s  
+    sudo blkid 
 
 #### folders
 /var/cache  
 /media/home
 
 #### commands
-sudo gedit /etc/fstab &  
+    sudo gedit /etc/fstab &  
 UUID=????????   /media/home    ext4          defaults       0       2   
-sudo mkdir /media/home  
-sudo mount -a  
-sudo rsync -aXS /home/. /media/home/.  
+    sudo mkdir /media/home  
+    sudo mount -a  
+    sudo rsync -aXS /home/. /media/home/.  
 UUID=????????   /home    ext4          defaults       0       2  
-cd / && sudo mv /home /old_home && sudo mkdir /home  
-sudo mount -a
+    cd / && sudo mv /home /old_home && sudo mkdir /home  
+    sudo mount -a
