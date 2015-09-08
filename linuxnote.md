@@ -3,18 +3,18 @@
     gnome-open <filename>
 
 #### Unmount tatra
-    udisks --unmount /dev/sdb1  
+    udisks --unmount /dev/sdb1
     udisks --detach /dev/sdb
 
 #### Dropbox encfs
-    sudo apt-get install encfs  
-    ~~sudo addgroup <username> fuse~~  
-    encfs ~/Dropbox/.encrypted ~/private  
-    sudo install ~/gnome-encfs /usr/local/bin  
+    sudo apt-get install encfs
+    #sudo addgroup <username> fuse
+    encfs ~/Dropbox/.encrypted ~/private
+    sudo install ~/gnome-encfs /usr/local/bin
     gnome-encfs -a ~/Dropbox/.encrypted ~/private
 
 #### Alt mouse move window
-    sudo apt-get install dconf-tools  
+    sudo apt-get install dconf-tools
 dconf-editor → org → gnome → desktop → wm → preferences → mouse-button-modifier
 
 #### Change pdf encoding
@@ -30,7 +30,7 @@ int pdf viewer: file\save as\format\settings\UTF-8\save
 chrome://flags - Override software rendering list - Enable
 
 #### Disable touchpad
-    xinput list | grep Touch  
+    xinput list | grep Touch
     xinput set-prop 13 "Device Enabled" 0
 
 #### Unzip
@@ -41,11 +41,11 @@ chrome://flags - Override software rendering list - Enable
     pv filename | md5sum
 
 #### Hardware info
-    lspci - VGA  
-    lsusb  
-    demidecode  
-    cat /proc/meminfo  
-    cat /proc/cpuinfo  
+    lspci - VGA
+    lsusb
+    demidecode
+    cat /proc/meminfo
+    cat /proc/cpuinfo
     cat /proc/partitions
 
 #### Install
@@ -62,7 +62,7 @@ libopenal-dev
 
 #### System Program Problem Detected
 1. disable apport enabled=1 to enabled=0  
-    sudo gedit /etc/default/apport  
+    sudo gedit /etc/default/apport
     sudo restart apport  
 or just reboot  
 2. remove old crash reports  
@@ -74,7 +74,7 @@ or just reboot
     ~/.gconf/apps/gnome-settings/gedit/%gconf.xml
 
 #### brightness gamma
-    xrandr --output LVDS1 --brightness 0.8  
+    xrandr --output LVDS1 --brightness 0.8
     xgamma -gamma 0.5
 
 #### sticky-bit
@@ -90,32 +90,32 @@ http://www.google.com/search?q=inurl:indexFrame.shtml?newstyle=Quad
 //------------------------------------------------------------------------------
 ## GIT
 #### Save direct commits history
-    git pull --rebase  
-    git fetch origin  
-    git status  
-    git fsck  
-    git reflog  
-    git rebase -i HEAD~3  
+    git pull --rebase
+    git fetch origin
+    git status
+    git fsck
+    git reflog
+    git rebase -i HEAD~3
 
 git stash -> git pull -> git stash apply -> fix conflicts  
 or just  
-    git rebase --autostash  
+    git rebase --autostash
 or in config  
-rebase.autostash.
+rebase.autostash
 
 #### List git-ignored files
-    git ls-files . --ignored --exclude-standard --others  
+    git ls-files . --ignored --exclude-standard --others
 
 #### List untracked files
-    git ls-files . --exclude-standard --others  
+    git ls-files . --exclude-standard --others
     git diff --name-status
 
 //------------------------------------------------------------------------------
 ## Certificates
-    sudo apt-get install libnss3-tools  
-    sudo cp SRK\ *.cer /usr/share/ca-certificates/  
-    sudo dpkg-reconfigure ca-certificates  
-    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Interseption" -i SRK\ Interseption.cer  
+    sudo apt-get install libnss3-tools
+    sudo cp SRK\ *.cer /usr/share/ca-certificates/
+    sudo dpkg-reconfigure ca-certificates
+    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Interseption" -i SRK\ Interseption.cer
     certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Root Cert" -i SRK\ Root\ Cert.cer
 
 //------------------------------------------------------------------------------
