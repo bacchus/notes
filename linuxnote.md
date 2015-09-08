@@ -61,7 +61,7 @@ libopenal-dev
 notify-send "Title" "Text"
 
 #### System Program Problem Detected
-1. disable apport
+1. disable apport  
 sudo gedit /etc/default/apport  
     enabled=1 to enabled=0  
 sudo restart apport  
@@ -234,10 +234,7 @@ grep -r word *
 ###### --include=\\*.{c,h}
 ###### --exclude=*.o
 grep -rnw 'directory' -e "pattern"
-
-grep <string> <file-patern>  
--iwrvn  
--locb
+###### -iwrvn -locb
 
 #### EXPRESSIONS
 ^ - begin line  
