@@ -304,10 +304,7 @@ sed '$ a\
 sed '/PATTERN/=' filename
 
 #### multiply lines
-sed -n '/PATTERN/,/PATTERN/ {  
-=  
-p  
-}' filename
+sed -n '/PATTERN/,/PATTERN/ { = p }' filename
 
 #### total lines
 sed -n '$=' thegeekstuff.txt
@@ -333,8 +330,8 @@ sshfs bacchus@106.125.32.44:/surc/Projects/ve/share ~/shares/ve_share
 //------------------------------------------------------------------------------
 ## Java
 
-\#!/bin/sh
-\# java install
+\#!/bin/sh  
+\# java install  
 set -e  
 sudo sh -c "echo 'deb http://www.duinsoft.nl/pkg debs all' >> /etc/apt/sources.list"  
 sudo apt-get update  
