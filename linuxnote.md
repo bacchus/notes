@@ -115,7 +115,7 @@ rebase.autostash
     sudo apt-get install libnss3-tools
     sudo cp <cer-folder>\ *.cer /usr/share/ca-certificates/
     sudo dpkg-reconfigure ca-certificates
-    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "<name>" -i SRK\ Interseption.cer
+    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "<name>" -i <cer-folder>\ SOME.cer
 
 //------------------------------------------------------------------------------
 ## Killing process
