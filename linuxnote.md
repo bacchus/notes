@@ -113,10 +113,9 @@ rebase.autostash
 //------------------------------------------------------------------------------
 ## Certificates
     sudo apt-get install libnss3-tools
-    sudo cp SRK\ *.cer /usr/share/ca-certificates/
+    sudo cp <cer-folder>\ *.cer /usr/share/ca-certificates/
     sudo dpkg-reconfigure ca-certificates
-    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Interseption" -i SRK\ Interseption.cer
-    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "SRK Root Cert" -i SRK\ Root\ Cert.cer
+    certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n "<name>" -i SRK\ Interseption.cer
 
 //------------------------------------------------------------------------------
 ## Killing process
@@ -354,7 +353,6 @@ sudo apt-get install update-sun-jre
 //------------------------------------------------------------------------------
 #### Evolution maill settings
 user@ss.com  
-SRK  
 pop3.w1.ss.net  
 995  
 ssl pwd  
