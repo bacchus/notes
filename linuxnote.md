@@ -80,6 +80,9 @@ or just reboot
 #### sticky-bit
     chmod +t sticky-bit
 
+#### Wget
+    wget -r --no-parent -k <web-page>
+
 #### Find online printers
 inurl:hp/device/this.LCDispatcher?nav=hp.Print  
 https://www.google.ru/search?hl=en&newwindow=1&tbo=d&site=&source=hp&q=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&oq=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&gs_l=hp.3...634.634.0.1065.1.1.0.0.0.0.43.43.1.1.0.les%3B..0.0...1c.1.z__9Aio_1J0  
