@@ -162,6 +162,8 @@ alt+f2 xkill
 -o qMakefile  
 -f qMakefile
 
+    locate libQt5Script.so
+
     LD_LIBRARY_PATH=\`pwd\` ./<executable>
 
     gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
