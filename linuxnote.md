@@ -1,14 +1,16 @@
 ## Ubuntu tricks
 #### Nautilus
-ctrl-pgup(pgdown)   prev/next tab  
-alt-1(2,3,4)        move to 1/2,3,4 tab  
-alt-home            home dir  
-alt-up              parent dir  
-alt-left(right)     history dir move  
-alt-enter           properties  
-ctrl-1(2,3)         view list, compact  
-ctrl-shift-n        new dir  
-ctrl-m              make link
+hotkey | what does  
+---- | ----
+ctrl-pgup(pgdown)   | prev/next tab  
+alt-1(2,3,4)        | move to 1/2,3,4 tab  
+alt-home            | home dir  
+alt-up              | parent dir  
+alt-left(right)     | history dir move  
+alt-enter           | properties  
+ctrl-1(2,3)         | view list, compact  
+ctrl-shift-n        | new dir  
+ctrl-m              | make link
 
 #### Hotkeys
 super-n         open app in launcher  
