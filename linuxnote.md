@@ -140,6 +140,15 @@ nmap -v -A scanme.nmap.org - scan
 
     wget -r --no-parent -k <web-page>
 
+#### Other
+/etc/apt/sources.list - repository list  
+/var/cache/apt/archives - archive of instaled packages  
+/etc/usplash.conf - usplash conf  
+/etc/rc.local - your script on boot  
+/boot/grub/menu.lst - grub conf  
+/ets/fstab - mounted devices conf  
+/var/log - logs  
+
 #### Find online printers
 inurl:hp/device/this.LCDispatcher?nav=hp.Print  
 https://www.google.ru/search?hl=en&newwindow=1&tbo=d&site=&source=hp&q=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&oq=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&gs_l=hp.3...634.634.0.1065.1.1.0.0.0.0.43.43.1.1.0.les%3B..0.0...1c.1.z__9Aio_1J0  
