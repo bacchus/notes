@@ -97,13 +97,18 @@ gksu            sudo with graphical ui
 crontab -e      edit cron tasks
 
 #### Install
-nautilus-open-terminal  
-CompizConfig  
-evolution  
-ubuntu-restricted-extras  
-chromium-codecs-ffmpeg-extra  
-libalut-dev  
-libopenal-dev
+
+    nautilus-open-terminal
+    compizconfig-settings-manager
+    ubuntu-restricted-extras
+    chromium-codecs-ffmpeg-extra
+
+    sudo apt-get clean
+    sudo apt-get update
+    sudo apt-get upgrade
+
+    necessitas qt gnu-octave meld git
+    skype gimp chromium stellarium vlc cheese-webcam guvcview
 
 #### Desktop message
     notify-send "Title" "Text"
