@@ -1,4 +1,22 @@
 ## Ubuntu tricks
+#### Nautilus
+ctrl-pgup(pgdown)   prev/next tab  
+alt-1(2,3,4)        move to 1/2,3,4 tab  
+alt-home            home dir  
+alt-up              parent dir  
+alt-left(right)     history dir move  
+alt-enter           properties  
+ctrl-1(2,3)         view list, compact  
+ctrl-shift-n        new dir  
+ctrl-m              make link
+
+#### Hotkeys
+super-n         open app in launcher  
+super-shift-n   opens app in launcher if already runing  
+super-t         trash  
+alt-f1 	        left toolbar  
+alt-f2		    run
+
 #### Open from terminal
     gnome-open <filename>
 
@@ -33,9 +51,17 @@ chrome://flags - Override software rendering list - Enable
     xinput list | grep Touch
     xinput set-prop 13 "Device Enabled" 0
 
-#### Unzip
-    tar -zxvf <file.tar.gz>
-    tar -jxvf <file.tar.bz2>
+#### Tar
+c - create, x - extract  
+z - gzip, j - bzip2  
+f - file, v - verbose
+
+    tar -czvf <file.tar.gz> <files>
+    tar -xjvf <file.tar.bz2>
+    tar cf <file.tar> <files>
+
+    gzip file
+    gzip -d file.gz
 
 #### See progress bar: md5sum filename
     pv filename | md5sum
@@ -47,6 +73,28 @@ chrome://flags - Override software rendering list - Enable
     cat /proc/meminfo
     cat /proc/cpuinfo
     cat /proc/partitions
+    ls -l /dev/disk/by-uuid/
+
+#### System info
+date - cur date and time  
+cal - calendar on cur month  
+uptime - time from boot  
+w - users online  
+whoami - login name  
+uname -a - kernel info  
+df - discs usage  
+du - weight of cur dir  
+du -sh <dir> - weight of <dir> in human readable  
+free - memory usage and swap  
+whereis app - location of app  
+which app - which app will be run
+
+#### Commands
+passwd          change pasword  
+locate file     find file  
+dpkg -i pkg.deb install package  
+gksu            sudo with graphical ui  
+crontab -e      edit cron tasks
 
 #### Install
 nautilus-open-terminal  
@@ -80,7 +128,16 @@ or just reboot
 #### sticky-bit
     chmod +t sticky-bit
 
-#### Wget
+#### Network
+ping host - ping host  
+whois domain - whois info  
+dig domain - dns info  
+dig -x host - reverse search host  
+wget file - load file  
+nmap -v -A scanme.nmap.org - scan  
+/etc/resolv.conf - dns-servers list  
+/etc/services - standart well known ports
+
     wget -r --no-parent -k <web-page>
 
 #### Find online printers
@@ -122,6 +179,13 @@ rebase.autostash
 
 //------------------------------------------------------------------------------
 ## Killing process
+#### Processes
+ps - show all current procs  
+top - show running procs  
+bg - list stoped and bg tasks; continue stoped task  
+fg - move last task to foreground  
+fg n - move n task to foreground
+
 #### Getting id
     ps aux | grep [name]
     pidof [name]
@@ -314,6 +378,10 @@ NOT
 
 //------------------------------------------------------------------------------
 ## SSH tricks
+
+ssh [-p port] user@host - connect to host as user on port  
+ssh-copy-id user@host   - add your key to host
+
 #### Generate and set key
     cd ~/.ssh
     ssh-keygen -t rsa
