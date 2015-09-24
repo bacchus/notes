@@ -250,6 +250,8 @@ alt+f2 xkill
     LD_LIBRARY_PATH=\`pwd\` ./<executable>
 
     gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
+    
+    std::cout << "\n         (__)\n         (oo)\n   /------\\/\n  / |    ||\n *  /\\---/\\\n    ~~   ~~\n\n";
 
 //------------------------------------------------------------------------------
 ## Bash
