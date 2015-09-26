@@ -145,7 +145,7 @@ nmap -v -A scanme.nmap.org - scan
 /etc/resolv.conf - dns-servers list  
 /etc/services - standart well known ports
 
-    wget -r --no-parent -k <web-page>
+    wget -r --no-parent -k -p <web-page>
 
 #### Other
 /etc/apt/sources.list - repository list  
