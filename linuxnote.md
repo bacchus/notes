@@ -186,6 +186,9 @@ rebase.autostash
     git ls-files . --exclude-standard --others
     git diff --name-status
 
+#### Tags
+    git tag -a v1.4 -m 'my version 1.4'
+
 //------------------------------------------------------------------------------
 ## Certificates
     sudo apt-get install libnss3-tools
