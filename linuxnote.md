@@ -218,6 +218,17 @@ fg n - move n task to foreground
 #### Kill with mouse
 alt+f2 xkill
 
+    sudo gedit /etc/sysctl.d/10-magic-sysrq.conf
+
+change 176 to 244  
+if "the system is BUSIER than it should be"  
+(slowly, with a few seconds between each)  
+alt+SysReq(Print Screen), type REISUB  
+alt+SysReq+F - Kernel will kill the mostly "expensive" process each time  
+alt+SysReq+K - for console  
+
+ctrl+alt+backspace - kill x-server
+
 //------------------------------------------------------------------------------
 ## Patching
 #### Make patch
