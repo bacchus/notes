@@ -156,6 +156,31 @@ nmap -v -A scanme.nmap.org - scan
 /ets/fstab - mounted devices conf  
 /var/log - logs  
 
+#### Chromium libpepflashplayer.so causing excessive disk writes
+shift-esc = chrome task manager  
+iotop  
+chrome://flags/Enable Offline Auto-Reload Mode  
+chrome:plugins disable  
+- chromoting view (no need accses other computers)  
+- pdf viewer (let download pdf)  
+- flash (uncheck always allowed to run)  
+uninstall pepperflash  
+sudo apt-get remove flashplugin-installer  
+sudo update-pepperflashplugin-nonfree --uninstall  
+/etc/chromium/default config to also add "--disk-cache-dir=/tmp"  
+http://peter.sh/experiments/chromium-command-line-switches
+
+#### Android Studio & ibus-daemon
+1: Force ibus in synchronous mode, Do this preferably before starting Studio  
+    IBUS_ENABLE_SYNC_MODE=1 ibus-daemon -xrd
+
+2: Disable IBus input in Studio, This will only disable input methods for Studio  
+    XMODIFIERS= ./bin/studio.sh
+
+Settings -> Language Support -> Keyboard input method system  
+change from 'IBus' to 'None'  
+and now Ctrl+Shift+u works again
+
 #### Find online printers
 inurl:hp/device/this.LCDispatcher?nav=hp.Print  
 https://www.google.ru/search?hl=en&newwindow=1&tbo=d&site=&source=hp&q=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&oq=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&gs_l=hp.3...634.634.0.1065.1.1.0.0.0.0.43.43.1.1.0.les%3B..0.0...1c.1.z__9Aio_1J0  
@@ -243,6 +268,10 @@ ctrl+alt+backspace - kill x-server
 #### Show first 5 errors
     <make> 2>&1|grep error|head -5|tee log.txt
 
+#### Display information about the contents of ELF format files
+    readelf <option(s)> elf-file(s)
+-a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+  
 #### eclipse crash: add following lines to eclipse.ini
 -Dorg.eclipse.swt.browser.DefaultType=mozilla  
 -Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xullrunner
@@ -319,6 +348,8 @@ history, then !*num-in-hist*
     find . -maxdepth 1 -exec mv {} .. \;
     find from/ -name *.orig -exec mv {} to/ \;
 
+#### List all files inside directories
+    ls -alr *
 //------------------------------------------------------------------------------
 ## GREP
 #### Finds "word" in files in subdirs
@@ -442,6 +473,18 @@ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 5CB26B26
 sudo apt-get update  
 sudo apt-get install update-sun-jre  
 
+## Installing Oracle Java JDK
+
+http://www.oracle.com/technetwork/java/javase/downloads/index.html  
+download jdk-7u21-linux-i586.tar.gz  
+tar -xf jdk-7u21-linux-i586.tar.gz  
+sudo mv jdk1.7.0_21 /usr/lib/jvm/  
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_21/bin/java" 1  
+sudo update-alternatives --config java  
+java -version  
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21/  
+export JAVA_HOME
+
 #### choose default java version in system
     sudo update-alternatives --config java
 
@@ -539,3 +582,15 @@ UUID=????????   /home    ext4          defaults       0       2
 
     cd / && sudo mv /home /old_home && sudo mkdir /home
     sudo mount -a
+    
+/etc/fstab:  
+###### swap was on /dev/sda6 during installation
+UUID=xxxxx none         swap    sw          0   0  
+###### home
+UUID=xxxxx /home        ext4    defaults    0   2  
+###### cashe
+UUID=xxxxx /var/cache   ext4    defaults    0   2  
+###### tmp
+tmpfs      /tmp         tmpfs   defaults    0   0  
+tmpfs      /var/tmp     tmpfs   defaults    0   0  
+
