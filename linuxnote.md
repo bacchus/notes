@@ -594,3 +594,54 @@ UUID=xxxxx /var/cache   ext4    defaults    0   2
 tmpfs      /tmp         tmpfs   defaults    0   0  
 tmpfs      /var/tmp     tmpfs   defaults    0   0  
 
+
+#### Comandline-one-liners
+Create a script of the last executed command
+    echo "!!" > script.sh
+Runs previous command but replacing
+    echo no typos
+    ^typos^errors
+Quickly rename a file
+    mv filename.{old,new}
+List of commands you use most often
+    history | awk '{print $2}' | sort | uniq -c | sort -rn | head
+Execute a command without saving it in the history
+    <space>command
+Make directory including intermediate directories
+    mkdir -p a/long/directory/path
+Create simple text file from command line
+    cat > file.txt
+    {your text here}
+    {your text here}
+    <ctrl-d>
+Show PATH in a human-readable way
+    echo $PATH | tr ':' '\n'
+Share a file between two computers
+    nc -l 5566 > data-dump.sql
+    nc <his-ip-address> 5566 < data-dump.sql
+Set audible alarm when an IP address comes online
+    ping -a IP_address
+List programs with open ports and connections
+    lsof -i
+Currently mounted filesystems in nice layout
+    mount | column -t
+Display free disk space
+    df -h
+Display disk usage statistics for the current directory
+    du -sh *
+Execute a command at a given time
+    echo "ls -l" | at midnight
+Simple stopwatch
+    time read
+    <ctrl-d>
+Put a console clock in top right corner
+    while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
+Display the top ten running processes. (Sorted by memory usage)
+    ps aux | sort -nk +4 | tail
+32 bits or 64 bits
+    getconf LONG_BIT
+Displays a calendar
+    cal 02 1988
+Quick access to the ascii table
+    man ascii
+
