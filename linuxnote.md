@@ -132,8 +132,9 @@ or just reboot
     xrandr --output LVDS1 --brightness 0.8
     xgamma -gamma 0.5
 
-#### sticky-bit
+#### sticky-bit setuid-setgid
     chmod +t sticky-bit
+    chmod ug+s setuid-setgid
 
 #### Network
 ping host - ping host  
