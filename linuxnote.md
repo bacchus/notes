@@ -645,3 +645,22 @@ Displays a calendar
 Quick access to the ascii table
     man ascii
 
+
+#### viewing thread information
+    ps -Lf
+    ps -T
+    ps -Lm
+    top -H
+
+TotalView debugger is LC's recommended debugger for parallel programs  
+computing.llnl.gov/code/content/software_tools.php  
+Some tools worth investigating, specifically for threaded codes, include:  
+Open|SpeedShop  
+TAU  
+HPCToolkit  
+PAPI  
+Intel VTune Amplifier  
+ThreadSpotter  
+
+
+
