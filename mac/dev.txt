@@ -1,0 +1,60 @@
+		Finder
+	Remove the Stripes
+defaults write com.apple.finder FXListViewStripes -bool FALSE
+	Put the Path Bar on Top
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+	quicklookplugins.com 
+To install the plug-ins after downloading them, place them in ~/Library/QuickLook
+qlmanage -r
+	Slow xcode
+defaults write com.apple.dt.XCode IDEIndexDisable 1
+./Applications/Xcode.app/Contents/PlugIns/
+Preferences Locations DerivedData -> DELETE
+	Fix CoreAudio missing
+xcode-select --install
+bar rebuild
+lar
+
+remove all references to CoreAudioKit
+
+sudo xcode-select -s /path/to/xcode/Contents/Developer
+	fast fix
+cd /usr/local/lib sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib
+
+Product -> Scheme -> Edit Scheme. Change the Build Configuration under the Info tab
+
+	XCode Needs
+install ubuntu fonts and qt colouring
+Creating method stubs automatically
+jump def - decl
+find usages
+not to write non ascii symbols
+
+http://brew.sh
+https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
+brew install bash-completion
+brew tap homebrew/completions
+https://github.com/Homebrew/homebrew-completions
+
+	Lock screen
+Enable the fast user switching menu from the Users & Groups preference pane and then select Login Window… from the menu.
+
+Applications -> Automator -> Service -> Service receives no input in any application -> Run Shell Script: /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+-> Cmd-S to save -> Name -> saved in ~/Library/Services
+System Preferences -> Keyboard -> Shortcuts -> Services -> General
+
+find . -name ".DS_Store" -exec rm {} \;
+find . -name ".DS_Store" -delete
+find . -name ".DS_Store" -print0 | xargs -0 rm
+find . -name "*.bak" -print0 | xargs -0 -I file mv file ~/old.files
+
+
+
+Heisenbug - disappear or alter its behaviour when one attempts to study it
+Bohrbug - is a "good, solid bug". do not change their behaviour and are relatively easily detected.
+Mandelbug - is a bug whose causes are so complex it defies repair, or makes its behaviour appear chaotic or even non-deterministic or bug that exhibits fractal behaviour by revealing more bugs
+Schrödinbug - manifests itself in running software after a programmer notices that the code should never have worked in the first place
+Hindenbug - is a bug with catastrophic behaviour
+
+
+gnome, unity, gtk, enlightenment, kde

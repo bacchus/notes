@@ -1,0 +1,35 @@
+    Panels
+cmd 1 - pro nav
+cmd sift j - show file in pro nav
+cmd 0 - nav panel
+cmd alt 0 - util panel
+ctrl 1 - show related
+alt cliсk - open paralel
+
+    Search
+cmd sift f - pro search
+cmd alt f - file find/replace
+cmd alt sift f - project find/replace
+
+ctrl 6 - jump bar
+cmd sift o - quick open
+cmd l - goto line
+cmd ctrl j - jump definition
+ctrl cmd up/down - switch cpp/header
+ctrl cmd left/right - forward/backward
+ctrl cmd e - rename variable
+cmd / - comment
+cmd alt [ ] - move line
+
+    Build
+cmd b - build
+cmd r - run
+cmd sift k - clean
+cmd . - stop
+
+    Debug
+f6 - step over
+f7 - step into
+cmd \ - breakpoint
+cmd y - enable/disable all breakpoints
+ctrl cmd y - play/pause debugger

@@ -1,0 +1,48 @@
+⌘ = Command
+⇧ = Shift
+⌥ = Option/Alt
+⌃ = Control
+
+    Screenshot
+cmd sift 3 - screenshot
+cmd sift 4 - area screenshot
+cmd sift 4 space - window screenshot
+
+    Safari
+cmd sift L - side bar
+cmd y - history
+
+    Finder
+cmd o - open
+cmd , - preferences
+space - quick look
+cmd i - get info window
+cmd backspaсe - delete to trash
+cmd sift n - new folder
+cmd d - duplicate file
+cmd ctrl up - open in new win
+
+    Folders
+cmd sift c - my computer
+cmd sift d - desktop
+cmd sift h - home
+cmd sift o - documents
+cmd sift l - downloads
+cmd sift u - utilities
+cmd sift g - go to folder
+
+    Navigating
+cmd [ - prev folder
+cmd ] - next folder
+cmd up - parent folder
+cmd down - child folder
+
+    Editor
+cmd ctrl d - lookup in dictionary
+cmd ; - spelling
+
+    Find
+cmd f - find
+cmd g - find next
+cmd sft g - find prev
+
