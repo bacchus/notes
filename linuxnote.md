@@ -32,6 +32,7 @@ alt-f2		    run
     encfs ~/Dropbox/.encrypted ~/private
     sudo install ~/gnome-encfs /usr/local/bin
     gnome-encfs -a ~/Dropbox/.encrypted ~/private
+    fusermount -u private
 
 #### Alt mouse move window
     sudo apt-get install dconf-tools
