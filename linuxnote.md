@@ -226,7 +226,8 @@ igs.org/igsnetwork/network_by_site.php?site=crao
 Кто угодно может скачать RINEX-файлы и прогнать через rtklib
 
 #### PS1
-PROMPT_DIRTRIM=2 
+PS1="$PS1\n--> "  
+PROMPT_DIRTRIM=2  
 PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u\[\033[01m\]@\[\033[00;36m\]\h\[\033[01m\]:\[\033[00;35m\]\w\[\033[00m\]\[\033[01;33m\]`git branch 2>/dev/null|cut -f2 -d\* -s`\[\033[00m\]\$ '
 
 
