@@ -174,6 +174,16 @@ nmap -v -A scanme.nmap.org - scan
 Spacesniffer  
 Windirstat  
 
+
+#### Youtube
+0-9         parts of video  
+space       play pause  
+<- ->       fwd back 5 sec  
+^ v	        +- vol  
+f           fullscreen  
+esc         exit fullscreen  
+tab         navigate  
+
 #### Chromium libpepflashplayer.so causing excessive disk writes
 shift-esc = chrome task manager  
 iotop  
