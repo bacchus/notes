@@ -32,7 +32,7 @@ alt-f2		    run
     encfs ~/Dropbox/.encrypted ~/private
     sudo install ~/gnome-encfs /usr/local/bin
     gnome-encfs -a ~/Dropbox/.encrypted ~/private
-    fusermount -u private
+    fusermount -u ~/private
 
 #### Alt mouse move window
     sudo apt-get install dconf-tools
@@ -157,6 +157,22 @@ nmap -v -A scanme.nmap.org - scan
 /boot/grub/menu.lst - grub conf  
 /ets/fstab - mounted devices conf  
 /var/log - logs  
+
+#### Grub customizer
+!!!not tested!!!  
+    sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+    sudo apt-get update
+    sudo apt-get install grub-customizer
+    
+#### Boot repair
+!!!not tested!!!  
+    sudo add-apt-repository ppa:yannubuntu/boot-repair
+    sudo apt-get update
+    sudo apt-get install boot-repair
+
+#### Win DU
+Spacesniffer  
+Windirstat  
 
 #### Chromium libpepflashplayer.so causing excessive disk writes
 shift-esc = chrome task manager  
