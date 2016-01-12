@@ -42,6 +42,14 @@ dconf-editor → org → gnome → desktop → wm → preferences → mouse-butt
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER  -sOutputFile=output.pdf input.pdf  
 int pdf viewer: file\save as\format\settings\UTF-8\save
 
+#### ffmpeg
+######## Video to gif
+    ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 \
+    -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifPallet.png
+	
+	ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 -i gifPallet.png -filter_complex \
+	"fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output2.gif
+	
 #### Restart ui
     sudo service lightdm restart
 #### Restart network
@@ -208,6 +216,19 @@ http://peter.sh/experiments/chromium-command-line-switches
 Settings -> Language Support -> Keyboard input method system  
 change from 'IBus' to 'None'  
 and now Ctrl+Shift+u works again
+
+You can increase the value of idea.cycle.buffer.size=1024  
+in property file android-studio\bin\idea.properties
+
+#### GPS
+В Крыму находится станция IGS с кодом CRAO.  
+igs.org/igsnetwork/network_by_site.php?site=crao  
+Кто угодно может скачать RINEX-файлы и прогнать через rtklib
+
+#### PS1
+PROMPT_DIRTRIM=2 
+PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u\[\033[01m\]@\[\033[00;36m\]\h\[\033[01m\]:\[\033[00;35m\]\w\[\033[00m\]\[\033[01;33m\]`git branch 2>/dev/null|cut -f2 -d\* -s`\[\033[00m\]\$ '
+
 
 #### Find online printers
 inurl:hp/device/this.LCDispatcher?nav=hp.Print  
