@@ -1,4 +1,6 @@
-		Finder
+		DEV
+
+	Finder
 	Remove the Stripes
 defaults write com.apple.finder FXListViewStripes -bool FALSE
 	Put the Path Bar on Top
@@ -38,15 +40,19 @@ https://github.com/Homebrew/homebrew-completions
 
 	Lock screen
 Enable the fast user switching menu from the Users & Groups preference pane and then select Login Window… from the menu.
-
 Applications -> Automator -> Service -> Service receives no input in any application -> Run Shell Script: /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 -> Cmd-S to save -> Name -> saved in ~/Library/Services
 System Preferences -> Keyboard -> Shortcuts -> Services -> General
+
+wget --password=<pass> --user=<user> -c '<link>'
 
 find . -name ".DS_Store" -exec rm {} \;
 find . -name ".DS_Store" -delete
 find . -name ".DS_Store" -print0 | xargs -0 rm
 find . -name "*.bak" -print0 | xargs -0 -I file mv file ~/old.files
+
+run app from terminal
+./target.app/Contents/MacOS/target [args]
 
 
 

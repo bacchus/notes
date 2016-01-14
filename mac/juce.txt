@@ -1,4 +1,5 @@
-	JUCE
+		JUCE
+
 https://github.com/open-ephys/GUI.git
 
 JUCE_ENABLE_REPAINT_DEBUGGING

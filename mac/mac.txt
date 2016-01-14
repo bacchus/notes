@@ -1,3 +1,5 @@
+		MAC
+
 ⌘ = Command
 ⇧ = Shift
 ⌥ = Option/Alt
