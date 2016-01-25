@@ -579,6 +579,16 @@ smtp.w1.ss.net
 no enc
 
 //------------------------------------------------------------------------------
+## Setup Bluetooth
+    dmesg | grep -i blue
+    lspci | grep -i blue
+    lsusb | grep -i blue
+    
+    sudo apt-get install bluez-utils
+    sudo /etc/init.d/bluetooth restart
+    hcitool dev
+
+//------------------------------------------------------------------------------
 ## Setup WIFI
     sudo apt-get install hostapd dnsmasq
 
