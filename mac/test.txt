@@ -1,0 +1,187 @@
+		TEST
+
+get app exit status: echo $?
+
+- collect requirements
+- analisys
+- propose solution
+
+MSTest, NUnit, xUnit, 
+obj-c: XCTest, OCUnit
+
+	xUnit architecture
+- t runer
+- t cases
+- t suits
+- t fixture
+- t log, result formatter
+    name, file name, states transitions, statistics: passed, failed, fail messages, file-line#
+
+test set
+  test suite
+    setUp()
+      testCase
+        assertion
+    tearDown()
+
+- all registered tests automatically executed
+- test cases groups into test suits
+- test cases can use shared context (t fixture)
+  to logically combine tests for one module or class
+- framework must be safe for multithread using
+- use of fatal not fatal assertions
+- to set expected behaviour of program as spec commands
+- requirements must be testable
+- unit tests are not proof of correctness
+- must include all states and transitions in your state diagram (test coverage)
+- every reachable line of code must be executed at least one time
+- test must pass when no other objects are present
+
+one unit test file for one class - tests file structure same as project structure
+run test in separate project
+
+This illustrates the first lesson from the async/await conceptual model: To test an asynchronous method’s behaviour, you must observe the task it returns. The best way to do this is to await the task returned from the method under test. This example also illustrates the benefit of the red/green/refactor testing development cycle; you must ensure the tests will fail when the code under test fails.
+
+Most modern unit test frameworks support Task-returning asynchronous unit tests
+
+Extreme programming mandates a "test everything that can possibly break" strategy, over the traditional "test every execution path" method. 
+
+Test automation -> Continuous testing -> Continuous delivery
+
+Tests should be logically-componentized, incremental, and repeatable; results must be deterministic and meaningful.
+
+Async unit tests that return Task enjoy wide support from almost all unit test frameworks
+
+Testing Exceptions
+
+When testing, it’s natural to test the successful scenario; for example, a user can update his own profile. However, testing exceptions is also very important; for example, a user shouldn’t be able to update someone else’s profile. Exceptions are part of an API surface just as much as method parameters are. Therefore, it’s important to have unit tests for code when it’s expected to fail.
+
+- compare floats, strings
+- expect throw
+- expect death
+
+
+public sealed class SystemUnderTest {
+public static async Task SimpleAsync()   {
+    await Task.Delay(10);
+    throw new Exception("Should fail.");
+  }
+}
+
+// Warning: bad code!
+[TestMethod]
+public void IncorrectlyPassingTest() {
+  SystemUnderTest.SimpleAsync();
+}
+
+[TestMethod]
+public async Task CorrectlyFailingTest() {
+  await SystemUnderTest.FailAsync();
+}
+
+Figure 1 Testing Exceptions with Synchronous Test Methods
+// Old style; only works on desktop.
+[TestMethod]
+[ExpectedException(typeof(Exception))]
+public void ExampleExpectedExceptionTest() {
+  SystemUnderTest.Fail();
+}
+// New style; only works on Windows Store.
+[TestMethod]
+public void ExampleThrowsExceptionTest()
+{
+  var ex = Assert.ThrowsException<Exception>(() 
+    => { SystemUnderTest.Fail(); });
+}
+
+Figure 2 Brittle NUnit Exception Testing
+[Test]
+public void FailureTest_AssertThrows() {
+  // This works, though it actually implements a nested loop,
+  // synchronously blocking the Assert.Throws call until the asynchronous
+  // FailAsync call completes.
+  Assert.Throws<Exception>(async () => await SystemUnderTest.FailAsync());
+}
+// Does NOT pass.
+[Test]
+public void BadFailureTest_AssertThrows() {
+  Assert.Throws<Exception>(() => SystemUnderTest.FailAsync());
+}
+
+Figure 3 The AssertEx Class for Testing Exceptions Asynchronously
+using System;
+using System.Threading.Tasks;
+public static class AssertEx {
+  public static async Task<TException> 
+    ThrowsAsync<TException>(Func<Task> action,
+    bool allowDerivedTypes = true) where TException : Exception {
+    try {
+      await action();
+    } catch (Exception ex) {
+      if (allowDerivedTypes && !(ex is TException))
+        throw new Exception("Delegate threw exception of type " +
+          ex.GetType().Name + ", but " + typeof(TException).Name +
+          " or a derived type was expected.", ex);
+      if (!allowDerivedTypes && ex.GetType() != typeof(TException))
+        throw new Exception("Delegate threw exception of type " +
+          ex.GetType().Name + ", but " + typeof(TException).Name +
+          " was expected.", ex);
+      return (TException)ex;
+    }
+    throw new Exception("Delegate did not throw expected exception " +
+      typeof(TException).Name + ".");
+  }
+  public static Task<Exception> ThrowsAsync(Func<Task> action)
+  {
+    return ThrowsAsync<Exception>(action, true);
+  }
+}
+
+[TestMethod]
+public async Task FailureTest_AssertEx()
+{
+  var ex = await AssertEx.ThrowsAsync(() 
+    => SystemUnderTest.FailAsync());
+}
+
+In my opinion, only the simplest of code can be tested without some kind of stub, mock, fake 
+
+
+Figure 1 Summary of Asynchronous Programming Guidelines
+
+Name	Description	Exceptions
+Avoid async void	Prefer async Task methods over async void methods	Event handlers
+Async all the way	Don’t mix blocking and async code	Console main method
+Configure context	Use ConfigureAwait(false) when you can	Methods that require con­text
+
+void MyMethod()
+{
+  // Do synchronous work.
+  Thread.Sleep(1000);
+}
+async Task MyMethodAsync()
+{
+  // Do asynchronous work.
+  await Task.Delay(1000);
+}
+
+
+	XCTest
+
+test targets build bundles - for managing tests
+TB exec by host proc
+inject into app, run in context of your app
+alter in host proc provided by xcode
+
+cmd-u - run test
+buttons just to run one test
+xcodebuild  test \
+	- proj... \
+	scheme... \
+	- dest... 
+test navi
+issue navi
+test rep
+
+
+

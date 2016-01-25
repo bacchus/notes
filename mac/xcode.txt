@@ -7,6 +7,7 @@ cmd 0 - nav panel
 cmd alt 0 - util panel
 ctrl 1 - show related
 alt cliсk - open paralel
+cmd sift 2 - show devices
 
     Search
 cmd sift f - pro search

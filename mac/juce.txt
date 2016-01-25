@@ -1,5 +1,11 @@
 		JUCE
 
+ipod: _bvn
+
+	XCode debug
+{(const char*) $VAR.text.data}:s
+{(const char*) $VAR.fullPath.text.data}:s
+
 https://github.com/open-ephys/GUI.git
 
 JUCE_ENABLE_REPAINT_DEBUGGING
@@ -34,27 +40,26 @@ AudioFormatReaderSource read from an AudioFormatReader
 BufferingAudioSource takes another source as input, and buffers it using a thread.
 Create this as a wrapper around another thread, and it will read-ahead with a background thread to smooth out playback. You can either create one of these directly, or use it indirectly using an AudioTransportSource
 
-AudioSourceChannelInfo: *AudioSampleBuffer, i startSmple, i numSamples
+AudioSourceChannelInfo: *AudioSampleBuffer, i startSample, i numSamples
 
 AudioSampleBuffer
+
+ThreadWithProgressWindow
 
 
 tracks
 sndfile-info.app
 AudioFormatReader::usesFloatingPointData
-	AudioFormatReader (false in ctor)
-	BufferingAudioReader (true in ctor)
-	WavAudioFormatReader (true in ctor in case:
-		format == 3
-		format == 0xfffe /*WAVE_FORMAT_EXTENSIBLE*/
-		  subFormat == IEEEFloatFormat
-	)
+AudioFormatReader (false in ctor)
+BufferingAudioReader (true in ctor)
+WavAudioFormatReader (true in ctor in case:
+    format == 3
+    format == 0xfffe /*WAVE_FORMAT_EXTENSIBLE*/
+    subFormat == IEEEFloatFormat
+)
 
 AsyncUpdater - handleAsyncUpdate()=0;
 ChangeBroadcaster
 ChangeBroadcasterCallback: public AsyncUpdater
 ChangeListener
 
-	XCode debug
-{(const char*) $VAR.text.data}:s
-{(const char*) $VAR.fullPath.text.data}:s
