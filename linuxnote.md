@@ -77,6 +77,25 @@ f - file, v - verbose
 #### See progress bar: md5sum filename
     pv filename | md5sum
 
+#### apt fix
+    sudo apt-get clean
+    sudo apt-get autoremove
+    sudo apt-get autoclean
+    sudo apt-get -f install
+    sudo dpkg --configure -a
+
+###### ☠ Use with caution
+    sudo apt-get --force-yes install <pkgname>
+    sudo apt-get --force-yes remove <pkgname>
+
+###### dpkg
+######## Install
+    sudo dpkg -i <pkgname>
+######## Remove
+    sudo dpkg -r <pkgname>
+######## Purge
+    sudo dpkg -P <pkgname>
+
 #### Hardware info
     lspci - VGA
     lsusb
