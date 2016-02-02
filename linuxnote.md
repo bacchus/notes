@@ -353,6 +353,9 @@ ctrl+alt+backspace - kill x-server
     ndk-build
     ant debug
 
+#### Create qt project from existing source
+    qmake -project
+
 #### Qt setting custom makefile
 -o qMakefile  
 -f qMakefile
