@@ -84,16 +84,16 @@ f - file, v - verbose
     sudo apt-get -f install
     sudo dpkg --configure -a
 
-###### ☠ Use with caution
+#### ☠ Use with caution
     sudo apt-get --force-yes install <pkgname>
     sudo apt-get --force-yes remove <pkgname>
 
-###### dpkg
-######## Install
+#### dpkg
+###### Install
     sudo dpkg -i <pkgname>
-######## Remove
+###### Remove
     sudo dpkg -r <pkgname>
-######## Purge
+###### Purge
     sudo dpkg -P <pkgname>
 
 #### Hardware info
@@ -272,6 +272,29 @@ or just
     git rebase --autostash  
 or in config  
 rebase.autostash
+
+#### Stash
+	git stash
+	git stash list
+	git stash apply stash@{2}
+	git stash drop stash@{0}
+	git stash pop # = apply + drop
+    git stash branch [name] # create branch from stash
+###### stash options    
+--keep-index - not to stash staged  
+--include-untracked or -u - +untracked
+
+#### Cleaning
+###### ☠ Use with caution: remove not tracked
+    git clean
+###### safer: remove everything but save it in a stash
+    git stash --all
+###### remove all the untracked files in your working directory
+    git clean -d
+-x - remove ignored  
+-n - dry run  
+-f - force ☠   
+-i - interactive
 
 #### List git-ignored files
     git ls-files . --ignored --exclude-standard --others
