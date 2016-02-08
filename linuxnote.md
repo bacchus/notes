@@ -663,6 +663,13 @@ sudo sysctl net.ipv4.ip_forward=0
 sudo service dnsmasq stop  
 sudo service hostapd stop
 
+#### Broadcom BCM43228 (not tested)
+# lspci 
+03:00.0 Network controller: Broadcom Corporation BCM43228 802.11a/b/g/n
+To resolve this issue, very simply run:
+
+sudo apt-get install linux-headers-generic
+sudo apt-get install --reinstall bcmwl-kernel-source
 //--------------------------------------------------------------
 ## SSD settings
 #### tools
