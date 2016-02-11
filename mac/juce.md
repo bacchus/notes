@@ -2,8 +2,6 @@
 
 ## JUCE
 
-ipod: _bvn
-
 #### XCode debug
     {(const char*) $VAR.text.data}:s
     {(const char*) $VAR.fullPath.text.data}:s
