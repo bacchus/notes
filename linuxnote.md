@@ -390,6 +390,8 @@ ctrl+alt+backspace - kill x-server
     gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
     
     std::cout << "\n         (__)\n         (oo)\n   /------\\/\n  / |    ||\n *  /\\---/\\\n    ~~   ~~\n\n";
+    
+    struct T{U u;T(U u):u(std::move(u)){}};
 
 //------------------------------------------------------------------------------
 ## Bash
