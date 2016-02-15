@@ -78,6 +78,9 @@ ctrl r v - delete parameter
 ctrl r o - change parameter order
 
 #### Errors
-Error: MSVCRTD.lib(crtexew.obj) : error LNK2019: unresolved external symbol _WinMain  
-Properties -> Linker -> System -> SubSystem:  Console (/SUBSYSTEM:CONSOLE)
+###### Error: MSVCRTD.lib(crtexew.obj) : error LNK2019: unresolved external symbol _WinMain  
+    Properties -> Linker -> System -> SubSystem:  Console (/SUBSYSTEM:CONSOLE)
 
+###### Missing: msvcp120.dll, msvcr120.dll
+    Download from microsoft: Visual C++ Redistributable Packages for Visual Studio 2013
+    
