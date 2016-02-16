@@ -47,7 +47,7 @@
 ###### Find
     cmd f - find
     cmd g - find next
-    cmd sft g - find prev
+    cmd sift g - find prev
 
 #### XCODE
 ###### Panels
