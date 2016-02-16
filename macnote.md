@@ -89,30 +89,30 @@
 
 ## DEV
 #### Finder
+###### Disable autocompleteng
+    Control Panel\Clock, Language, and Region\Language\Advanced settings
 ###### Remove the Stripes
-defaults write com.apple.finder FXListViewStripes -bool FALSE
+    defaults write com.apple.finder FXListViewStripes -bool FALSE
 ###### Put the Path Bar on Top
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+    defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 ###### quicklookplugins.com 
-To install the plug-ins after downloading them, place them in ~/Library/QuickLook
-qlmanage -r
+    To install the plug-ins after downloading them, place them in ~/Library/QuickLook
+    qlmanage -r
 ###### Slow xcode
-defaults write com.apple.dt.XCode IDEIndexDisable 1
-./Applications/Xcode.app/Contents/PlugIns/
-Preferences Locations DerivedData -> DELETE
+    defaults write com.apple.dt.XCode IDEIndexDisable 1
+    ./Applications/Xcode.app/Contents/PlugIns/
+    Preferences Locations DerivedData -> DELETE
 ###### Fix CoreAudio missing
-xcode-select --install
-bar rebuild
-lar
+    xcode-select --install
 
-remove all references to CoreAudioKit  
+    remove all references to CoreAudioKit  
 
-sudo xcode-select -s /path/to/xcode/Contents/Developer  
-fast fix  
-cd /usr/local/lib sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib  
+    sudo xcode-select -s /path/to/xcode/Contents/Developer  
+    fast fix  
+    cd /usr/local/lib sudo ln -s ../../lib/libSystem.B.dylib libgcc_s.10.5.dylib  
 
-
-Product -> Scheme -> Edit Scheme. Change the Build Configuration under the Info tab  
+###### Debug/Release
+    Product -> Scheme -> Edit Scheme. Change the Build Configuration under the Info tab  
 
 #### XCode Needs
 - install ubuntu fonts and qt colouring
@@ -153,4 +153,4 @@ Schrödinbug - manifests itself in running software after a programmer notices t
 Hindenbug - is a bug with catastrophic behaviour  
 
 
-gnome, unity, gtk, enlightenment, kde
+    gnome, unity, gtk, enlightenment, kde
