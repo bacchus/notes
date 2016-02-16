@@ -383,6 +383,8 @@ ctrl+alt+backspace - kill x-server
 -o qMakefile  
 -f qMakefile
 
+    pkg-config --cflags --libs opencv
+
     locate libQt5Script.so
 
     LD_LIBRARY_PATH=\`pwd\` ./<executable>
