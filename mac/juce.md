@@ -45,7 +45,7 @@ other's subsection, which might be at a non-zero position
 incredibly fast random-access to sample data in the mapped region of the file
 
 #### AudioSource
-Base class for objects that can produce a continuous stream of audio
+Base class for objects that can produce a continuous stream of audio  
 **AudioAppComponent** A base class for writing audio apps that stream from the audio i/o devices.  
 provides a basic *AudioDeviceManager* object and runs audio through the default output device
 **ChannelRemappingAudioSource** takes the audio from another source, and re-maps its input and  
