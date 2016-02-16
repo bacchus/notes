@@ -146,11 +146,11 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
 
 ￼
 #### Bugs
-Heisenbug - disappear or alter its behaviour when one attempts to study it  
-Bohrbug - is a "good, solid bug". do not change their behaviour and are relatively easily detected.  
-Mandelbug - is a bug whose causes are so complex it defies repair, or makes its behaviour appear chaotic or even non-deterministic or bug that exhibits fractal behaviour by revealing more bugs  
-Schrödinbug - manifests itself in running software after a programmer notices that the code should never have worked in the first place  
-Hindenbug - is a bug with catastrophic behaviour  
+**Heisenbug** - disappear or alter its behaviour when one attempts to study it  
+**Bohrbug** - is a "good, solid bug". do not change their behaviour and are relatively easily detected.  
+**Mandelbug** - is a bug whose causes are so complex it defies repair, or makes its behaviour appear chaotic or even non-deterministic or bug that exhibits fractal behaviour by revealing more bugs  
+**Schrödinbug** - manifests itself in running software after a programmer notices that the code should never have worked in the first place  
+**Hindenbug** - is a bug with catastrophic behaviour  
 
 
     gnome, unity, gtk, enlightenment, kde
