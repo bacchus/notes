@@ -163,3 +163,38 @@ or
     	std::cout.flush();
     	if (percent == 100) std::cout << std::endl << "Operation completed successfully." << std::endl;
     }
+
+    private:
+        AudioDeviceManager deviceManager;
+        AudioDeviceSelectorComponent deviceComponent;
+        AudioProcessorGraph graph;
+        AudioProcessorPlayer graphPlayer;
+    
+    MainContentComponent::MainContentComponent()
+        : deviceComponent(deviceManager, 0, 2, 0, 2, false, false, true, false)
+    {
+        addAndMakeVisible(deviceComponent);
+        
+        deviceManager.initialise(2, 2, nullptr, true);
+        graphPlayer.setProcessor(&graph);
+        deviceManager.addAudioCallback(&graphPlayer);
+        
+        AudioProcessorGraph::Node* inNode = graph.addNode(
+          new AudioProcessorGraph::AudioGraphIOProcessor(
+            AudioProcessorGraph::AudioGraphIOProcessor::audioInputNode));
+        AudioProcessorGraph::Node* outNode = graph.addNode(
+          new AudioProcessorGraph::AudioGraphIOProcessor(
+            AudioProcessorGraph::AudioGraphIOProcessor::audioOutputNode));
+        
+        graph.addConnection(inNode->nodeId, 0, outNode->nodeId, 0);
+        graph.addConnection(inNode->nodeId, 1, outNode->nodeId, 1);
+        
+        setSize (600, 400);
+    }
+    
+    MainContentComponent::~MainContentComponent()
+    {
+        deviceManager.removeAudioCallback(&graphPlayer);
+        graphPlayer.setProcessor(nullptr);
+        deviceManager.closeAudioDevice();
+    }
