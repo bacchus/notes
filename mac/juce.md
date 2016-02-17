@@ -105,3 +105,61 @@ or
     ChangeBroadcasterCallback: public AsyncUpdater
     ChangeListener
 
+#### Usage examples
+    DBG("hello kittie!");
+    Logger* log = Logger::getCurrentLogger();
+    String msg("log message");
+    msg = msg + String(": details ");
+    msg << 42 << " at ";
+    
+    Time now = Time::getCurrentTime();
+    msg << now.toString(true, true, true, true);
+
+    //File file("./test_file.txt"); // same as
+    File file = File::getSpecialLocation(File::currentExecutableFile).getParentDirectory().getChildFile("./test_file.txt");
+    
+    file.replaceWithText(msg);
+    
+    String text = file.loadFileAsString();
+    log->writeToLog(text);
+
+    FileInputStream fis(file);
+    if (fis.openedOk()) {
+        log->writeToLog("as stream: " + fis.readEntireStreamAsString());
+    }
+    
+    log->writeToLog("cre: " + file.getCreationTime().toString(true, true, true, true));
+    log->writeToLog("mod: " + file.getLastModificationTime().toString(true, true, true, true));
+    log->writeToLog("acc: " + file.getLastAccessTime().toString(true, true, true, true));
+    
+    File root = File::getSpecialLocation(File::userDocumentsDirectory);
+    File dir1 = root.getChildFile("t1");
+    File dir2 = dir1.getChildFile("t2");
+    Result res = dir2.createDirectory();
+    if (res.wasOk()) {
+        log->writeToLog(dir2.getFullPathName() + String(" created"));
+        log->writeToLog(dir2.getRelativePathFrom(file) + String(" to test_file.txt"));
+    } else {
+        log->writeToLog("fail");
+    }
+    
+    Array<File> resFiles;
+    dir1.findChildFiles(resFiles, File::findFilesAndDirectories, false);
+    for (int i=0; i<resFiles.size(); ++i) {
+        log->writeToLog(resFiles[i].getFullPathName());
+    }
+    
+    StringArray strs;
+    strs.addTokens("one two three", true);
+    for (int i=0; i<strs.size(); ++i) {
+        log->writeToLog(strs[i]);
+    }
+
+    void print_progress(float x) {
+    	int percent = (int)(100*x);
+    	std::cout << "\r" << std::setw(3) << percent << "% completed ";
+    		<< "[" << std::string(percent/2, 'I')
+    		<< std::string((50 - percent/2), '.') << "]";
+    	std::cout.flush();
+    	if (percent == 100) std::cout << std::endl << "Operation completed successfully." << std::endl;
+    }
