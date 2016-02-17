@@ -198,3 +198,23 @@ or
         graphPlayer.setProcessor(nullptr);
         deviceManager.closeAudioDevice();
     }
+
+#### Resizing
+    void MainContentComponent::resized() {
+        int heigth = getHeight();
+        int width = getWidth();
+    
+        //mDeviceComponent.setBounds(0,0, 330,headerHeigth);
+        int y = 0;
+        for (int i = mDeviceComponent.getNumChildComponents(); --i >= 0;)
+            y = jmax (y, mDeviceComponent.getChildComponent (i)->getBottom());
+        Rectangle<int> area (getLocalBounds());
+        y += 50;
+        area.setBottom (y);
+        area.setWidth(jmin(area.getWidth(), 330));
+        mDeviceComponent.setBounds (area);
+    
+        area = getLocalBounds();
+        area.setTop (y);
+        recorderControl.setBounds (area.reduced (8));
+    }
