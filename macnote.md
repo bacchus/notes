@@ -95,6 +95,8 @@
     defaults write com.apple.finder FXListViewStripes -bool FALSE
 ###### Put the Path Bar on Top
     defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+###### See Library folder in Users
+    chflags nohidden ~/Library/
 ###### quicklookplugins.com 
     To install the plug-ins after downloading them, place them in ~/Library/QuickLook
     qlmanage -r
