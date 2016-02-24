@@ -91,4 +91,5 @@ ctrl r o - change parameter order
 #### Apps
 WinHEX  
 Ninite
-
+Spacesniffer  
+Windirstat  
