@@ -46,6 +46,10 @@ Alt+F1+8        open file in files  - conflict: go to main menu
 ctrl+alt+t      surround with       - conflict: open terminal
 ctrl+shift+del
 
+#### Decompile
+    decompileandroid.com
+    dex2jar, JAD, apktool
+
     Net android
 OkHttp
 Retrofit
