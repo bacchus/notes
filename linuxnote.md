@@ -34,6 +34,24 @@ alt-f2		    run
     gnome-encfs -a ~/Dropbox/.encrypted ~/private
     fusermount -u ~/private
 
+#### Googling
+    ~ [synonym] (~best films -best)
+    - [except] (-.ua)
+    * [any] (best editor * image)
+    | [or] (buy house | car)
+    "[exact]"
+    define: [word definition]
+    site: [addres]
+    links: [to site]
+    filetype: [extension]
+    cached: [cached pages]
+    time [city]
+    weather [city]
+    1 kg in pounds; 1 usd in uah
+    translate [word] into [lang]
+    2+2=
+    google.com/ncr - really google.com
+
 #### Aliases
     alias sag="sudo apt-get install -y"
     alias gr='git rebase -i upstream/master --autosquash'
