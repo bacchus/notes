@@ -66,7 +66,7 @@ int pdf viewer: file\save as\format\settings\UTF-8\save
     sudo service network-manager restart
 
 #### Enable WebGL
-chrome://flags - Override software rendering list - Enable
+    chrome://flags - Override software rendering list - Enable
 
 #### Disable touchpad
     xinput list | grep Touch
@@ -116,25 +116,25 @@ f - file, v - verbose
     ls -l /dev/disk/by-uuid/
 
 #### System info
-date - cur date and time  
-cal - calendar on cur month  
-uptime - time from boot  
-w - users online  
-whoami - login name  
-uname -a - kernel info  
-df - discs usage  
-du - weight of cur dir  
-du -sh <dir> - weight of <dir> in human readable  
-free - memory usage and swap  
-whereis app - location of app  
-which app - which app will be run
+    date - cur date and time  
+    cal - calendar on cur month  
+    uptime - time from boot  
+    w - users online  
+    whoami - login name  
+    uname -a - kernel info  
+    df - discs usage  
+    du - weight of cur dir  
+    du -sh <dir> - weight of <dir> in human readable  
+    free - memory usage and swap  
+    whereis app - location of app  
+    which app - which app will be run
 
 #### Commands
-passwd          change pasword  
-locate file     find file  
-dpkg -i pkg.deb install package  
-gksu            sudo with graphical ui  
-crontab -e      edit cron tasks
+    passwd          change pasword  
+    locate file     find file  
+    dpkg -i pkg.deb install package  
+    gksu            sudo with graphical ui  
+    crontab -e      edit cron tasks
 
 #### Install
 
@@ -175,14 +175,14 @@ or just reboot
     chmod ug+s setuid-setgid
 
 #### Network
-ping host - ping host  
-whois domain - whois info  
-dig domain - dns info  
-dig -x host - reverse search host  
-wget file - load file  
-nmap -v -A scanme.nmap.org - scan  
-/etc/resolv.conf - dns-servers list  
-/etc/services - standart well known ports
+    ping host - ping host  
+    whois domain - whois info  
+    dig domain - dns info  
+    dig -x host - reverse search host  
+    wget file - load file  
+    nmap -v -A scanme.nmap.org - scan  
+    /etc/resolv.conf - dns-servers list  
+    /etc/services - standart well known ports
 
     wget -r --no-parent -k -p <web-page>
 
@@ -206,11 +206,6 @@ nmap -v -A scanme.nmap.org - scan
     sudo add-apt-repository ppa:yannubuntu/boot-repair
     sudo apt-get update
     sudo apt-get install boot-repair
-
-#### Win DU
-Spacesniffer  
-Windirstat  
-
 
 #### Youtube
 0-9         parts of video  
@@ -292,8 +287,8 @@ rebase.autostash
 	git stash pop # = apply + drop
     git stash branch [name] # create branch from stash
 ###### stash options    
---keep-index - not to stash staged  
---include-untracked or -u - +untracked
+    --keep-index - not to stash staged  
+    --include-untracked or -u - +untracked
 
 #### Cleaning
 ###### ☠ Use with caution: remove not tracked
@@ -327,11 +322,11 @@ rebase.autostash
 //------------------------------------------------------------------------------
 ## Killing process
 #### Processes
-ps - show all current procs  
-top - show running procs  
-bg - list stoped and bg tasks; continue stoped task  
-fg - move last task to foreground  
-fg n - move n task to foreground
+    ps - show all current procs  
+    top - show running procs  
+    bg - list stoped and bg tasks; continue stoped task  
+    fg - move last task to foreground  
+    fg n - move n task to foreground
 
 #### Getting id
     ps aux | grep [name]
@@ -376,8 +371,8 @@ ctrl+alt+backspace - kill x-server
 -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
   
 #### eclipse crash: add following lines to eclipse.ini
--Dorg.eclipse.swt.browser.DefaultType=mozilla  
--Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xullrunner
+    -Dorg.eclipse.swt.browser.DefaultType=mozilla  
+    -Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xullrunner
 
 #### Physical Source Lines of Code (SLOC)
     sloccount directoryname
@@ -558,18 +553,18 @@ ssh-copy-id user@host   - add your key to host
 #### Generate and set key
     cd ~/.ssh
     ssh-keygen -t rsa
-    sftp bacchus@106.125.32.44
+    sftp bacchus@106.125.11.22
     mkdir .ssh
     cd .ssh
     put id_rsa.pub
     exit
-    ssh bacchus@106.125.32.44
+    ssh bacchus@106.125.11.22
     cd .ssh
     cat id_rsa.pub > authorized_keys
     exit
 
 #### mount remote ssh dir: sshfs *ssh-dir* *local-dir*
-    sshfs bacchus@106.125.32.44:/surc/Projects/ve/share ~/shares/ve_share
+    sshfs bacchus@106.125.11.22:/share/dir ~/share/dir
 
 //------------------------------------------------------------------------------
 ## Java
@@ -610,12 +605,12 @@ export JAVA_HOME
 
 //------------------------------------------------------------------------------
 #### Evolution maill settings
-user@ss.com  
-pop3.w1.ss.net  
+user@s.com  
+pop3.ww.s.net  
 995  
 ssl pwd  
 leave msg on srv  
-smtp.w1.ss.net  
+smtp.ww.s.net  
 25  
 no enc
 
@@ -644,39 +639,39 @@ dhcp-range=192.168.150.2,192.168.150.10
     sudo update-rc.d hostapd disable
     sudo update-rc.d dnsmasq disable
 
-#### file: hostapd.conf
-interface=wlan0  
-driver=nl80211  
-ssid=sdjlh  
-hw_mode=g  
-channel=6  
-wpa=2  
-wpa_passphrase=33323345  
+#### hostapd.conf
+    interface=wlan0  
+    driver=nl80211  
+    ssid=sdjlh  
+    hw_mode=g  
+    channel=6  
+    wpa=2  
+    wpa_passphrase=33323345  
 
-#### file: start.sh
-\#!/bin/bash  
-\# fix 14.04 troubles  
-sudo nmcli nm wifi off  
-sudo rfkill unblock wlan
-\# Start  
-\# Configure IP address for WLAN  
-sudo ifconfig wlan0 192.168.150.1
-\# Start DHCP/DNS server  
-sudo service dnsmasq restart
-\# Enable routing  
-sudo sysctl net.ipv4.ip_forward=1
-\# Enable NAT  
-sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-\# Run access point daemon  
-sudo hostapd /etc/hostapd/hostapd.conf
-\# Stop  
-\# Disable NAT  
-sudo iptables -D POSTROUTING -t nat -o eth0 -j MASQUERADE
-\# Disable routing  
-sudo sysctl net.ipv4.ip_forward=0
-\# Disable DHCP/DNS server  
-sudo service dnsmasq stop  
-sudo service hostapd stop
+#### start.sh
+    #!/bin/bash  
+    # fix 14.04 troubles  
+    sudo nmcli nm wifi off  
+    sudo rfkill unblock wlan
+    # Start  
+    # Configure IP address for WLAN  
+    sudo ifconfig wlan0 192.168.150.1
+    # Start DHCP/DNS server  
+    sudo service dnsmasq restart
+    # Enable routing  
+    sudo sysctl net.ipv4.ip_forward=1
+    # Enable NAT  
+    sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+    # Run access point daemon  
+    sudo hostapd /etc/hostapd/hostapd.conf
+    # Stop  
+    # Disable NAT  
+    sudo iptables -D POSTROUTING -t nat -o eth0 -j MASQUERADE
+    # Disable routing  
+    sudo sysctl net.ipv4.ip_forward=0
+    # Disable DHCP/DNS server  
+    sudo service dnsmasq stop  
+    sudo service hostapd stop
 
 #### Broadcom BCM43228 (not tested)
 	lspci
@@ -694,8 +689,8 @@ sudo service hostapd stop
     sudo blkid 
 
 #### folders
-/var/cache  
-/media/home
+    /var/cache  
+    /media/home
 
 #### commands
     sudo gedit /etc/fstab &
