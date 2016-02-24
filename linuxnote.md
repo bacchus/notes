@@ -34,6 +34,16 @@ alt-f2		    run
     gnome-encfs -a ~/Dropbox/.encrypted ~/private
     fusermount -u ~/private
 
+#### Aliases
+    alias sag="sudo apt-get install -y"
+    alias gr='git rebase -i upstream/master --autosquash'
+    alias gfu='git fetch upstream develop'
+    alias gup='git checkout develop && git fetch upstream develop && git pull --ff-only upstream develop && git push'
+    alias fresh='git checkout develop && git fetch upstream develop && git pull --ff-only upstream develop && git push && grit fresh '
+    alias rtags="find src/ripple -name \*.h -or -name \*.hpp -or -name \*.cpp | xargs etags"
+    alias gdiff="git diff > /tmp/git.diff"
+    alias sb='source ~/.bashrc'
+
 #### Alt mouse move window
     sudo apt-get install dconf-tools
 dconf-editor → org → gnome → desktop → wm → preferences → mouse-button-modifier
