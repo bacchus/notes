@@ -8,6 +8,10 @@
 #### Win features
 Control Panel\Programs\Programs and Features
 
+#### change permissions
+    takeown /f folder_name /r /d y
+    icacls folder_name /grant username_or_usergroup:F /t /q
+
 #### Wifi
     netsh wlan set hostednetwork mode=allow ssid=wbcchome key=qazwsxedc
     netsh wlan start hostednetwork
@@ -84,3 +88,7 @@ ctrl r o - change parameter order
 ###### Missing: msvcp120.dll, msvcr120.dll
     Download from microsoft: Visual C++ Redistributable Packages for Visual Studio 2013
     
+#### Apps
+WinHEX  
+Ninite
+
