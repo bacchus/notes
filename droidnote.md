@@ -54,7 +54,12 @@ Volley
 SQLiteOpenHelper
 SQLiteDatabase
 
-ORMLite
-GreenDao
-SQLCipher
+ORMLite GreenDao SQLCipher  
+ES File Explorer  
+Android Terminal Emulator  
+Orai lietuvo  
+SimpleScreenRecorder  
 
+Wi-Fi analyzer, Fing, ConnectBot, BitTorrentSync, Owncloud, KeyPass
+
+Cities in motion, Tycoon
