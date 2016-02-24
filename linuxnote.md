@@ -210,6 +210,7 @@ space       play pause
 f           fullscreen  
 esc         exit fullscreen  
 tab         navigate  
+    youtube CTRL + U. CTRL + F. og:image. the link.  
 
 #### Chromium libpepflashplayer.so causing excessive disk writes
 shift-esc = chrome task manager  
