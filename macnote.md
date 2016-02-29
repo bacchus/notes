@@ -123,6 +123,9 @@
 - find usages
 - not to write non ascii symbols
 
+#### Qt with installed Xcode 7.2 
+    QMAKE_MAC_SDK = macosx10.11
+
 #### http://brew.sh
     https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
     brew install bash-completion
