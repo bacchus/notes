@@ -16,6 +16,10 @@ Control Panel\Programs\Programs and Features
     netsh wlan set hostednetwork mode=allow ssid=wbcchome key=qazwsxedc
     netsh wlan start hostednetwork
     netsh wlan stop hostednetwork
+    netsh wlan show hostednetwork
+    
+#### Avast blocks wifi
+    settings -> Active protection -> customize -> Policies -> Internet sharing mode -> OK
 
 #### Win console kill
     query process
