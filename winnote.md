@@ -8,6 +8,9 @@
 #### Win features
 Control Panel\Programs\Programs and Features
 
+#### Edit environment variables
+    rundll32 sysdm.cpl,EditEnvironmentVariables
+
 #### change permissions
     takeown /f folder_name /r /d y
     icacls folder_name /grant username_or_usergroup:F /t /q
