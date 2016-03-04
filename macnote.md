@@ -164,6 +164,7 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
 
 #### arch binary info
     lipo -info <binary>
+    https://gist.github.com/sponno/7228256
     
 #### zshrc.mac
     # Add brew autocompletion
