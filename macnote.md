@@ -162,6 +162,9 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
 ###### Enable text selection in quicklook.
     defaults write com.apple.finder QLEnableTextSelection -bool true
 
+#### arch binary info
+    lipo -info <binary>
+    
 #### zshrc.mac
     # Add brew autocompletion
     fpath=($HOME/.zsh/func $fpath)
