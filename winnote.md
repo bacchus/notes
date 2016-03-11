@@ -20,6 +20,7 @@ Control Panel\Programs\Programs and Features
     netsh wlan start hostednetwork
     netsh wlan stop hostednetwork
     netsh wlan show hostednetwork
+    netsh wlan show drivers
     
 #### Avast blocks wifi
     settings -> Active protection -> customize -> Policies -> Internet sharing mode -> OK
