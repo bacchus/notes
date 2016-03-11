@@ -166,49 +166,6 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
     lipo -info <binary>
     https://gist.github.com/sponno/7228256
     
-#### zshrc.mac
-    # Add brew autocompletion
-    fpath=($HOME/.zsh/func $fpath)
-    typeset -U fpath
-    for file ($HOME/.zsh/config/*.zsh); do
-      source $file
-    done
-    private_path="$HOME/.zshrc-private"
-    [ -f "$private_path" ] && source $private_path
-
-#### pythonrc.mac
-    import rlcompleter, readline
-    #readline.parse_and_bind('tab:complete')
-    
-    ### Indenting
-    class TabCompleter(rlcompleter.Completer):
-        """Completer that supports indenting"""
-        def complete(self, text, state):
-            if text:
-                return rlcompleter.Completer.complete(self, text, state)
-            else:
-                return ('', None)[state]            
-    
-    readline.set_completer(TabCompleter().complete)
-    
-    ### Add autocompletion
-    if 'libedit' in readline.__doc__:
-        readline.parse_and_bind("bind -e")
-        readline.parse_and_bind("bind '\t' rl_complete")
-    else:
-        readline.parse_and_bind("tab: complete")
-    
-    ### Add history
-    import os
-    histfile = os.path.join(os.environ["HOME"], ".pyhist")
-    try:
-        readline.read_history_file(histfile)
-    except IOError:
-        pass
-    import atexit
-    atexit.register(readline.write_history_file, histfile)
-    del histfile
-
 #### Bugs
 **Heisenbug** - disappear or alter its behaviour when one attempts to study it  
 **Bohrbug** - is a "good, solid bug". do not change their behaviour and are relatively easily detected.  
