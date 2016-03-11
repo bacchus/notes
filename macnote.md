@@ -91,10 +91,6 @@
 #### Finder
 ###### Disable autocompleteng
     Control Panel\Clock, Language, and Region\Language\Advanced settings
-###### Remove the Stripes
-    defaults write com.apple.finder FXListViewStripes -bool FALSE
-###### Put the Path Bar on Top
-    defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 ###### See Library folder in Users
     chflags nohidden ~/Library/
 ###### quicklookplugins.com 
@@ -148,19 +144,6 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
 
 #### run app from terminal
     ./target.app/Contents/MacOS/target [args]
-
-#### osx.mac
-###### Configure even faster key repeat rate.
-    defaults write NSGlobalDomain KeyRepeat -int 0
-
-###### Disable press and hold key feature for accessing special chars.
-    defaults write -g ApplePressAndHoldEnabled -bool false
-
-###### Speed up expose animations.
-    defaults write com.apple.dock expose-animation-duration -float 0.1
-
-###### Enable text selection in quicklook.
-    defaults write com.apple.finder QLEnableTextSelection -bool true
 
 #### arch binary info
     lipo -info <binary>
