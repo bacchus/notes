@@ -86,7 +86,7 @@ int pdf viewer: file\save as\format\settings\UTF-8\save
 #### Enable WebGL
     chrome://flags - Override software rendering list - Enable
 
-#### Disable touchpad
+#### Disable touchpad (in 14.04 from settings)
     xinput list | grep Touch
     xinput set-prop 13 "Device Enabled" 0
 
