@@ -8,9 +8,10 @@
 
     https://github.com/open-ephys/GUI.git
 
-    JUCE_ENABLE_REPAINT_DEBUGGING  
-    ignoreUnused  
-    JUCEApplication::getCommandLineParameters()  
+    JUCE_ENABLE_REPAINT_DEBUGGING
+    ignoreUnused
+    JUCEApplication::getCommandLineParameters()
+    forEachXmlChildElement // define
 
 #### ConsoleLogger
     class ConsoleLogger : public Logger {
