@@ -43,8 +43,10 @@ or
     HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\kbdhid\Parameters
     DWORD CrashOnCtrlScroll 1
 
-Control Panel > System > Advanced >  Startup and Recovery > Settings > System failure > Automatically restart - uncheck
-
+Control Panel > System > Advanced >  Startup and Recovery > Settings > System failure > Automatically restart - uncheck  
+MANUALLY_INITIATED_CRASH  
+The computer has rebooted from a bugcheck: 0x000000e2  
+A dump was saved in: C:\Windows\MEMORY.DMP
 
 #### Diff-ext
 http://diff-ext.sourceforge.net/downloads.shtml
