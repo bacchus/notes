@@ -142,6 +142,10 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
     find . -name "*.bak" -print0 | xargs -0 -I file mv file ~/old.files
     find . -type f -exec sed -i -e 's/foo/bar/g' {} \;
 
+nouchg Means the file can be changed (immutable bit cleared)
+    chflags nouchg [files]
+
+
 #### run app from terminal
     ./target.app/Contents/MacOS/target [args]
 
