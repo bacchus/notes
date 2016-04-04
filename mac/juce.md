@@ -8,10 +8,23 @@
 
     https://github.com/open-ephys/GUI.git
 
+    JUCE_DEBUG
+    JUCE_ASIO_DEBUGGING
     JUCE_ENABLE_REPAINT_DEBUGGING
     ignoreUnused
     JUCEApplication::getCommandLineParameters()
     forEachXmlChildElement // define
+    juce::DeletedAtShutdown
+    juce_DeclareSingleton (Class, true)
+    juce::SystemTrayIconComponent
+    numElementsInArray(arr) // const int arr[] = { 1,2,3,4,7 };
+
+if component methods are being called from threads other than the message  
+thread, you'll need to use a MessageManagerLock object to make sure it's thread-safe.
+
+    ASSERT_MESSAGE_MANAGER_IS_LOCKED_OR_OFFSCREEN
+    callFunctionOnMessageThread
+    (new CallbackMessage())->post();
 
 #### ConsoleLogger
     class ConsoleLogger : public Logger {
@@ -219,3 +232,216 @@ or
         area.setTop (y);
         recorderControl.setBounds (area.reduced (8));
     }
+
+#### ComponentBuilder
+
+    class View
+            : public Component
+            , public Button::Listener
+            , public TextEditor::Listener
+            , public ActionBroadcaster
+    {
+    public:
+        View()
+        {
+
+        }
+
+        View(ActionListener * listener)
+        {
+            addActionListener(listener);
+        }
+
+        virtual ~View()
+        {
+            deleteAllChildren();
+        }
+
+        void paint (Graphics& g)
+        {
+            g.fillAll (Colour (0xff6d8579));
+        }
+
+        void resized()
+        {
+
+        }
+
+        virtual void buttonClicked (Button* buttonThatWasClicked) {
+            sendActionMessage (buttonThatWasClicked->getComponentID());
+        }
+    };
+
+    template <class ComponentClass>
+    class ComponentTypeHandler
+            : public ComponentBuilder::TypeHandler
+    {
+    public:
+        ComponentTypeHandler(const Identifier& valueTreeType_)
+            : ComponentBuilder::TypeHandler (valueTreeType_)
+        {
+        }
+
+        Component* addNewComponentFromState (const ValueTree& state, Component* parent)
+        {
+            Component* const c = new ComponentClass();
+
+            if (parent != nullptr)
+                parent->addAndMakeVisible (c);
+
+            updateComponentFromState (c, state);
+            return c;
+        }
+
+        void updateComponentFromState (Component* component, const ValueTree& state)
+        {
+            ComponentClass* const c = dynamic_cast <ComponentClass*> (component);
+            jassert (c != nullptr);
+
+            ValueTree babbo = state.getParent();
+            int myIndex = babbo.indexOf(state);
+
+            c->setBounds (72, myIndex*24+5, 150, 24);
+            c->setText (state.getProperty("value"));
+        }
+    };
+
+    template <>
+    class ComponentTypeHandler<TextButton>
+            : public ComponentBuilder::TypeHandler
+    {
+    public:
+        ComponentTypeHandler()
+            : ComponentBuilder::TypeHandler ("TextButton")
+        {
+        }
+
+        Component* addNewComponentFromState (const ValueTree& state, Component* parent)
+        {
+            TextButton* const b = new TextButton();
+
+            if (parent != nullptr)
+            {
+                parent->addAndMakeVisible (b);
+                b->addListener(dynamic_cast<Button::Listener*>(parent));
+            }
+
+            updateComponentFromState (b, state);
+            return b;
+        }
+
+        void updateComponentFromState (Component* component, const ValueTree& state)
+        {
+            TextButton* const b = dynamic_cast <TextButton*> (component);
+            jassert (b != nullptr);
+
+            ValueTree babbo = state.getParent();
+            int myIndex = babbo.indexOf(state);
+
+            b->setBounds (72, myIndex*24+5, 150, 24);
+
+            b->setButtonText (state.getProperty("value"));
+        }
+    };
+
+    template <>
+    class ComponentTypeHandler<View>  : public ComponentBuilder::TypeHandler
+    {
+    public:
+        ComponentTypeHandler()
+            : ComponentBuilder::TypeHandler ("SimpleForm")
+        {
+        }
+
+        Component* addNewComponentFromState (const ValueTree& state, Component* parent)
+        {
+            Component * c = new View();
+
+            if (parent != nullptr)
+                parent->addAndMakeVisible (c);
+
+            updateComponentFromState (c, state);
+
+            getBuilder()->updateChildComponents(*c, state);
+
+            return c;
+        }
+
+        void updateComponentFromState (Component* component, const ValueTree& state)
+        {
+            View* const c = dynamic_cast <View*> (component);
+            jassert (c != nullptr);
+
+            c->setSize (800, 600);
+        }
+    };
+
+    void registerComponentTypeHandlers (ComponentBuilder& builder)
+    {
+        builder.registerTypeHandler (new ComponentTypeHandler <TextEditor>("TextEditor"));
+        builder.registerTypeHandler (new ComponentTypeHandler <TextButton>());
+        builder.registerTypeHandler (new ComponentTypeHandler <View>());
+    }
+
+
+    class Controller : public ActionListener
+    {
+    public:
+
+        Controller()
+            : cb (values)
+        {
+            initValues();
+
+            //cb.state = values;
+
+            registerComponentTypeHandlers(cb);
+
+            ActionBroadcaster * view = dynamic_cast<ActionBroadcaster*> (cb.getManagedComponent());
+
+            view-> addActionListener(this);
+        }
+
+        virtual ~Controller()
+        {
+
+        }
+
+        virtual void actionListenerCallback (const String& message)
+        {
+            AlertWindow::showMessageBox (AlertWindow::InfoIcon,
+                                         message + " clicked",
+                                         values.toXmlString()  );
+
+            Logger::writeToLog(values.toXmlString() );
+
+            values.getChildWithProperty("id", "Pippo").setProperty("value", 42, nullptr);
+        }
+
+        Component * getComponent ()
+        {
+            return cb.getManagedComponent();
+        }
+
+    private:
+        ValueTree values;
+        ComponentBuilder cb;
+
+        void initValues()
+        {
+            String xmlString (
+                        "<SimpleForm id=\"MyForm0001\">"
+                        "<TextEditor id=\"Pippo\" value=\"123\"/>"
+                        "<TextEditor id=\"Pluto\" value=\"AAA\"/>"
+                        "<TextButton id=\"Carlo\" value=\"OK\"/>"
+                        "</SimpleForm>");
+
+            ScopedPointer<XmlElement> element = XmlDocument::parse(xmlString);
+
+            values = ValueTree::fromXml(*element);
+
+        }
+    };
+
+
+
