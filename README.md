@@ -6,7 +6,7 @@
 - [C++11](https://github.com/bacchus/notes/blob/master/c%2B%2B11.md "C++11 FAQ")
 
 #### Typography
-\<REPLACED TEXT\>  
-\[OPTIONAL TEXT\]
+\<replaced text\>  
+\[optional text\]
 
     exact command
