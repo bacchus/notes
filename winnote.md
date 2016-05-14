@@ -97,6 +97,9 @@ ctrl r o - change parameter order
 
 ###### Missing: msvcp120.dll, msvcr120.dll
     Download from microsoft: Visual C++ Redistributable Packages for Visual Studio 2013
+
+#### Additionally, you can try to map long base paths to an own drive letter. From a command line run
+    subst P:\ C:\Your\Project\Folder\Is\Quite\Long
     
 #### Apps
 WinHEX  
