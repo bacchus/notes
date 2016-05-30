@@ -15,6 +15,35 @@ Control Panel\Programs\Programs and Features
     takeown /f folder_name /r /d y
     icacls folder_name /grant username_or_usergroup:F /t /q
 
+#### change permissions from popup menu
+
+###### InstallTakeOwnership.reg
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CLASSES_ROOT\*\shell\runas]
+    @="Take Ownership"
+    "NoWorkingDirectory"=""
+    
+    [HKEY_CLASSES_ROOT\*\shell\runas\command]
+    @="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+    "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+    
+    [HKEY_CLASSES_ROOT\Directory\shell\runas]
+    @="Take Ownership"
+    "NoWorkingDirectory"=""
+    
+    [HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+    @="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+    "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+###### RemoveTakeOwnership.reg
+    Windows Registry Editor Version 5.00
+
+    [-HKEY_CLASSES_ROOT\*\shell\runas]
+    
+    [-HKEY_CLASSES_ROOT\Directory\shell\runas]
+
+
 #### Wifi
     netsh wlan set hostednetwork mode=allow ssid=wbcchome key=qazwsxedc
     netsh wlan start hostednetwork
