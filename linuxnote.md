@@ -166,7 +166,7 @@ f - file, v - verbose
     sudo apt-get upgrade
 
     necessitas qt gnu-octave meld git
-    skype gimp chromium stellarium vlc cheese-webcam guvcview
+    skype gimp chromium stellarium vlc cheese-webcam guvcview guake
 
 #### Desktop message
     notify-send "Title" "Text"
