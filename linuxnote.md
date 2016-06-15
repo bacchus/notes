@@ -711,6 +711,7 @@ dhcp-range=192.168.150.2,192.168.150.10
     /media/home
 
 #### commands
+    sudo cp /etc/fstab /etc/fstab.$(date +%Y-%m-%d)
     sudo gedit /etc/fstab &
     
 UUID=????????   /media/home    ext4          defaults       0       2   
