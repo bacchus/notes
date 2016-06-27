@@ -1,30 +1,31 @@
-Bear
-BoardGamesEngine
-CMakeJuce
-JUCE-utilities
-angeljuice
-coder
-coreAudioFormatWriter
-cppclean
-drowaudio
-github.txt
-googletest
-hubot
-jpm
-juce
-juce-toys
-juced
-juced-2
-linux_settings
-maximilian
-notes
-open-ephys
-optparse
-pyfuzz
-qtjuce
-rtags
-scumbler
-simpledj
-sox
-styleguide
-swirly-juce
+origin	https://github.com/rizsotto/Bear.git (fetch)
+origin	https://github.com/jrlanglois/BoardGamesEngine.git (fetch)
+origin	https://github.com/teragonaudio/CMakeJuce.git (fetch)
+origin	https://github.com/sept-en/JUCE-utilities.git (fetch)
+origin	https://github.com/kunitoki/angeljuice.git (fetch)
+origin	https://bitbucket.org/tonu/coder.git (fetch)
+origin	https://github.com/rec/CoreAudioFormatWriter.git (fetch)
+origin	https://github.com/myint/cppclean.git (fetch)
+origin	https://github.com/jrlanglois/drowaudio.git (fetch)
+origin	https://github.com/google/googletest.git (fetch)
+heroku	https://git.heroku.com/bcc-slackbot.git (fetch)
+origin	https://github.com/jcredland/jpm.git (fetch)
+origin	https://github.com/jcredland/juce-toys.git (fetch)
+bcclocal	/Users/denisstakhnik/projects/juce/introjucer (fetch)
+juce	https://github.com/julianstorer/JUCE.git (fetch)
+origin	https://github.com/bacchus/JUCE.git (fetch)
+origin	https://github.com/adamski/juced.git (fetch)
+origin	https://github.com/kunitoki/juced.git (fetch)
+origin	https://github.com/bacchus/linux_settings.git (fetch)
+origin	https://github.com/micknoise/Maximilian.git (fetch)
+origin	https://github.com/bacchus/notes.git (fetch)
+origin	https://github.com/open-ephys/GUI.git (fetch)
+origin	https://github.com/myint/optparse.git (fetch)
+origin	https://github.com/myint/pyfuzz.git (fetch)
+origin	https://github.com/seebk/JUCE.git (fetch)
+origin	https://github.com/Andersbakken/rtags.git (fetch)
+origin	https://github.com/bgporter/scumbler.git (fetch)
+origin	https://github.com/vinniefalco/SimpleDJ.git (fetch)
+origin	git://git.code.sf.net/p/sox/code (fetch)
+origin	https://github.com/google/styleguide.git (fetch)
+origin	https://github.com/rec/swirly-juce.git (fetch)
