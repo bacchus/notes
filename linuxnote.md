@@ -52,6 +52,31 @@ alt-f2		    run
     2+2=
     google.com/ncr - really google.com
 
+#### Tweeter unfolow all
+Open "Following" page on Twitter https://twitter.com/following  
+scroll down till all following accounts showed  
+open developer console(CTRL+SHIFT+C)  
+$('.button-text.unfollow-text').trigger('click');
+
+#### Styling
+    brew install astyle
+    curl https://raw.githubusercontent.com/sept-en/JUCE-utilities/master/juce_astyle.options > ~/.juce_astyle.options
+    echo 'alias jucestyle="astyle --options=\"${HOME}/.juce_astyle.options\""' >> ~/.bash_profile
+    . ~/.bash_profile
+
+#### Bash cpp
+    cat >> intro.cpp
+    #include <iostream>
+    int main() { std::cout<<"hello kittie\n"; }
+    ^D
+    make intro
+    ./intro 
+
+#### Safe fixed array param
+    inline mat3_t::mat3_t( float (&src)[3][3] ) {
+        memcpy( mat, src, sizeof(src ) );
+    }
+
 #### Aliases
     alias sag="sudo apt-get install -y"
     alias gr='git rebase -i upstream/master --autosquash'
@@ -101,6 +126,10 @@ f - file, v - verbose
 
     gzip file
     gzip -d file.gz
+
+###### Encrypt archive
+    tar cz <file_name> | openssl enc -aes-256-cbc -e > out.tar.gz.enc
+    openssl aes-256-cbc -d -in out.tar.gz | tar xz
 
 #### See progress bar: md5sum filename
     pv filename | md5sum
@@ -297,6 +326,16 @@ or just
 or in config  
 rebase.autostash
 
+#### Push to remote branch
+    git push [remotename] [localbranch]:[remotebranch]
+
+#### Delete remote branch
+    git push [remotename] :[remotebranch]
+
+#### resolve conflicts
+    git checkout --theirs -- path/to/conflicted-file.txt
+    git checkout --ours -- path/to/conflicted-file.txt
+
 #### Stash
 	git stash
 	git stash list
@@ -329,7 +368,22 @@ rebase.autostash
 
 #### Tags
     git tag -a v1.4 -m 'my version 1.4'
+    git fetch --tags
 
+#### Difftool: meld folders
+    git difftool -d master..devel
+    git difftool -d [branch]
+//------------------------------------------------------------------------------
+## Perforce
+
+#### Integrate perforce to QtCreator
+p4 command: /Users/<user>/bin/p4  
+P4PORT=<ip>:<port>  
+P4USER=<user-name>  
+P4CLIENT=<workspace>
+
+    /usr/local/bin/p4 rename <from_name> <to_name>
+    p4 changes -u $P4USER @2016/06/08,@now -m 5
 //------------------------------------------------------------------------------
 ## Certificates
     sudo apt-get install libnss3-tools

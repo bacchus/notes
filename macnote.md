@@ -119,6 +119,32 @@
 - find usages
 - not to write non ascii symbols
 
+#### XCode settings
+    defaults ACTION DOMAIN KEY VALUE
+    defaults write com.apple.Xcode PBXNumberOfParallelBuildSubtasks 4
+
+#### That should restore Xcode to the state of its first launch
+    defaults delete com.apple.dt.Xcode
+    rm -rf $HOME/Library/Application Support/Developer/Shared/Xcode
+    rm -rf $HOME/Library/Saved\ Application\ State/com.apple.dt.Xcode.savedState
+    rm -rf $HOME/Library/Preferences/com.apple.dt.Xcode.*
+
+#### XCode bash build (xcrun / xcodebuild / xcode-select)
+    xcodebuild -list -project <pro-name>.xcodeproj
+    xcodebuild -scheme "<scheme>" build
+
+###### options
+-list   lists the targets in a project  
+-jobs NUMBER  
+-showsdks   show system sdks  
+-showBuildSettings  show project settings  
+-version        of xcode  
+-sdk SDK, -toolchain NAME   use for build  
+-find-executable NAME, -find-library NAME   in system sdk  
+The active developer directory can be set using `xcode-select`  
+, or via the DEVELOPER_DIR
+
+
 #### Qt with installed Xcode 7.2 
     QMAKE_MAC_SDK = macosx10.11
 
@@ -145,6 +171,9 @@ System Preferences -> Keyboard -> Shortcuts -> Services -> General
 #### nouchg Means the file can be changed (immutable bit cleared)
     chflags nouchg [files]
 
+
+#### LLDB not work
+    breakpoint set -M std::ostream::operator<<
 
 #### run app from terminal
     ./target.app/Contents/MacOS/target [args]
