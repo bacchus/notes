@@ -428,6 +428,9 @@ revert
     git checkout hotfix
     git revert HEAD~2
 
+log by files
+
+    git log -- foo.py bar.py
 //------------------------------------------------------------------------------
 ## Perforce
 
