@@ -1,22 +1,22 @@
 ## Ubuntu tricks
 #### Nautilus
-hotkey | what does
+hotkey | what does  
 ---- | ----
-ctrl-pgup(pgdown)   | prev/next tab
-alt-1(2,3,4)        | move to 1/2,3,4 tab
-alt-home            | home dir
-alt-up              | parent dir
-alt-left(right)     | history dir move
-alt-enter           | properties
-ctrl-1(2,3)         | view list, compact
-ctrl-shift-n        | new dir
+ctrl-pgup(pgdown)   | prev/next tab  
+alt-1(2,3,4)        | move to 1/2,3,4 tab  
+alt-home            | home dir  
+alt-up              | parent dir  
+alt-left(right)     | history dir move  
+alt-enter           | properties  
+ctrl-1(2,3)         | view list, compact  
+ctrl-shift-n        | new dir  
 ctrl-m              | make link
 
 #### Hotkeys
-super-n         open app in launcher
-super-shift-n   opens app in launcher if already runing
-super-t         trash
-alt-f1 	        left toolbar
+super-n         open app in launcher  
+super-shift-n   opens app in launcher if already runing  
+super-t         trash  
+alt-f1 	        left toolbar  
 alt-f2		    run
 
 #### Open from terminal
@@ -53,9 +53,9 @@ alt-f2		    run
     google.com/ncr - really google.com
 
 #### Tweeter unfolow all
-Open "Following" page on Twitter https://twitter.com/following
-scroll down till all following accounts showed
-open developer console(CTRL+SHIFT+C)
+Open "Following" page on Twitter https://twitter.com/following  
+scroll down till all following accounts showed  
+open developer console(CTRL+SHIFT+C)  
 $('.button-text.unfollow-text').trigger('click');
 
 #### Styling
@@ -70,7 +70,7 @@ $('.button-text.unfollow-text').trigger('click');
     int main() { std::cout<<"hello kittie\n"; }
     ^D
     make intro
-    ./intro
+    ./intro 
 
 #### Safe fixed array param
     inline mat3_t::mat3_t( float (&src)[3][3] ) {
@@ -92,17 +92,17 @@ $('.button-text.unfollow-text').trigger('click');
 dconf-editor → org → gnome → desktop → wm → preferences → mouse-button-modifier
 
 #### Change pdf encoding
-    gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER  -sOutputFile=output.pdf input.pdf
+    gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER  -sOutputFile=output.pdf input.pdf  
 int pdf viewer: file\save as\format\settings\UTF-8\save
 
 #### ffmpeg
 ######## Video to gif
     ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 \
     -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifPallet.png
-
-    ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 -i gifPallet.png -filter_complex \
-    "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output2.gif
-
+	
+	ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 -i gifPallet.png -filter_complex \
+	"fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output2.gif
+	
 #### Restart ui
     sudo service lightdm restart
 #### Restart network
@@ -116,8 +116,8 @@ int pdf viewer: file\save as\format\settings\UTF-8\save
     xinput set-prop 13 "Device Enabled" 0
 
 #### Tar
-c - create, x - extract
-z - gzip, j - bzip2
+c - create, x - extract  
+z - gzip, j - bzip2  
 f - file, v - verbose
 
     tar -czvf <file.tar.gz> <files>
@@ -163,24 +163,24 @@ f - file, v - verbose
     ls -l /dev/disk/by-uuid/
 
 #### System info
-    date - cur date and time
-    cal - calendar on cur month
-    uptime - time from boot
-    w - users online
-    whoami - login name
-    uname -a - kernel info
-    df - discs usage
-    du - weight of cur dir
-    du -sh <dir> - weight of <dir> in human readable
-    free - memory usage and swap
-    whereis app - location of app
+    date - cur date and time  
+    cal - calendar on cur month  
+    uptime - time from boot  
+    w - users online  
+    whoami - login name  
+    uname -a - kernel info  
+    df - discs usage  
+    du - weight of cur dir  
+    du -sh <dir> - weight of <dir> in human readable  
+    free - memory usage and swap  
+    whereis app - location of app  
     which app - which app will be run
 
 #### Commands
-    passwd          change pasword
-    locate file     find file
-    dpkg -i pkg.deb install package
-    gksu            sudo with graphical ui
+    passwd          change pasword  
+    locate file     find file  
+    dpkg -i pkg.deb install package  
+    gksu            sudo with graphical ui  
     crontab -e      edit cron tasks
 
 #### Install
@@ -201,11 +201,11 @@ f - file, v - verbose
     notify-send "Title" "Text"
 
 #### System Program Problem Detected
-1. disable apport enabled=1 to enabled=0
+1. disable apport enabled=1 to enabled=0  
     sudo gedit /etc/default/apport
-    sudo restart apport
-or just reboot
-2. remove old crash reports
+    sudo restart apport  
+or just reboot  
+2. remove old crash reports  
     sudo rm /var/crash/*
 
 #### Conky
@@ -222,92 +222,92 @@ or just reboot
     chmod ug+s setuid-setgid
 
 #### Network
-    ping host - ping host
-    whois domain - whois info
-    dig domain - dns info
-    dig -x host - reverse search host
-    wget file - load file
-    nmap -v -A scanme.nmap.org - scan
-    /etc/resolv.conf - dns-servers list
+    ping host - ping host  
+    whois domain - whois info  
+    dig domain - dns info  
+    dig -x host - reverse search host  
+    wget file - load file  
+    nmap -v -A scanme.nmap.org - scan  
+    /etc/resolv.conf - dns-servers list  
     /etc/services - standart well known ports
 
     wget -r --no-parent -k -p <web-page>
 
 #### Other
-/etc/apt/sources.list - repository list
-/var/cache/apt/archives - archive of instaled packages
-/etc/usplash.conf - usplash conf
-/etc/rc.local - your script on boot
-/boot/grub/menu.lst - grub conf
-/ets/fstab - mounted devices conf
-/var/log - logs
+/etc/apt/sources.list - repository list  
+/var/cache/apt/archives - archive of instaled packages  
+/etc/usplash.conf - usplash conf  
+/etc/rc.local - your script on boot  
+/boot/grub/menu.lst - grub conf  
+/ets/fstab - mounted devices conf  
+/var/log - logs  
 
 #### Grub customizer
-!!!not tested!!!
+!!!not tested!!!  
     sudo add-apt-repository ppa:danielrichter2007/grub-customizer
     sudo apt-get update
     sudo apt-get install grub-customizer
-
+    
 #### Boot repair
-!!!not tested!!!
+!!!not tested!!!  
     sudo add-apt-repository ppa:yannubuntu/boot-repair
     sudo apt-get update
     sudo apt-get install boot-repair
 
 #### Youtube
-0-9         parts of video
-space       play pause
-<- ->       fwd back 5 sec
-^ v	        +- vol
-f           fullscreen
-esc         exit fullscreen
-tab         navigate
-    youtube CTRL + U. CTRL + F. og:image. the link.
+0-9         parts of video  
+space       play pause  
+<- ->       fwd back 5 sec  
+^ v	        +- vol  
+f           fullscreen  
+esc         exit fullscreen  
+tab         navigate  
+    youtube CTRL + U. CTRL + F. og:image. the link.  
 
 #### Chromium libpepflashplayer.so causing excessive disk writes
-shift-esc = chrome task manager
-iotop
-chrome://flags/Enable Offline Auto-Reload Mode
-chrome:plugins disable
-- chromoting view (no need accses other computers)
-- pdf viewer (let download pdf)
-- flash (uncheck always allowed to run)
-uninstall pepperflash
-sudo apt-get remove flashplugin-installer
-sudo update-pepperflashplugin-nonfree --uninstall
-/etc/chromium/default config to also add "--disk-cache-dir=/tmp"
+shift-esc = chrome task manager  
+iotop  
+chrome://flags/Enable Offline Auto-Reload Mode  
+chrome:plugins disable  
+- chromoting view (no need accses other computers)  
+- pdf viewer (let download pdf)  
+- flash (uncheck always allowed to run)  
+uninstall pepperflash  
+sudo apt-get remove flashplugin-installer  
+sudo update-pepperflashplugin-nonfree --uninstall  
+/etc/chromium/default config to also add "--disk-cache-dir=/tmp"  
 http://peter.sh/experiments/chromium-command-line-switches
 
 #### Android Studio & ibus-daemon
-1: Force ibus in synchronous mode, Do this preferably before starting Studio
+1: Force ibus in synchronous mode, Do this preferably before starting Studio  
     IBUS_ENABLE_SYNC_MODE=1 ibus-daemon -xrd
 
-2: Disable IBus input in Studio, This will only disable input methods for Studio
+2: Disable IBus input in Studio, This will only disable input methods for Studio  
     XMODIFIERS= ./bin/studio.sh
 
-Settings -> Language Support -> Keyboard input method system
-change from 'IBus' to 'None'
+Settings -> Language Support -> Keyboard input method system  
+change from 'IBus' to 'None'  
 and now Ctrl+Shift+u works again
 
-You can increase the value of idea.cycle.buffer.size=1024
+You can increase the value of idea.cycle.buffer.size=1024  
 in property file android-studio\bin\idea.properties
 
 #### GPS
-В Крыму находится станция IGS с кодом CRAO.
-igs.org/igsnetwork/network_by_site.php?site=crao
+В Крыму находится станция IGS с кодом CRAO.  
+igs.org/igsnetwork/network_by_site.php?site=crao  
 Кто угодно может скачать RINEX-файлы и прогнать через rtklib
 
 #### PS1
-PS1="$PS1\n--> "
-PROMPT_DIRTRIM=2
+PS1="$PS1\n--> "  
+PROMPT_DIRTRIM=2  
 PS1='${debian_chroot:+($debian_chroot)}\[\033[00;32m\]\u\[\033[01m\]@\[\033[00;36m\]\h\[\033[01m\]:\[\033[00;35m\]\w\[\033[00m\]\[\033[01;33m\]`git branch 2>/dev/null|cut -f2 -d\* -s`\[\033[00m\]\$ '
 
 
 #### Find online printers
-inurl:hp/device/this.LCDispatcher?nav=hp.Print
-https://www.google.ru/search?hl=en&newwindow=1&tbo=d&site=&source=hp&q=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&oq=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&gs_l=hp.3...634.634.0.1065.1.1.0.0.0.0.43.43.1.1.0.les%3B..0.0...1c.1.z__9Aio_1J0
-http://www.google.com/search?rls=en&q=intitle:start+inurl:cgistart
-http://www.google.com/search?q=inurl:CgiStart?page=Single
+inurl:hp/device/this.LCDispatcher?nav=hp.Print  
+https://www.google.ru/search?hl=en&newwindow=1&tbo=d&site=&source=hp&q=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&oq=inurl%3Ahp%2Fdevice%2Fthis.LCDispatcher%3Fnav%3Dhp.Print&gs_l=hp.3...634.634.0.1065.1.1.0.0.0.0.43.43.1.1.0.les%3B..0.0...1c.1.z__9Aio_1J0  
+http://www.google.com/search?rls=en&q=intitle:start+inurl:cgistart  
+http://www.google.com/search?q=inurl:CgiStart?page=Single  
 http://www.google.com/search?q=inurl:indexFrame.shtml?newstyle=Quad
 
 //------------------------------------------------------------------------------
@@ -320,10 +320,10 @@ http://www.google.com/search?q=inurl:indexFrame.shtml?newstyle=Quad
     git reflog
     git rebase -i HEAD~3
 
-git stash -> git pull -> git stash apply -> fix conflicts
+git stash -> git pull -> git stash apply -> fix conflicts  
 or just
-    git rebase --autostash
-or in config
+    git rebase --autostash  
+or in config  
 rebase.autostash
 
 #### Push to remote branch
@@ -337,26 +337,26 @@ rebase.autostash
     git checkout --ours -- path/to/conflicted-file.txt
 
 #### Stash
-    git stash
-    git stash list
-    git stash apply stash@{2}
-    git stash drop stash@{0}
-    git stash pop # = apply + drop
+	git stash
+	git stash list
+	git stash apply stash@{2}
+	git stash drop stash@{0}
+	git stash pop # = apply + drop
     git stash branch [name] # create branch from stash
-###### stash options
-    --keep-index - not to stash staged
+###### stash options    
+    --keep-index - not to stash staged  
     --include-untracked or -u - +untracked
 
-#### Clean
+#### Cleaning
 ###### ☠ Use with caution: remove not tracked
     git clean
 ###### safer: remove everything but save it in a stash
     git stash --all
 ###### remove all the untracked files in your working directory
     git clean -d
--x - remove ignored
--n - dry run
--f - force ☠
+-x - remove ignored  
+-n - dry run  
+-f - force ☠   
 -i - interactive
 
 #### List git-ignored files
@@ -378,8 +378,7 @@ rebase.autostash
     git merge master feature
 
 #### Rebase
-rebase the current branch onto base
-
+rebase the current branch onto <base>
     git rebase <base>
 
     git checkout feature
@@ -422,9 +421,9 @@ revert
 ## Perforce
 
 #### Integrate perforce to QtCreator
-p4 command: /Users/<user>/bin/p4
-P4PORT=<ip>:<port>
-P4USER=<user-name>
+p4 command: /Users/<user>/bin/p4  
+P4PORT=<ip>:<port>  
+P4USER=<user-name>  
 P4CLIENT=<workspace>
 
     /usr/local/bin/p4 rename <from_name> <to_name>
@@ -439,10 +438,10 @@ P4CLIENT=<workspace>
 //------------------------------------------------------------------------------
 ## Killing process
 #### Processes
-    ps - show all current procs
-    top - show running procs
-    bg - list stoped and bg tasks; continue stoped task
-    fg - move last task to foreground
+    ps - show all current procs  
+    top - show running procs  
+    bg - list stoped and bg tasks; continue stoped task  
+    fg - move last task to foreground  
     fg n - move n task to foreground
 
 #### Getting id
@@ -460,12 +459,12 @@ alt+f2 xkill
 
     sudo gedit /etc/sysctl.d/10-magic-sysrq.conf
 
-change 176 to 244
-if "the system is BUSIER than it should be"
-(slowly, with a few seconds between each)
-alt+SysReq(Print Screen), type REISUB
-alt+SysReq+F - Kernel will kill the mostly "expensive" process each time
-alt+SysReq+K - for console
+change 176 to 244  
+if "the system is BUSIER than it should be"  
+(slowly, with a few seconds between each)  
+alt+SysReq(Print Screen), type REISUB  
+alt+SysReq+F - Kernel will kill the mostly "expensive" process each time  
+alt+SysReq+K - for console  
 
 ctrl+alt+backspace - kill x-server
 
@@ -478,7 +477,7 @@ ctrl+alt+backspace - kill x-server
 
 //------------------------------------------------------------------------------
 #### Show number of CPU cores
-    grep -c ^processor /proc/cpuinfo
+    grep -c ^processor /proc/cpuinfo  
 
 #### Show first 5 errors
     <make> 2>&1|grep error|head -5|tee log.txt
@@ -486,9 +485,9 @@ ctrl+alt+backspace - kill x-server
 #### Display information about the contents of ELF format files
     readelf <option(s)> elf-file(s)
 -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
-
+  
 #### eclipse crash: add following lines to eclipse.ini
-    -Dorg.eclipse.swt.browser.DefaultType=mozilla
+    -Dorg.eclipse.swt.browser.DefaultType=mozilla  
     -Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xullrunner
 
 #### Physical Source Lines of Code (SLOC)
@@ -503,7 +502,7 @@ ctrl+alt+backspace - kill x-server
     qmake -project
 
 #### Qt setting custom makefile
--o qMakefile
+-o qMakefile  
 -f qMakefile
 
     pkg-config --cflags --libs opencv
@@ -513,9 +512,9 @@ ctrl+alt+backspace - kill x-server
     LD_LIBRARY_PATH=\`pwd\` ./<executable>
 
     gcc -Wall -fno-stack-protector stacksmash.c -o stacksmash
-
+    
     std::cout << "\n         (__)\n         (oo)\n   /------\\/\n  / |    ||\n *  /\\---/\\\n    ~~   ~~\n\n";
-
+    
     struct T{U u;T(U u):u(std::move(u)){}};
 
 //------------------------------------------------------------------------------
@@ -542,11 +541,11 @@ ctrl+alt+backspace - kill x-server
 #### random
     jot -r [count] [min] [max]
 
-df - disk free
-cal - calendar
-tac - reverse cat
-w - who
-factor - factors num
+df - disk free  
+cal - calendar  
+tac - reverse cat  
+w - who  
+factor - factors num  
 nl - numering lines
 
 pushd/popd
@@ -589,18 +588,18 @@ history, then !*num-in-hist*
 ###### -iwrvn -locb
 
 #### EXPRESSIONS
-^ - begin line
-$ - end line
+^ - begin line  
+$ - end line  
 grep -c "^$" - count empty lines
 
-'1*' matches zero or more '1'
-. any symb
-\\+ one or more of prev symb
-\\? zero or one
+'1*' matches zero or more '1'  
+. any symb  
+\\+ one or more of prev symb  
+\\? zero or one  
 \\b words boundary
 
-grep "[0-9]\\+ times"
-grep -i "^[^aeiou]" - starts with non matching aeiou
+grep "[0-9]\\+ times"  
+grep -i "^[^aeiou]" - starts with non matching aeiou  
 grep -v "^\\#\\|^\\/\\/" - do not show comments
 
 [:digit:] [:alnum:] [:alpha:] [:blank:]
@@ -611,17 +610,17 @@ grep  "^[0-9]\\{1,5\\}$" - [0-9] number 1-5 times
 
 grep -e '^\\(abc\\)\\1$' - back references (\\n): ^; \\(abc\\); \\1; $;
 
-OR
+OR  
     grep 'pattern1\|pattern2'
     grep -E 'pattern1|pattern2'
     grep -e pattern1 -e pattern2
 
-AND
+AND  
     grep -E 'pattern1.*pattern2'
     grep -E 'pattern1.*pattern2|pattern2.*pattern1'
     grep 'pattern1' | grep 'pattern2'
 
-NOT
+NOT  
     grep -v 'pattern1'
 
 //------------------------------------------------------------------------------
@@ -641,13 +640,13 @@ NOT
 ###### a\ append, i\ insert, c\ replace, = print line number
 ###### ADDRESS line number, PATTERN reg, $ end of file
 
-    sed 'ADDRESS a\
+    sed 'ADDRESS a\  
         Line which you want to append' filename
 
-    sed '/PATTERN/ a\
+    sed '/PATTERN/ a\  
         Line which you want to append' filename
 
-    sed '$ a\
+    sed '$ a\  
         Line which you want to append to end of file' filename
 
     sed '/PATTERN/=' filename
@@ -664,7 +663,7 @@ NOT
 //------------------------------------------------------------------------------
 ## SSH tricks
 
-ssh [-p port] user@host - connect to host as user on port
+ssh [-p port] user@host - connect to host as user on port  
 ssh-copy-id user@host   - add your key to host
 
 #### Generate and set key
@@ -686,25 +685,25 @@ ssh-copy-id user@host   - add your key to host
 //------------------------------------------------------------------------------
 ## Java
 
-\#!/bin/sh
-\# java install
-set -e
-sudo sh -c "echo 'deb http://www.duinsoft.nl/pkg debs all' >> /etc/apt/sources.list"
-sudo apt-get update
-sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 5CB26B26
-sudo apt-get update
-sudo apt-get install update-sun-jre
+\#!/bin/sh  
+\# java install  
+set -e  
+sudo sh -c "echo 'deb http://www.duinsoft.nl/pkg debs all' >> /etc/apt/sources.list"  
+sudo apt-get update  
+sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 5CB26B26  
+sudo apt-get update  
+sudo apt-get install update-sun-jre  
 
 ## Installing Oracle Java JDK
 
-http://www.oracle.com/technetwork/java/javase/downloads/index.html
-download jdk-7u21-linux-i586.tar.gz
-tar -xf jdk-7u21-linux-i586.tar.gz
-sudo mv jdk1.7.0_21 /usr/lib/jvm/
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_21/bin/java" 1
-sudo update-alternatives --config java
-java -version
-JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21/
+http://www.oracle.com/technetwork/java/javase/downloads/index.html  
+download jdk-7u21-linux-i586.tar.gz  
+tar -xf jdk-7u21-linux-i586.tar.gz  
+sudo mv jdk1.7.0_21 /usr/lib/jvm/  
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_21/bin/java" 1  
+sudo update-alternatives --config java  
+java -version  
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21/  
 export JAVA_HOME
 
 #### choose default java version in system
@@ -722,13 +721,13 @@ export JAVA_HOME
 
 //------------------------------------------------------------------------------
 #### Evolution maill settings
-user@s.com
-pop3.ww.s.net
-995
-ssl pwd
-leave msg on srv
-smtp.ww.s.net
-25
+user@s.com  
+pop3.ww.s.net  
+995  
+ssl pwd  
+leave msg on srv  
+smtp.ww.s.net  
+25  
 no enc
 
 //------------------------------------------------------------------------------
@@ -736,7 +735,7 @@ no enc
     dmesg | grep -i blue
     lspci | grep -i blue
     lsusb | grep -i blue
-
+    
     sudo apt-get install bluez-utils
     sudo /etc/init.d/bluetooth restart
     hcitool dev
@@ -746,8 +745,8 @@ no enc
     sudo apt-get install hostapd dnsmasq
 
 #### file: /etc/dnsmasq.conf
-bind-interfaces
-interface=wlan0
+bind-interfaces  
+interface=wlan0  
 dhcp-range=192.168.150.2,192.168.150.10
 
 #### in bash
@@ -757,83 +756,83 @@ dhcp-range=192.168.150.2,192.168.150.10
     sudo update-rc.d dnsmasq disable
 
 #### hostapd.conf
-    interface=wlan0
-    driver=nl80211
-    ssid=sdjlh
-    hw_mode=g
-    channel=6
-    wpa=2
-    wpa_passphrase=33323345
+    interface=wlan0  
+    driver=nl80211  
+    ssid=sdjlh  
+    hw_mode=g  
+    channel=6  
+    wpa=2  
+    wpa_passphrase=33323345  
 
 #### start.sh
-    #!/bin/bash
-    # fix 14.04 troubles
-    sudo nmcli nm wifi off
+    #!/bin/bash  
+    # fix 14.04 troubles  
+    sudo nmcli nm wifi off  
     sudo rfkill unblock wlan
-    # Start
-    # Configure IP address for WLAN
+    # Start  
+    # Configure IP address for WLAN  
     sudo ifconfig wlan0 192.168.150.1
-    # Start DHCP/DNS server
+    # Start DHCP/DNS server  
     sudo service dnsmasq restart
-    # Enable routing
+    # Enable routing  
     sudo sysctl net.ipv4.ip_forward=1
-    # Enable NAT
+    # Enable NAT  
     sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-    # Run access point daemon
+    # Run access point daemon  
     sudo hostapd /etc/hostapd/hostapd.conf
-    # Stop
-    # Disable NAT
+    # Stop  
+    # Disable NAT  
     sudo iptables -D POSTROUTING -t nat -o eth0 -j MASQUERADE
-    # Disable routing
+    # Disable routing  
     sudo sysctl net.ipv4.ip_forward=0
-    # Disable DHCP/DNS server
-    sudo service dnsmasq stop
+    # Disable DHCP/DNS server  
+    sudo service dnsmasq stop  
     sudo service hostapd stop
 
 #### Broadcom BCM43228 (not tested)
-    lspci
-
+	lspci
+	
 03:00.0 Network controller: Broadcom Corporation BCM43228 802.11a/b/g/n
 
-    sudo apt-get install linux-headers-generic
-    sudo apt-get install --reinstall bcmwl-kernel-source
+	sudo apt-get install linux-headers-generic
+	sudo apt-get install --reinstall bcmwl-kernel-source
 
 //--------------------------------------------------------------
 ## SSD settings
 #### tools
 
     swapon -s
-    sudo blkid
+    sudo blkid 
 
 #### folders
-    /var/cache
+    /var/cache  
     /media/home
 
 #### commands
     sudo cp /etc/fstab /etc/fstab.$(date +%Y-%m-%d)
     sudo gedit /etc/fstab &
-
-UUID=????????   /media/home    ext4          defaults       0       2
+    
+UUID=????????   /media/home    ext4          defaults       0       2   
 
     sudo mkdir /media/home
     sudo mount -a
     sudo rsync -aXS /home/. /media/home/.
-
-UUID=????????   /home    ext4          defaults       0       2
+    
+UUID=????????   /home    ext4          defaults       0       2  
 
     cd / && sudo mv /home /old_home && sudo mkdir /home
     sudo mount -a
-
-/etc/fstab:
+    
+/etc/fstab:  
 ###### swap was on /dev/sda6 during installation
-UUID=xxxxx none         swap    sw          0   0
+UUID=xxxxx none         swap    sw          0   0  
 ###### home
-UUID=xxxxx /home        ext4    defaults    0   2
+UUID=xxxxx /home        ext4    defaults    0   2  
 ###### cashe
-UUID=xxxxx /var/cache   ext4    defaults    0   2
+UUID=xxxxx /var/cache   ext4    defaults    0   2  
 ###### tmp
-tmpfs      /tmp         tmpfs   defaults    0   0
-tmpfs      /var/tmp     tmpfs   defaults    0   0
+tmpfs      /tmp         tmpfs   defaults    0   0  
+tmpfs      /var/tmp     tmpfs   defaults    0   0  
 
 
 #### Comandline-one-liners
@@ -893,15 +892,15 @@ tmpfs      /var/tmp     tmpfs   defaults    0   0
     ps -Lm
     top -H
 
-TotalView debugger is LC's recommended debugger for parallel programs
-computing.llnl.gov/code/content/software_tools.php
-Some tools worth investigating, specifically for threaded codes, include:
-Open|SpeedShop
-TAU
-HPCToolkit
-PAPI
-Intel VTune Amplifier
-ThreadSpotter
+TotalView debugger is LC's recommended debugger for parallel programs  
+computing.llnl.gov/code/content/software_tools.php  
+Some tools worth investigating, specifically for threaded codes, include:  
+Open|SpeedShop  
+TAU  
+HPCToolkit  
+PAPI  
+Intel VTune Amplifier  
+ThreadSpotter  
 
 
 
