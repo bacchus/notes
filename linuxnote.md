@@ -378,15 +378,15 @@ rebase.autostash
     git merge master feature
 
 #### Rebase
-rebase the current branch onto <base>
-    git rebase <base>
+
+rebase the current branch onto base
+
+    git rebase base
 
     git checkout feature
     git checkout -b temporary-branch
     git rebase -i master
-
-clean up the history
-
+    # clean up the history
     git checkout master
     git merge temporary-branch
 
