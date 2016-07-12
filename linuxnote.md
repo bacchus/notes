@@ -343,17 +343,26 @@ rebase.autostash
 	git stash drop stash@{0}
 	git stash pop # = apply + drop
     git stash branch [name] # create branch from stash
-###### stash options    
+
+stash options   
+
     --keep-index - not to stash staged  
     --include-untracked or -u - +untracked
 
 #### Cleaning
-###### ☠ Use with caution: remove not tracked
+
+☠ Use with caution: remove not tracked
+
     git clean
-###### safer: remove everything but save it in a stash
+
+safer: remove everything but save it in a stash
+
     git stash --all
-###### remove all the untracked files in your working directory
+
+remove all the untracked files in your working directory
+
     git clean -d
+
 -x - remove ignored  
 -n - dry run  
 -f - force ☠   
@@ -382,6 +391,8 @@ rebase.autostash
 rebase the current branch onto base
 
     git rebase base
+
+rebase workflow
 
     git checkout feature
     git checkout -b temporary-branch
@@ -577,15 +588,16 @@ history, then !*num-in-hist*
     grep -rl ‘text’ directory/*
     grep -r word *
 
-###### -r recursive, -n line number, -w whole word
-###### -i ignore-case, -v non-matching,  -l print files matches
-###### -B before, -A after, -C context
-###### --include-dir=dir0
-###### --exclude-dir={dir1,dir2,*.dst}
-###### --include=\\*.{c,h}
-###### --exclude=*.o
     grep -rnw 'directory' -e "pattern"
-###### -iwrvn -locb
+
+-r recursive, -n line number, -w whole word  
+-i ignore-case, -v non-matching,  -l print files matches  
+-B before, -A after, -C context  
+--include-dir=dir0  
+--exclude-dir={dir1,dir2,*.dst}  
+--include=\\*.{c,h}  
+--exclude=*.o  
+-iwrvn -locb
 
 #### EXPRESSIONS
 ^ - begin line  
@@ -625,20 +637,24 @@ NOT
 
 //------------------------------------------------------------------------------
 #### nl - number lines
-###### -i5 increase cnt, -s. add string '.' after cnt, -w2     column for cnt
-###### -b style: a all lines,  t nonempty lines, n no lines, pREG lines for regexp (-bpA - only with A)
-###### -n format: ln left justified no leading zeros, rn right -same-,  rz right j lead z
+-i5 increase cnt, -s. add string '.' after cnt, -w2     column for cnt  
+-b style: a all lines,  t nonempty lines, n no lines, pREG lines for regexp (-bpA - only with A)  
+-n format: ln left justified no leading zeros, rn right -same-,  rz right j lead z  
+
     nl file.txt
 
 #### wc - coun lines, words, bytes
-###### -w words, -L length of longest line, -l new lines, -c bytes
+
+-w words, -L length of longest line, -l new lines, -c bytes
+
     wc file.txt
+
 #### lines words bytes
 5     5     41     sort.txt
 
 #### sed
-###### a\ append, i\ insert, c\ replace, = print line number
-###### ADDRESS line number, PATTERN reg, $ end of file
+a\ append, i\ insert, c\ replace, = print line number  
+ADDRESS line number, PATTERN reg, $ end of file
 
     sed 'ADDRESS a\  
         Line which you want to append' filename
