@@ -542,6 +542,7 @@ ctrl+alt+backspace - kill x-server
     rename 'y/A-Z/a-z/' *
     rename 's/.df/.txt/g' *.df
     rename 's/aa/12/g' *
+    rename 's/(\.)(?!png)/_/g' * --dry-run # all '.' to '_' except in '.png'
     sed -i 's/old-word/new-word/g' *.txt
 
 #### delimeters - in: vmlinuz-3.13.0-40-generic; out: 3.13.0-40
