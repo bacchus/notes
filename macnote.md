@@ -132,6 +132,7 @@
 #### XCode bash build (xcrun / xcodebuild / xcode-select)
     xcodebuild -list -project <pro-name>.xcodeproj
     xcodebuild -scheme "<scheme>" build
+    xcodebuild -jobs 4
 
 ###### options
 -list   lists the targets in a project  
