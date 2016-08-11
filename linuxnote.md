@@ -463,6 +463,16 @@ If something goes wrong here (there is a lot of potential)
 you are in trouble since this works on the live checkout  
 so either do manual cherry-picks or use rebase
 
+	git diff $start_commit..$end_commit -- path/to/file
+	git blame -w # ignore whitespaces
+	git blame -M # ignore text moving
+	git blame -C # ignore text moving to other files
+	
+#### Git worktree
+    git worktree add ../folder name-of-branch
+    git worktree list
+    git worktree prune
+	
 //------------------------------------------------------------------------------
 ## Perforce
 
