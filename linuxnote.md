@@ -428,9 +428,41 @@ revert
     git checkout hotfix
     git revert HEAD~2
 
+undo merge: if you haven't done anything else after the merge attempt
+    git reset --hard HEAD@{1}
+
+
+from which branch we are rebasing - that will be on top
+    git pull --rebase origin master
+    git push origin feature --force # POZOR
+    git pull --rebase origin feature
+
+from master
+    git merge feature --no-ff
+
+
 log by files
 
     git log -- foo.py bar.py
+    
+to apply commit to your current branch: git-cherry-pick  
+pick in gitk and cherry-pick them with right-clicks on the commit
+    git cherry-pick <commit>
+
+If you want to go more automatic (with all its dangers)  
+and assuming all commits since yesterday happened on wss  
+you could generate the list of commits using  
+    git log --reverse --since=yesterday --pretty=%H
+
+    for commit in $(git log --reverse --since=yesterday --pretty=%H);
+    do
+        git cherry-pick $commit
+    done
+
+If something goes wrong here (there is a lot of potential)  
+you are in trouble since this works on the live checkout  
+so either do manual cherry-picks or use rebase
+
 //------------------------------------------------------------------------------
 ## Perforce
 
@@ -499,7 +531,10 @@ ctrl+alt+backspace - kill x-server
 #### Display information about the contents of ELF format files
     readelf <option(s)> elf-file(s)
 -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
-  
+
+ check architecture
+    file <lib>
+    
 #### eclipse crash: add following lines to eclipse.ini
     -Dorg.eclipse.swt.browser.DefaultType=mozilla  
     -Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xullrunner
@@ -721,7 +756,8 @@ ADDRESS line number, PATTERN reg, $ end of file
 ## SSH tricks
 
 ssh [-p port] user@host - connect to host as user on port  
-ssh-copy-id user@host   - add your key to host
+ssh-copy-id user@host   - add your key to host  
+ssh -nNTL 9999:127.0.0.1:1234 secret_dev - 	port forwarding
 
 #### Generate and set key
     cd ~/.ssh
