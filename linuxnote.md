@@ -473,24 +473,36 @@ so either do manual cherry-picks or use rebase
     git worktree list
     git worktree prune
 
-#### Github tricks
-    
-###### URLs
-public keys
+## Github tricks
+
+#### URLs
+
+###### public keys
+
     https://github.com/<user_name>.keys
-add .diff or .patch to url
+
+###### add .diff or .patch to url
+
     https://github.com/tars/tars/commit/07902a9.diff
-permanent link to specific commit file - press 'y'
+
+###### permanent link to specific commit file - press 'y'
+
     <permanent link>
-diff without whitespaces
+
+###### diff without whitespaces
+
     ?w=1
-block highlight 15 to 17 line
+
+###### block highlight 15 to 17 line
+
     #L15-L17
-revision diff
+
+###### revision diff
+
     https://github.com/github/linguist/compare/master@%7B2week%7D...master
     master@{1day}...master
 
-###### Hotkeys
+#### Hotkeys
     '?' - show all hotkeys
     't' - file search
     'l' - go to line
@@ -499,18 +511,22 @@ revision diff
     'gi' - go issues
     'gn' - go notifications
 
-###### Tickets/pull requests
-close issue via commit message use 'fix/resolve/close'
+#### Tickets/pull requests
+
+###### close issue via commit message use 'fix/resolve/close'
+
     git commit -m "Fix screwup, fix #12"
-markdown
+
+#### markdown
+
     - [x] @mentions, #refs, [links]()
     - [ ] incomplete item
 
-###### Special files
+#### Special files
     ISSUE_TEMPLATE.md - opening new ticket
     PULL_REQUEST_TEMPLATE.md - will show up when
 
-###### links
+#### links
     https://github.com/search
     https://github.com/explore
     https://github.com/trending
