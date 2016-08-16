@@ -472,7 +472,63 @@ so either do manual cherry-picks or use rebase
     git worktree add ../folder name-of-branch
     git worktree list
     git worktree prune
-	
+
+#### Github tricks
+    
+###### URLs
+public keys
+    https://github.com/<user_name>.keys
+add .diff or .patch to url
+    https://github.com/tars/tars/commit/07902a9.diff
+permanent link to specific commit file - press 'y'
+    <permanent link>
+diff without whitespaces
+    ?w=1
+block highlight 15 to 17 line
+    #L15-L17
+revision diff
+    https://github.com/github/linguist/compare/master@%7B2week%7D...master
+    master@{1day}...master
+
+###### Hotkeys
+    '?' - show all hotkeys
+    't' - file search
+    'l' - go to line
+
+    'gp' - go pull-requests
+    'gi' - go issues
+    'gn' - go notifications
+
+###### Tickets/pull requests
+close issue via commit message use 'fix/resolve/close'
+    git commit -m "Fix screwup, fix #12"
+markdown
+    - [x] @mentions, #refs, [links]()
+    - [ ] incomplete item
+
+###### Special files
+    ISSUE_TEMPLATE.md - opening new ticket
+    PULL_REQUEST_TEMPLATE.md - will show up when
+
+###### links
+    https://github.com/search
+    https://github.com/explore
+    https://github.com/trending
+    https://status.github.com
+    https://gist.github.com - drafts
+    https://help.github.com
+    https://github.com/github/hub
+    https://habrahabr.ru/post/129343/ - user scripts
+    https://greasyfork.org/en/scripts/by-site/github.com
+    https://github.com/jerone/UserScripts/tree/master/Github_Commit_Whitespace
+    https://github.com/jerone/UserScripts/tree/master/Github_News_Feed_Filter
+    https://github.com/gelstudios/gitfiti
+    http://dotfiles.github.io
+    https://octodex.github.com
+    https://github.com/Kikobeats/awesome-github
+    https://git-lfs.github.com - large file storage
+    https://github.com/buunguyen/octotree - chrome ext
+
 //------------------------------------------------------------------------------
 ## Perforce
 
