@@ -66,7 +66,7 @@ or
 - Safe mode
 
 
-#### REISUB Windows (not worked for me)
+#### REISUB Windows
     regedit
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters
     HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\kbdhid\Parameters
