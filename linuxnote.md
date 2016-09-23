@@ -614,7 +614,14 @@ ctrl+alt+backspace - kill x-server
     readelf <option(s)> elf-file(s)
 -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
 
- check architecture
+#### Show lib export symbols info
+    nm -D <lib.a>
+    
+#### Decode c++ symbols
+    c++filt __ZNK4juce19AudioProcessorGraph21AudioGraphIOProcessor8isOutputEv
+    > juce::AudioProcessorGraph::AudioGraphIOProcessor::isOutput() const
+
+#### Check architecture
     file <lib>
     
 #### eclipse crash: add following lines to eclipse.ini
