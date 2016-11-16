@@ -102,6 +102,13 @@ Applications -> Automator -> Service -> Service receives no input in any applica
 -> Cmd-S to save -> Name "Lock screen" -> saved in ~/Library/Services  
 System Preferences -> Keyboard -> Shortcuts -> Services -> General -> Shortcut "Ctrl+Cmd+L"
 
+#### Change language by CapsLock
+(previous was Sail)
+
+    https://pqrs.org/latest/karabiner-elements-latest.dmg
+add modifier -> CapsLock -> f19  
+System Preferences -> Keyboard -> Shortcuts -> Input Sources -> Shortcut "CapsLock" (replaces by f19)
+
 #### Finder
 ###### Disable autocompleteng
     Control Panel\Clock, Language, and Region\Language\Advanced settings
