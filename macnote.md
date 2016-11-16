@@ -87,7 +87,21 @@
     cmd y - enable/disable all breakpoints
     ctrl cmd y - play/pause debugger
 
-## DEV
+## Admin
+#### http://brew.sh
+    https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
+    brew install bash-completion
+    brew tap homebrew/completions
+    https://github.com/Homebrew/homebrew-completions
+
+#### Lock screen
+Enable the fast user switching menu from the Users & Groups preference pane and then select Login Window… from the menu.  
+Applications -> Automator -> Service -> Service receives no input in any application -> Run Shell Script:
+
+    /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+-> Cmd-S to save -> Name "Lock screen" -> saved in ~/Library/Services  
+System Preferences -> Keyboard -> Shortcuts -> Services -> General -> Shortcut "Ctrl+Cmd+L"
+
 #### Finder
 ###### Disable autocompleteng
     Control Panel\Clock, Language, and Region\Language\Advanced settings
@@ -96,6 +110,10 @@
 ###### quicklookplugins.com 
     To install the plug-ins after downloading them, place them in ~/Library/QuickLook
     qlmanage -r
+    
+
+## DEV
+
 ###### Slow xcode
     defaults write com.apple.dt.XCode IDEIndexDisable 1
     ./Applications/Xcode.app/Contents/PlugIns/
@@ -148,18 +166,6 @@ The active developer directory can be set using `xcode-select`
 
 #### Qt with installed Xcode 7.2 
     QMAKE_MAC_SDK = macosx10.11
-
-#### http://brew.sh
-    https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
-    brew install bash-completion
-    brew tap homebrew/completions
-    https://github.com/Homebrew/homebrew-completions
-
-#### Lock screen
-Enable the fast user switching menu from the Users & Groups preference pane and then select Login Window… from the menu.  
-Applications -> Automator -> Service -> Service receives no input in any application -> Run Shell Script:   /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend  
--> Cmd-S to save -> Name "Lock screen" -> saved in ~/Library/Services  
-System Preferences -> Keyboard -> Shortcuts -> Services -> General -> Shortcut "Ctrl+Cmd+L"
 
     wget --password=<pass> --user=<user> -c '<link>'
 
