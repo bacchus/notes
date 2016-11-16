@@ -158,8 +158,8 @@ The active developer directory can be set using `xcode-select`
 #### Lock screen
 Enable the fast user switching menu from the Users & Groups preference pane and then select Login Window… from the menu.  
 Applications -> Automator -> Service -> Service receives no input in any application -> Run Shell Script:   /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend  
--> Cmd-S to save -> Name -> saved in ~/Library/Services  
-System Preferences -> Keyboard -> Shortcuts -> Services -> General  
+-> Cmd-S to save -> Name "Lock screen" -> saved in ~/Library/Services  
+System Preferences -> Keyboard -> Shortcuts -> Services -> General -> Shortcut "Ctrl+Cmd+L"
 
     wget --password=<pass> --user=<user> -c '<link>'
 
