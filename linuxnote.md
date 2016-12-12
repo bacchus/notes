@@ -328,6 +328,7 @@ rebase.autostash
 
 #### Add remote
     git remote add reponame https://github.com/user/repo.git
+    git fetch reponame
 
 #### Push to remote branch
     git push [remotename] [localbranch]:[remotebranch]
