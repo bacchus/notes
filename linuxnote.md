@@ -331,6 +331,9 @@ rebase.autostash
     git fetch reponame
     git checkout branchname
     git checkout --track reponame/branchname
+    
+###### Push after rebase
+    git push -f reponame branchname
 
 #### Push to remote branch
     git push [remotename] [localbranch]:[remotebranch]
