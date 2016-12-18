@@ -1094,4 +1094,56 @@ Intel VTune Amplifier
 ThreadSpotter  
 
 
+## ubuntu-nvidia
+    sudo apt-get upgrade
+    sudo apt-get install ubuntu-restricted-extras
+
+after this updates not working with error:  
+failed to open plugin /usr/lib/gs-plugins-9
+
+###### fixed
+    sudo apt-get autoremove gnome-software
+    sudo apt-get install gnome-software
+
+
+software & updates  
+software updater
+
+#### drivers updates
+###### intel microcode
+###### nvidia 361.42
+
+    sudo apt-get install mesa-utils
+    glxinfo | grep -i opengl
+    
+###### nvidia settings - set graphics card
+
+
+#### answer 1
+    sudo apt-get purge nvidia*
+    
+###### fixes xorg
+    sudo apt-get install --reinstall xserver-xorg-video-intel  libgl1-mesa-glx libgl1-mesa-dri xserver-xorg-core
+    sudo dpkg-reconfigure xserver-xorg
+    sudo update-alternatives --remove gl_conf /usr/lib/nvidia-current/ld.so.conf
+    
+###### reinstall nVidia software
+    sudo apt-add-repository ppa:xorg-edgers/ppa
+    sudo apt-get update
+    sudo apt-get install bumblebee-nvidia nvidia-319 nvidia-settings-319
+
+
+#### answer 2
+I tried manually installing the Nvidia proprietary drivers  
+un-installing them with a
+
+    sudo ./NVIDIA-Linux-x86-331.67.run --uninstall
+    
+###### every option in the driver manager always resulted in:
+
+OpenGL vendor string: VMware, Inc.  
+OpenGL renderer string: Gallium 0.4 on llvmpipe (LLVM 3.3, 256 bits)
+
+#### use answer 1
+    sudo apt-get install nvidia-337 nvidia-settings-337
 
