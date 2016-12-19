@@ -2,6 +2,15 @@
 
 ## JUCE
 
+#### AStyle autoformat
+    brew install astyle
+    curl https://raw.githubusercontent.com/sept-en/JUCE-utilities/master/juce_astyle.options > ~/.juce_astyle.options
+    echo 'alias juce_style="astyle --options=\"${HOME}/.juce_astyle.options\""' >> ~/.bashrc
+    . ~/.bashrc
+    
+###### alternative
+    https://github.com/open-ephys/GUI/blob/master/astyle.options
+
 #### XCode debug
     {(const char*) $VAR.text.data}:s
     {(const char*) $VAR.fullPath.text.data}:s
