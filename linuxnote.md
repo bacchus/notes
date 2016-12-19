@@ -1147,3 +1147,35 @@ OpenGL renderer string: Gallium 0.4 on llvmpipe (LLVM 3.3, 256 bits)
 #### use answer 1
     sudo apt-get install nvidia-337 nvidia-settings-337
 
+## ubuntu-default-app
+
+#### /usr/share/applications/defaults.list
+    text/qt-project-file=DigiaQt-qtcreator-community.desktop
+
+#### ~/.local/share/applications/DigiaQt-qtcreator-community.desktop
+    [Desktop Entry]
+    Type=Application
+    Exec=/home/bacchus/install/qt/Tools/QtCreator/bin/qtcreator
+    Name=Qt Creator (Community)
+    GenericName=The IDE of choice for Qt development.
+    Icon=QtProject-qtcreator
+    Terminal=false
+    Categories=Development;IDE;Qt;
+    MimeType=text/x-c++src;...;text/qt-project-file;
+
+#### qt-pro.xml
+    <?xml version="1.0"?>
+    <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+      <mime-type type="text/qt-project-file" subtype="text/plain">
+        <comment>QtCreator project</comment>
+        <glob pattern="*.pro"/>
+      </mime-type>
+    </mime-info>
+
+#### install mime type
+    sudo xdg-mime install qt-pro.xml
+
+#### copy your custom icon to ~/.icons
+    cp QtProject-qtcreator.png ~/.icons/
+
+
