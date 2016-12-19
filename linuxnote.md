@@ -482,6 +482,28 @@ so either do manual cherry-picks or use rebase
     git worktree list
     git worktree prune
 
+#### cache credentials
+If you’re using a Mac, Git comes with an “osxkeychain” mode  
+, which caches credentials in the secure keychain that’s attached to your system account.  
+This method stores the credentials on disk, and they never expire  
+, but they’re encrypted with the same system that stores HTTPS certificates and Safari auto-fills.  
+  
+If you’re using Windows, you can install a helper called “wincred.”  
+This is similar to the “osxkeychain” helper described above  
+, but uses the Windows Credential Store to control sensitive information.  
+
+    git config --global credential.helper cache.
+    git ls-remote [remote]
+    git remote show [remote]
+    git fetch origin
+    git remote add otherrepo git://git.otherrepo.com
+    git fetch othrrepo
+    git push <remote> <branch>
+
+    git config --global push.default tracking
+
+
+
 ## Github tricks
 
 #### URLs
