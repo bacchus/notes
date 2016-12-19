@@ -196,6 +196,26 @@ The active developer directory can be set using `xcode-select`
     lipo -info <binary>
     https://gist.github.com/sponno/7228256
     
+## Sardi
+#### Ardis Icon Theme
+#### http://erikdubois.be/sardi-flexible/
+#### http://erikdubois.be/what-are-my-personal-settings-for-mac-osx-el-capitan/
+    #1793D1  to #choosecolour
+    find -name "*.svg" -type f -exec sed -i '/fill="#ffffff"/!s/fill="#1793D1"/fill="#choosecolour"/g' {}  \;
+    find -name "*.svg" -type f -exec sed -i '/fill:#ffffff/!s/fill:#1793D1/fill:#choosecolour/g' {} \;
+
+#### Preferences in Finder 
+- Icons in the navigation in the Finder
+- pressing the ALT button gives you an hidden folder Library 
+- Order the favorites in the finder
+- Finder toolbar – completely changed
+- Security – allow all programs to install – every random source
+- How to share a map between computers
+- Log yourself in automatically
+- autoinstall osx updates
+- display the day in your time
+
+    
 #### Bugs
 **Heisenbug** - disappear or alter its behaviour when one attempts to study it  
 **Bohrbug** - is a "good, solid bug". do not change their behaviour and are relatively easily detected.  
