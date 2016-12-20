@@ -52,6 +52,19 @@ alt-f2		    run
     2+2=
     google.com/ncr - really google.com
 
+#### Find in files
+    grep -rl ‘text’ directory/*
+    grep -r word *
+    grep -rnw 'directory' -e "pattern"
+    
+-r recursive; -n line number; -w whole word  
+-i ignore-case; -v non-matching; -l print files matches  
+-B before; -A after; -C context  
+--include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
+--include=\.{c,h}; --exclude=*.o
+
+    -iwrvn -locb
+
 #### Tweeter unfolow all
 Open "Following" page on Twitter https://twitter.com/following  
 scroll down till all following accounts showed  
@@ -763,8 +776,7 @@ ab\|cd      | match ab or cd
 ## FIND
 #### Apply command to find files
     find . -type f -exec dos2unix {} +
-
-#### Find in files
+    
     find *directory* -type f | xargs grep -rl '*text*'
     find *directory* -type f -exec grep -l ‘*text*’ {} +
     find /path -name "name" -type d
@@ -780,20 +792,6 @@ ab\|cd      | match ab or cd
     ls -alr *
 //------------------------------------------------------------------------------
 ## GREP
-#### Finds "word" in files in subdirs
-    grep -rl ‘text’ directory/*
-    grep -r word *
-
-    grep -rnw 'directory' -e "pattern"
-
--r recursive, -n line number, -w whole word  
--i ignore-case, -v non-matching,  -l print files matches  
--B before, -A after, -C context  
---include-dir=dir0  
---exclude-dir={dir1,dir2,*.dst}  
---include=\\*.{c,h}  
---exclude=*.o  
--iwrvn -locb
 
 #### EXPRESSIONS
 ^ - begin line  
