@@ -56,14 +56,13 @@ alt-f2		    run
     grep -rl ‘text’ directory/*
     grep -r word *
     grep -rnw 'directory' -e "pattern"
-    
+    -iwrvn -locb
+
 -r recursive; -n line number; -w whole word  
 -i ignore-case; -v non-matching; -l print files matches  
 -B before; -A after; -C context  
 --include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
 --include=\.{c,h}; --exclude=*.o
-
-    -iwrvn -locb
 
 #### Tweeter unfolow all
 Open "Following" page on Twitter https://twitter.com/following  
