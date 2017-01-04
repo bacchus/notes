@@ -449,7 +449,8 @@ revert
     git checkout hotfix
     git revert HEAD~2
 
-undo rebase, else.. find the head commit, supose it was 'HEAD@{5}'  
+undo rebase, else.. find the head commit, supose it was 'HEAD@{5}'
+
     git reflog
     git reset --hard HEAD@{5}
 
