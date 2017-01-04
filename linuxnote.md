@@ -449,6 +449,10 @@ revert
     git checkout hotfix
     git revert HEAD~2
 
+undo rebase, else.. find the head commit, supose it was 'HEAD@{5}'  
+    git reflog
+    git reset --hard HEAD@{5}
+
 undo merge: if you haven't done anything else after the merge attempt
     git reset --hard HEAD@{1}
 
