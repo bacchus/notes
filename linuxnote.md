@@ -444,15 +444,18 @@ checkout
 
     git checkout HEAD~2 //foo.cpp
 
-revert
-
-    git checkout hotfix
-    git revert HEAD~2
-
-undo rebase, else.. find the head commit, supose it was 'HEAD@{5}'
+revert rebase, else.. find the head commit, supose it was 'HEAD@{5}'
 
     git reflog
     git reset --hard HEAD@{5}
+    
+revert deleted branch
+    
+    git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline >  lost-found.txt
+    git config --global alias.rescue '!git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt'
+    git cat-file -p [commit_chsum]
+    git log [commit_chsum]
+    git branch commit_rescued [commit_chsum]
 
 undo merge: if you haven't done anything else after the merge attempt
     git reset --hard HEAD@{1}
