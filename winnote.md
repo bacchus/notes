@@ -181,7 +181,7 @@ Options -> ReSharper -> General ->Suspend Now
 
 #### 4. Debug symbols
 
-DB files are generated if using /Zi or /ZI (Produce PDB Information) compiler
+DB files are generated if using /Zi or /ZI (Produce PDB Information) compiler  
 and /DEBUG (Generate Debug Info) linker
 
 ###### PDB files contain the following information:
@@ -192,10 +192,10 @@ and /DEBUG (Generate Debug Info) linker
 - Source file and line number information
 
 ###### Developer Links
-https://www.microsoft.com/whdc/devtools/debugging/default.mspx
-https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk
-https://developer.microsoft.com/en-us/windows/hardware/windows-driver-kit
-https://developer.microsoft.com/en-us/windows/hardware/download-symbolsw
+    https://www.microsoft.com/whdc/devtools/debugging/default.mspx
+    https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk
+    https://developer.microsoft.com/en-us/windows/hardware/windows-driver-kit
+    https://developer.microsoft.com/en-us/windows/hardware/download-symbolsw
 
 
 ###### Check if a given DLL or .exe file and PDB in the same folder match
@@ -214,10 +214,13 @@ https://developer.microsoft.com/en-us/windows/hardware/download-symbolsw
     DUMPBIN /PDBPATH:VERBOSE filename.exe
 
 ###### Microsoft Symbol Server: _NT_SYMBOL_PATH
-Options -> Debugging -> Symbols -> http://msdl.microsoft.com/download/symbols
-srv*c:\symbols*https://msdl.microsoft.com/download/symbols
+Options -> Debugging -> Symbols -> 
+    
+    http://msdl.microsoft.com/download/symbols
+    srv*c:\symbols*https://msdl.microsoft.com/download/symbols
 
 local file share on \\mainserver\symbols:
+
     Srv*c:\symbols*\\mainserver\symbols*https://msdl.microsoft.com/download/symbols
 
 ###### Getting Symbols Manually
