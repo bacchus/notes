@@ -8,6 +8,16 @@
 #### Win features
 Control Panel\Programs\Programs and Features
 
+#### Admin tools
+    gpedit.msc
+    optionalfeatures.exe
+    check the %APPDATA% folder
+    
+#### Start/stop services
+    sc stop "AppXSvc"
+    sc config "AppXSvc" start=disabled
+    sc delete "AppXSvc"
+
 #### Edit environment variables
     rundll32 sysdm.cpl,EditEnvironmentVariables
 
@@ -129,7 +139,14 @@ ctrl r o - change parameter order
 
 #### Additionally, you can try to map long base paths to an own drive letter. From a command line run
     subst P:\ C:\Your\Project\Folder\Is\Quite\Long
-    
+
+
+#### virtual desktop (VD)
+    win+ctrl+D: new VD
+    win+ctrl+F4: close current VD
+    win+ctrl+left/right: switch between VDs
+
+
 #### Apps
 WinHEX  
 Ninite
