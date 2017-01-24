@@ -156,3 +156,73 @@ WinHEX
 Ninite
 Spacesniffer  
 Windirstat  
+
+//==============================================================================
+## visual-studio-hang
+
+#### 1. disable the  "Hosting Process"
+- Open an executable project in Visual Studio. Projects that do not
+produce executables (for example, class library or service projects) do not have this option.
+- On the Project menu, click Properties.
+- Click the Debug tab.
+- Clear the Enable the Visual Studio hosting process check box.
+
+
+#### 2. suspended ReSharper
+Options -> ReSharper -> General ->Suspend Now
+
+
+#### 3. Disable "Allow this precompiled site to be updatable"
+- Open Site/Solution
+- Right click and view Property Pages
+- Go to MSBuild Options
+- Uncheck "Allow this precompiled site to be updatable"
+
+
+#### 4. Debug symbols
+
+DB files are generated if using /Zi or /ZI (Produce PDB Information) compiler
+and /DEBUG (Generate Debug Info) linker
+
+###### PDB files contain the following information:
+- Public symbols (typically all functions, static and global variables)
+- A list of object files that are responsible for sections of code in the executable
+- Frame pointer optimization information (FPO)
+- Name and type information for local variables and data structures
+- Source file and line number information
+
+###### Developer Links
+https://www.microsoft.com/whdc/devtools/debugging/default.mspx
+https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk
+https://developer.microsoft.com/en-us/windows/hardware/windows-driver-kit
+https://developer.microsoft.com/en-us/windows/hardware/download-symbolsw
+
+
+###### Check if a given DLL or .exe file and PDB in the same folder match
+/s option tells symchk to look for symbols only in the current folder, and not to look in any symbol servers
+
+    "c:\Program Files\Debugging Tools for Windows\symchk" testing.dll /s
+    -> SYMCHK: FAILED files = 0
+    -> SYMCHK: PASSED + IGNORED files = 1
+
+###### Check if all the DLLs and executable files in a set of folders have matching PDBs
+/r - recursively
+
+    "c:\Program Files\Debugging Tools for Windows\symchk" *.* /r
+
+###### show the symbol paths that are searched
+    DUMPBIN /PDBPATH:VERBOSE filename.exe
+
+###### Microsoft Symbol Server: _NT_SYMBOL_PATH
+Options -> Debugging -> Symbols -> http://msdl.microsoft.com/download/symbols
+srv*c:\symbols*https://msdl.microsoft.com/download/symbols
+
+local file share on \\mainserver\symbols:
+    Srv*c:\symbols*\\mainserver\symbols*https://msdl.microsoft.com/download/symbols
+
+###### Getting Symbols Manually
+for lib: d3dx9_30.dll:
+
+    "c:\Program Files\Debugging Tools for Windows\symchk" c:\Windows\System32\d3dx9_30.dll /oc \.
+
+//==============================================================================
