@@ -130,6 +130,7 @@ ctrl r i - select interface
 ctrl r v - delete parameter  
 ctrl r o - change parameter order
 
+//==============================================================================
 #### Errors
 ###### Error: MSVCRTD.lib(crtexew.obj) : error LNK2019: unresolved external symbol _WinMain  
     Properties -> Linker -> System -> SubSystem:  Console (/SUBSYSTEM:CONSOLE)
@@ -140,12 +141,15 @@ ctrl r o - change parameter order
 #### Additionally, you can try to map long base paths to an own drive letter. From a command line run
     subst P:\ C:\Your\Project\Folder\Is\Quite\Long
 
+#### side-by-side configuration is incorrect
+    sxstrace trace -logfile:sxs.log
+    sxstrace parse -logfile:sxs.log -outfile:sxstrace.txt
 
+//==============================================================================
 #### virtual desktop (VD)
     win+ctrl+D: new VD
     win+ctrl+F4: close current VD
     win+ctrl+left/right: switch between VDs
-
 
 #### Apps
 WinHEX  
