@@ -215,6 +215,24 @@ The active developer directory can be set using `xcode-select`
 - autoinstall osx updates
 - display the day in your time
 
+#### Kill EPP&AMP
+
+###### Tools
+mdfind, which, locate, kextunload, kextstat  
+
+    #try 
+    sudo launchctl unload /Library/LaunchDaemons/...
+    #else
+    sudo rm /Library/LaunchDaemons/com.sourcefire.amp.daemon.plist
+    
+    sudo mv /usr/local/libexec/sourcefire /usr/local/libexec/sourcefire_
+    sudo mv /Library/CoSoSys/EndpointProtector /Library/CoSoSys/EndpointProtector_
+
+    sudo kextunload -b com.cososys.kext.EPPUsbHelper
+    sudo kextunload -b com.cososys.driver.EPPDeviceController
+    sudo kextunload -b com.cososys.eppclient.eppkauth
+    sudo kextunload -b com.sourcefire.amp.fileop
+    sudo kextunload -b com.sourcefire.amp.nke
     
 #### Bugs
 **Heisenbug** - disappear or alter its behaviour when one attempts to study it  
