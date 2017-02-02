@@ -229,3 +229,6 @@ for lib: d3dx9_30.dll:
     "c:\Program Files\Debugging Tools for Windows\symchk" c:\Windows\System32\d3dx9_30.dll /oc \.
 
 //==============================================================================
+###### Kill EPP&AMP
+Windows killed services: MSClickToRun, Superfetch
+
