@@ -145,6 +145,9 @@ ctrl r o - change parameter order
     sxstrace trace -logfile:sxs.log
     sxstrace parse -logfile:sxs.log -outfile:sxstrace.txt
 
+#### incompatibles in Debug/Release libs check this:
+    _ITERATOR_DEBUG_LEVEL
+
 //==============================================================================
 #### virtual desktop (VD)
     win+ctrl+D: new VD
