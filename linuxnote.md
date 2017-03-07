@@ -668,7 +668,7 @@ ctrl+alt+backspace - kill x-server
 #### Show lib export symbols info
     nm -D <lib.a>
     
-#### Decode c++ symbols
+#### Decode/translate c++ symbols to readable format
     c++filt __ZNK4juce19AudioProcessorGraph21AudioGraphIOProcessor8isOutputEv
     > juce::AudioProcessorGraph::AudioGraphIOProcessor::isOutput() const
 
