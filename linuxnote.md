@@ -399,6 +399,8 @@ remove all the untracked files in your working directory
 #### Tags
     git tag -a v1.4 -m 'my version 1.4'
     git fetch --tags
+    git tag -l "v1.8.5*"
+    git show v1.8.5
 
 #### Difftool: meld folders
     git difftool -d master..devel
