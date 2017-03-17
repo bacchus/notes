@@ -235,3 +235,9 @@ for lib: d3dx9_30.dll:
 ###### Kill EPP&AMP
 Windows killed services: MSClickToRun, Superfetch
 
+//==============================================================================
+## Skype block ads
+[forum](https://community.skype.com/t5/Windows-desktop-client/Block-Skype-Ads-Quick-and-Easy/td-p/3222434/page/7)  
+[github](https://gist.github.com/eyecatchup/ba7dc7a50d90cbf6377d)
+add it to host file: system32/drivers/etc/host
+
