@@ -460,10 +460,12 @@ revert deleted branch
     git branch commit_rescued [commit_chsum]
 
 undo merge: if you haven't done anything else after the merge attempt
+
     git reset --hard HEAD@{1}
 
 
 from which branch we are rebasing - that will be on top
+
     git pull --rebase origin master
     git push origin feature --force # POZOR
     git pull --rebase origin feature
@@ -478,13 +480,14 @@ log by files
     
 to apply commit to your current branch: git-cherry-pick  
 pick in gitk and cherry-pick them with right-clicks on the commit
+
     git cherry-pick <commit>
 
 If you want to go more automatic (with all its dangers)  
 and assuming all commits since yesterday happened on wss  
-you could generate the list of commits using  
-    git log --reverse --since=yesterday --pretty=%H
+you could generate the list of commits using
 
+    git log --reverse --since=yesterday --pretty=%H
     for commit in $(git log --reverse --since=yesterday --pretty=%H);
     do
         git cherry-pick $commit
@@ -602,13 +605,15 @@ This is similar to the “osxkeychain” helper described above
 ## Perforce
 
 #### Integrate perforce to QtCreator
-p4 command: /Users/<user>/bin/p4  
-P4PORT=<ip>:<port>  
-P4USER=<user-name>  
-P4CLIENT=<workspace>
+
+    p4 command: /Users/<user>/bin/p4  
+    P4PORT=<ip>:<port>  
+    P4USER=<user-name>  
+    P4CLIENT=<workspace>
 
     /usr/local/bin/p4 rename <from_name> <to_name>
     p4 changes -u $P4USER @2016/06/08,@now -m 5
+
 //------------------------------------------------------------------------------
 ## Certificates
     sudo apt-get install libnss3-tools
@@ -665,7 +670,7 @@ ctrl+alt+backspace - kill x-server
 
 #### Display information about the contents of ELF format files
     readelf <option(s)> elf-file(s)
--a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+      -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
 
 #### Show lib export symbols info
     nm -D <lib.a>
@@ -693,8 +698,8 @@ ctrl+alt+backspace - kill x-server
     qmake -project
 
 #### Qt setting custom makefile
--o qMakefile  
--f qMakefile
+    -o qMakefile  
+    -f qMakefile
 
     pkg-config --cflags --libs opencv
 
@@ -733,16 +738,16 @@ ctrl+alt+backspace - kill x-server
 #### random
     jot -r [count] [min] [max]
 
-df - disk free  
-cal - calendar  
-tac - reverse cat  
-w - who  
-factor - factors num  
-nl - numering lines
+    df - disk free  
+    cal - calendar  
+    tac - reverse cat  
+    w - who  
+    factor - factors num  
+    nl - numering lines
 
-pushd/popd
+    pushd/popd
 
-history, then !*num-in-hist*
+    history, then !*num-in-hist*
 
 ## Regex Cheat Sheet
 Characters- | ---------------------------------
@@ -803,19 +808,19 @@ ab\|cd      | match ab or cd
 ## GREP
 
 #### EXPRESSIONS
-^ - begin line  
-$ - end line  
-grep -c "^$" - count empty lines
+- ^ - begin line  
+- $ - end line  
+- grep -c "^$" - count empty lines
 
-'1*' matches zero or more '1'  
-. any symb  
-\\+ one or more of prev symb  
-\\? zero or one  
-\\b words boundary
+- '1*' matches zero or more '1'  
+- . any symb  
+- \\+ one or more of prev symb  
+- \\? zero or one  
+- \\b words boundary
 
-grep "[0-9]\\+ times"  
-grep -i "^[^aeiou]" - starts with non matching aeiou  
-grep -v "^\\#\\|^\\/\\/" - do not show comments
+    grep "[0-9]\\+ times"  
+    grep -i "^[^aeiou]" - starts with non matching aeiou  
+    grep -v "^\\#\\|^\\/\\/" - do not show comments
 
 [:digit:] [:alnum:] [:alpha:] [:blank:]
 
@@ -825,17 +830,20 @@ grep  "^[0-9]\\{1,5\\}$" - [0-9] number 1-5 times
 
 grep -e '^\\(abc\\)\\1$' - back references (\\n): ^; \\(abc\\); \\1; $;
 
-OR  
+OR
+
     grep 'pattern1\|pattern2'
     grep -E 'pattern1|pattern2'
     grep -e pattern1 -e pattern2
 
-AND  
+AND
+
     grep -E 'pattern1.*pattern2'
     grep -E 'pattern1.*pattern2|pattern2.*pattern1'
     grep 'pattern1' | grep 'pattern2'
 
-NOT  
+NOT
+
     grep -v 'pattern1'
 
 //------------------------------------------------------------------------------
@@ -882,9 +890,9 @@ ADDRESS line number, PATTERN reg, $ end of file
 //------------------------------------------------------------------------------
 ## SSH tricks
 
-ssh [-p port] user@host - connect to host as user on port  
-ssh-copy-id user@host   - add your key to host  
-ssh -nNTL 9999:127.0.0.1:1234 secret_dev - 	port forwarding
+    ssh [-p port] user@host - connect to host as user on port  
+    ssh-copy-id user@host   - add your key to host  
+    ssh -nNTL 9999:127.0.0.1:1234 secret_dev - 	port forwarding
 
 #### Generate and set key
     cd ~/.ssh
@@ -905,26 +913,26 @@ ssh -nNTL 9999:127.0.0.1:1234 secret_dev - 	port forwarding
 //------------------------------------------------------------------------------
 ## Java
 
-\#!/bin/sh  
-\# java install  
-set -e  
-sudo sh -c "echo 'deb http://www.duinsoft.nl/pkg debs all' >> /etc/apt/sources.list"  
-sudo apt-get update  
-sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 5CB26B26  
-sudo apt-get update  
-sudo apt-get install update-sun-jre  
+    \#!/bin/sh  
+    \# java install  
+    set -e  
+    sudo sh -c "echo 'deb http://www.duinsoft.nl/pkg debs all' >> /etc/apt/sources.list"  
+    sudo apt-get update  
+    sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 5CB26B26  
+    sudo apt-get update  
+    sudo apt-get install update-sun-jre  
 
 ## Installing Oracle Java JDK
 
-http://www.oracle.com/technetwork/java/javase/downloads/index.html  
-download jdk-7u21-linux-i586.tar.gz  
-tar -xf jdk-7u21-linux-i586.tar.gz  
-sudo mv jdk1.7.0_21 /usr/lib/jvm/  
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_21/bin/java" 1  
-sudo update-alternatives --config java  
-java -version  
-JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21/  
-export JAVA_HOME
+    http://www.oracle.com/technetwork/java/javase/downloads/index.html  
+    download jdk-7u21-linux-i586.tar.gz  
+    tar -xf jdk-7u21-linux-i586.tar.gz  
+    sudo mv jdk1.7.0_21 /usr/lib/jvm/  
+    sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0_21/bin/java" 1  
+    sudo update-alternatives --config java  
+    java -version  
+    JAVA_HOME=/usr/lib/jvm/jdk1.7.0_21/  
+    export JAVA_HOME
 
 #### choose default java version in system
     sudo update-alternatives --config java
@@ -941,14 +949,14 @@ export JAVA_HOME
 
 //------------------------------------------------------------------------------
 #### Evolution maill settings
-user@s.com  
-pop3.ww.s.net  
-995  
-ssl pwd  
-leave msg on srv  
-smtp.ww.s.net  
-25  
-no enc
+    user@s.com  
+    pop3.ww.s.net  
+    995  
+    ssl pwd  
+    leave msg on srv  
+    smtp.ww.s.net  
+    25  
+    no enc
 
 //------------------------------------------------------------------------------
 ## Setup Bluetooth
@@ -965,9 +973,9 @@ no enc
     sudo apt-get install hostapd dnsmasq
 
 #### file: /etc/dnsmasq.conf
-bind-interfaces  
-interface=wlan0  
-dhcp-range=192.168.150.2,192.168.150.10
+    bind-interfaces  
+    interface=wlan0  
+    dhcp-range=192.168.150.2,192.168.150.10
 
 #### in bash
     sudo service hostapd stop
