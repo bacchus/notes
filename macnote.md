@@ -87,6 +87,24 @@
     cmd y - enable/disable all breakpoints
     ctrl cmd y - play/pause debugger
 
+## Git Meld
+#### [yousseb](https://yousseb.github.io/meld/)
+    [diff]
+      tool = meld
+    [difftool]
+      prompt = false
+    [difftool "meld"]
+      trustExitCode = true
+      cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+    [merge]
+      tool = meld
+    [mergetool]
+      prompt = false
+    [mergetool "meld"]
+      trustExitCode = true
+      cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+
 ## Admin
 #### http://brew.sh
     https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
