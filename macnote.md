@@ -58,6 +58,7 @@
     ctrl 1 - show related
     alt cliсk - open paralel
     cmd sift 2 - show devices
+    ctrl i - indent
 
 ###### Search
     cmd sift f - pro search
