@@ -863,9 +863,16 @@ NOT
 #### lines words bytes
 5     5     41     sort.txt
 
-#### sed
-a\ append, i\ insert, c\ replace, = print line number  
-ADDRESS line number, PATTERN reg, $ end of file
+#### Rename
+    sed -i 's/old-word/new-word/g' *.txt
+
+#### Find and replace in files foo -> bar
+    find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
+
+//------------------------------------------------------------------------------
+## SED
+#### a\ append, i\ insert, c\ replace, = print line number  
+#### ADDRESS line number, PATTERN reg, $ end of file
 
     sed 'ADDRESS a\  
         Line which you want to append' filename
