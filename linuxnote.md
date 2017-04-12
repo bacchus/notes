@@ -725,7 +725,7 @@ ctrl+alt+backspace - kill x-server
     rename 's/.df/.txt/g' *.df
     rename 's/aa/12/g' *
     rename 's/(\.)(?!png)/_/g' * --dry-run # all '.' to '_' except in '.png'
-    sed -i 's/old-word/new-word/g' *.txt
+    sed -i 's/foo/bar/g' *.txt
 
 #### delimeters - in: vmlinuz-3.13.0-40-generic; out: 3.13.0-40
     cut -d '-' -f2,3
@@ -863,11 +863,7 @@ NOT
 #### lines words bytes
 5     5     41     sort.txt
 
-#### Rename
-    sed -i 's/old-word/new-word/g' *.txt
 
-#### Find and replace in files foo -> bar
-    find . -name "*.php" -print | xargs sed -i 's/foo/bar/g'
 
 //------------------------------------------------------------------------------
 ## SED
@@ -884,6 +880,11 @@ NOT
         Line which you want to append to end of file' filename
 
     sed '/PATTERN/=' filename
+
+#### Find and replace in files foo -> bar
+    sed -i 's/foo/bar/g' *.txt
+    find . -name "*.txt" -print | xargs sed -i 's/foo/bar/g'
+    
 
 #### multiply lines
     sed -n '/PATTERN/,/PATTERN/ {
