@@ -798,7 +798,7 @@ Anchors---- | ---------------------------------
 
 Escaped---- | ---------------------------------
 ----------- | -----------
-\\. \\* \\\\| escaped special characters
+\\. \\* \\\ | escaped special characters
 \t \n \r    | tab, linefeed, carriage return
 \u00A9      | unicode escaped ©
 
