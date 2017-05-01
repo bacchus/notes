@@ -1009,7 +1009,19 @@ NOT
     hcitool dev
 
 //------------------------------------------------------------------------------
-## Setup WIFI
+## Setup WIFI (since Ubuntu 16.04)
+
+Edit Connections -> Add -> WiFi ... -> Connect to hiden
+
+    SSID: <name>
+    Mode: Hotspot
+    Device: <choose>
+    Security: WPA & WPA2 Personal
+    IPv4: Shared to others
+
+
+//------------------------------------------------------------------------------
+## Setup WIFI (on pre Ubuntu 16.04)
     sudo apt-get install hostapd dnsmasq
 
 #### file: /etc/dnsmasq.conf
