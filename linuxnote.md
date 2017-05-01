@@ -1,4 +1,17 @@
-## Ubuntu tricks
+## Do after install
+   
+    sudo apt-get clean
+    sudo apt-get update
+    sudo apt-get upgrade
+
+#### apps
+- nautilus-open-terminal
+- compizconfig-settings-manager
+- ubuntu-restricted-extras
+- chromium-codecs-ffmpeg-extra
+- necessitas qt gnu-octave meld git
+- skype gimp chromium stellarium vlc cheese-webcam guvcview guake
+
 #### Nautilus
 hotkey | what does  
 ---- | ----
@@ -87,8 +100,6 @@ alt-f2		    run
     ##div[title*="adv"]         // div elements with title containing "adv"
     ##div[title^="adv"][title$="ert"]   // starting "adv" and ending "ert"
     table[width="80%"][bgcolor="white"] // tables with width 80% and bgcolor white
-
-
 
 ###### exceptions
     http://example.com/advice.html  // exception rule @@advice
@@ -226,20 +237,6 @@ f - file, v - verbose
     dpkg -i pkg.deb install package  
     gksu            sudo with graphical ui  
     crontab -e      edit cron tasks
-
-#### Install
-
-    nautilus-open-terminal
-    compizconfig-settings-manager
-    ubuntu-restricted-extras
-    chromium-codecs-ffmpeg-extra
-
-    sudo apt-get clean
-    sudo apt-get update
-    sudo apt-get upgrade
-
-    necessitas qt gnu-octave meld git
-    skype gimp chromium stellarium vlc cheese-webcam guvcview guake
 
 #### Desktop message
     notify-send "Title" "Text"
