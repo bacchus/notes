@@ -1264,4 +1264,12 @@ OpenGL renderer string: Gallium 0.4 on llvmpipe (LLVM 3.3, 256 bits)
 #### copy your custom icon to ~/.icons
     cp QtProject-qtcreator.png ~/.icons/
 
+## slow ubuntu 16.04
+[askubuntu:](https://askubuntu.com/questions/584636/kidle-inject-causing-very-high-load)
+top shows kidle_inject/x 50%+ cpu load
+
+    sudo rmmod intel_powerclamp
+    echo "blacklist intel_powerclamp" > /etc/modprobe.d/disable-powerclamp.conf
+
+    
 
