@@ -39,6 +39,11 @@ alt-f2		    run
     udisks --unmount /dev/sdb1
     udisks --detach /dev/sdb
 
+#### Backup: create file list m_Photos.txt
+    du -ah > m_Photos1.txt
+    sort -k 2,2 m_Photos1.txt > m_Photos.txt
+    rm m_Photos1.txt
+
 #### Dropbox encfs
     sudo apt-get install encfs
     #sudo addgroup <username> fuse
