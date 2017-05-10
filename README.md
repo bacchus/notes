@@ -24,7 +24,7 @@ multiline code(without tab) {
 
 [`[link](https://github.com/bacchus/notes "notes")`](https://github.com/bacchus/notes "notes")
 
-![`![nyantocat](http://octodex.github.com/nyantocat "The Nyantocat")`](http://octodex.github.com/nyantocat "The Nyantocat")
+![`![img](url "note")`](url "note")
 
 - [`[this](/README.md)`](/README.md) relative path
 - \[[notelink]\] reference
