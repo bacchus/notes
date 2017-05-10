@@ -749,6 +749,10 @@ ctrl+alt+backspace - kill x-server
 
 //------------------------------------------------------------------------------
 ## Bash
+
+    # exit status
+    echo $?
+
 #### Scroll up and down the list. 'q' to quit
     ls | less
     more
