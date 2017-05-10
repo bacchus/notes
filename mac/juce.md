@@ -14,6 +14,34 @@
 ###### astyle usage:
     astyle --options="juce_astyle.options" "*.cpp" -r
 
+## JUCED
+- [heroku] (https://git.heroku.com/bcc-slackbot.git)
+- [rizsotto] (https://github.com/rizsotto/Bear.git)
+- [jrlanglois] (https://github.com/jrlanglois/BoardGamesEngine.git)
+- [teragonaudio] (https://github.com/teragonaudio/CMakeJuce.git)
+- [utilities] (https://github.com/sept-en/JUCE-utilities.git)
+- [angeljuice] (https://github.com/kunitoki/angeljuice.git)
+- [coder] (https://bitbucket.org/tonu/coder.git)
+- [CoreAudioFormatWriter] (https://github.com/rec/CoreAudioFormatWriter.git)
+- [cppclean] (https://github.com/myint/cppclean.git)
+- [drowaudio] (https://github.com/jrlanglois/drowaudio.git)
+- [googletest] (https://github.com/google/googletest.git)
+- [jcredland] (https://github.com/jcredland/jpm.git)
+- [juce-toys] (https://github.com/jcredland/juce-toys.git)
+- [adamski] (https://github.com/adamski/juced.git)
+- [kunitoki] (https://github.com/kunitoki/juced.git)
+- [Maximilian] (https://github.com/micknoise/Maximilian.git)
+- [open-ephys] (https://github.com/open-ephys/GUI.git)
+- [optparse] (https://github.com/myint/optparse.git)
+- [pyfuzz] (https://github.com/myint/pyfuzz.git)
+- [seebk] (https://github.com/seebk/JUCE.git)
+- [rtags] (https://github.com/Andersbakken/rtags.git)
+- [bgporter] (https://github.com/bgporter/scumbler.git)
+- [vinniefalco] (https://github.com/vinniefalco/SimpleDJ.git)
+- [sox] (git://git.code.sf.net/p/sox/code)
+- [google-styleguide] (https://github.com/google/styleguide.git)
+- [swirly-juce] (https://github.com/rec/swirly-juce.git)
+
 #### XCode debug
     {(const char*) $VAR.text.data}:s
     {(const char*) $VAR.fullPath.text.data}:s
