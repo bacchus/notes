@@ -4,6 +4,7 @@
     win x
     win i
     win pause
+    win g - video record
 
 #### Win features
 Control Panel\Programs\Programs and Features
@@ -241,3 +242,16 @@ Windows killed services: MSClickToRun, Superfetch
 [github](https://gist.github.com/eyecatchup/ba7dc7a50d90cbf6377d)  
 add it to host file: system32/drivers/etc/host
 
+## 32 vs 64
+64: %ProgramFiles%
+64: %ProgramW6432%
+32: %ProgramFiles(x86)%
+
+64: %SystemRoot%\System32
+32: %SystemRoot%\SysWOW64
+16: %SystemRoot%\System
+
+64: HKLM\Software
+32: HKLM\Software\Wow6432Node
+
+PowerShell: Set-ExecutionPolicy RemoteSigned
