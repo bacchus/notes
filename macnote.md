@@ -140,6 +140,9 @@ System Preferences -> Keyboard -> Shortcuts -> Input Sources -> Shortcut "CapsLo
 
 ## DEV
 
+### xcode disable double click
+    prefs -> navigation -> double click navigation -> same as click
+
 ###### Slow xcode
     defaults write com.apple.dt.XCode IDEIndexDisable 1
     ./Applications/Xcode.app/Contents/PlugIns/
