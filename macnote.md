@@ -140,7 +140,7 @@ System Preferences -> Keyboard -> Shortcuts -> Input Sources -> Shortcut "CapsLo
 
 ## DEV
 
-### xcode disable double click
+###### XCode disable double click
     prefs -> navigation -> double click navigation -> same as click
 
 ###### Slow xcode
