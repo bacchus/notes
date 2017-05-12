@@ -956,6 +956,16 @@ NOT
 #### mount remote ssh dir: sshfs *ssh-dir* *local-dir*
     sshfs bacchus@106.125.11.22:/share/dir ~/share/dir
 
+#### reverse ssh tuneling
+    # dest(192.168.20.55) <- NAT <- src(138.47.99.99) [<- Bob's server]
+    # from dest
+    ssh -R 19999:localhost:22 sourceuser@138.47.99.99
+    # from src
+    ssh localhost -p 19999
+    # from Bob's server
+    ssh sourceuser@138.47.99.99
+    ssh localhost -p 19999
+
 //------------------------------------------------------------------------------
 ## Java
 
