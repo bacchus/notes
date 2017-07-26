@@ -36,32 +36,32 @@ Characters- | --------------------------------- | Anchors---- | ----------------
 ## AdBlock rules
     r-click -> menu -> inspect -> adblock -> block elements
 #### rules:
-    http://example.com/ads/*    // all matching
-    ||example.com/banner.gif    // beginning of the domain name
-    ^                           // placeholder for a single separator character: [:/?&=]
-    ! comment                   // used for scripts in downloaded filter lists, not in custom filters
-    */ads/*$script,match-case   // '*/ads/*' - filter, '$script,match-case' - options
-    /banner\d+/                 // regex: matches 'banner123', but not 'banners'; low performance
+    http://example.com/ads/*            // all matching
+    ||example.com/banner.gif            // beginning of the domain name
+    ^                                   // placeholder for a single separator character: [:/?&=]
+    ! comment                           // used for scripts in downloaded filter lists, not in custom filters
+    */ads/*$script,match-case           // '*/ads/*' - filter, '$script,match-case' - options
+    /banner\d+/                         // regex: matches 'banner123', but not 'banners'; low performance
 
-    ##div.textad                // <div class="textad">
-    ##div#sponsorad             // <div id="sponsorad">
-    ##*#sponsorad               // also works
-    ##textad                    // <textad>
+    ##div.textad                        // <div class="textad">
+    ##div#sponsorad                     // <div id="sponsorad">
+    ##*#sponsorad                       // also works
+    ##textad                            // <textad>
 
-    ##*.sponsorad               // all sites
-    example.com##*.sponsorad    // onlly on example.com
-    ~example.com##*.sponsorad   // exception on example.com
+    ##*.sponsorad                       // all sites
+    example.com##*.sponsorad            // onlly on example.com
+    ~example.com##*.sponsorad           // exception on example.com
 
-    ##table[width="80%"]        // tables with width attribute set to 80%
-    ##div[title*="adv"]         // div elements with title containing "adv"
+    ##table[width="80%"]                // tables with width attribute set to 80%
+    ##div[title*="adv"]                 // div elements with title containing "adv"
     ##div[title^="adv"][title$="ert"]   // starting "adv" and ending "ert"
     table[width="80%"][bgcolor="white"] // tables with width 80% and bgcolor white
 
 #### exceptions
-    http://example.com/advice.html  // exception rule @@advice
-    @@||example.com^$document       // adblock entirely disabled on this page
-    ~example.com##*.sponsorad       // exception on example.com
-     example.com#@#div.textad       // exceptions
+    http://example.com/advice.html      // exception rule @@advice
+    @@||example.com^$document           // adblock entirely disabled on this page
+    ~example.com##*.sponsorad           // exception on example.com
+     example.com#@#div.textad           // exceptions
 
 ## Find in files
     grep -rl ‘text’ directory/*
