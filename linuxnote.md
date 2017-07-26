@@ -1,5 +1,101 @@
-## Do after install
-   
+## Googling
+    ~ [synonym] (~best films -best)
+    - [except] (-.ua)
+    * [any] (best editor * image)
+    | [or] (buy house | car)
+    "[exact]"
+    define: [word definition]
+    site: [addres]
+    links: [to site]
+    filetype: [extension]
+    cached: [cached pages]
+    time [city]
+    weather [city]
+    1 kg in pounds; 1 usd in uah
+    translate [word] into [lang]
+    2+2=
+    google.com/ncr - really google.com
+
+## AdBlock rules
+    r-click -> menu -> inspect -> adblock -> block elements
+#### rules:
+    http://example.com/ads/*    // all matching
+    ||example.com/banner.gif    // beginning of the domain name
+    ^                           // placeholder for a single separator character: [:/?&=]
+    ! comment                   // used for scripts in downloaded filter lists, not in custom filters
+    */ads/*$script,match-case   // '*/ads/*' - filter, '$script,match-case' - options
+    /banner\d+/                 // regex: matches 'banner123', but not 'banners'; low performance
+
+    ##div.textad                // <div class="textad">
+    ##div#sponsorad             // <div id="sponsorad">
+    ##*#sponsorad               // also works
+    ##textad                    // <textad>
+
+    ##*.sponsorad               // all sites
+    example.com##*.sponsorad    // onlly on example.com
+    ~example.com##*.sponsorad   // exception on example.com
+
+    ##table[width="80%"]        // tables with width attribute set to 80%
+    ##div[title*="adv"]         // div elements with title containing "adv"
+    ##div[title^="adv"][title$="ert"]   // starting "adv" and ending "ert"
+    table[width="80%"][bgcolor="white"] // tables with width 80% and bgcolor white
+
+#### exceptions
+    http://example.com/advice.html  // exception rule @@advice
+    @@||example.com^$document       // adblock entirely disabled on this page
+    ~example.com##*.sponsorad       // exception on example.com
+     example.com#@#div.textad       // exceptions
+
+## Find in files
+    grep -rl ‘text’ directory/*
+    grep -r word *
+    grep -rnw 'directory' -e "pattern"
+    -iwrvn -locb
+
+-r recursive; -n line number; -w whole word  
+-i ignore-case; -v non-matching; -l print files matches  
+-B before; -A after; -C context  
+--include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
+--include=\.{c,h}; --exclude=*.o
+
+## Regex Cheat Sheet
+Characters- | ---------------------------------
+----------- | -----------
+.           | any character except newline
+\w \d \s    | word, digit, whitespace
+\W \D \S    | not word, digit, whitespace
+[abc]       | any of a, b, or c
+[^abc]      | not a, b, or c
+[a-g]       | character between a & g
+
+Anchors---- | ---------------------------------
+----------- | -----------
+^abc$       | start / end of the string
+\b          | word boundary
+
+Escaped---- | ---------------------------------
+----------- | -----------
+\\. \\* \\\ | escaped special characters
+\t \n \r    | tab, linefeed, carriage return
+\u00A9      | unicode escaped ©
+
+Groups----- | ---------------------------------
+----------- | -----------
+(abc)       | capture group
+\1          | backreference to group #1
+(?:abc)     | non-capturing group
+(?=abc)     | positive lookahead
+(?!abc)     | negative lookahead
+
+Quantifiers | ---------------------------------
+----------- | -----------
+a* a+ a?    | 0 or more, 1 or more, 0 or 1
+a{5} a{2,}  | exactly five, two or more
+a{1,3}      | between one & three
+a+? a{2,}?  | match as few as possible
+ab\|cd      | match ab or cd
+
+## Ubuntu
     sudo apt-get clean
     sudo apt-get update
     sudo apt-get upgrade
@@ -52,66 +148,6 @@ alt-f2		    run
     gnome-encfs -a ~/Dropbox/.encrypted ~/private
     fusermount -u ~/private
 
-#### Googling
-    ~ [synonym] (~best films -best)
-    - [except] (-.ua)
-    * [any] (best editor * image)
-    | [or] (buy house | car)
-    "[exact]"
-    define: [word definition]
-    site: [addres]
-    links: [to site]
-    filetype: [extension]
-    cached: [cached pages]
-    time [city]
-    weather [city]
-    1 kg in pounds; 1 usd in uah
-    translate [word] into [lang]
-    2+2=
-    google.com/ncr - really google.com
-
-#### Find in files
-    grep -rl ‘text’ directory/*
-    grep -r word *
-    grep -rnw 'directory' -e "pattern"
-    -iwrvn -locb
-
--r recursive; -n line number; -w whole word  
--i ignore-case; -v non-matching; -l print files matches  
--B before; -A after; -C context  
---include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
---include=\.{c,h}; --exclude=*.o
-
-#### AdBlock rules
-    r-click -> menu -> inspect -> adblock -> block elements
-###### rules:
-    http://example.com/ads/*    // all matching
-    ||example.com/banner.gif    // beginning of the domain name
-    ^                           // placeholder for a single separator character: [:/?&=]
-    ! comment                   // used for scripts in downloaded filter lists, not in custom filters
-    */ads/*$script,match-case   // '*/ads/*' - filter, '$script,match-case' - options
-    /banner\d+/                 // regex: matches 'banner123', but not 'banners'; low performance
-
-    ##div.textad                // <div class="textad">
-    ##div#sponsorad             // <div id="sponsorad">
-    ##*#sponsorad               // also works
-    ##textad                    // <textad>
-
-    ##*.sponsorad               // all sites
-    example.com##*.sponsorad    // onlly on example.com
-    ~example.com##*.sponsorad   // exception on example.com
-
-    ##table[width="80%"]        // tables with width attribute set to 80%
-    ##div[title*="adv"]         // div elements with title containing "adv"
-    ##div[title^="adv"][title$="ert"]   // starting "adv" and ending "ert"
-    table[width="80%"][bgcolor="white"] // tables with width 80% and bgcolor white
-
-###### exceptions
-    http://example.com/advice.html  // exception rule @@advice
-    @@||example.com^$document       // adblock entirely disabled on this page
-    ~example.com##*.sponsorad       // exception on example.com
-     example.com#@#div.textad       // exceptions
-
 #### Tweeter unfolow all
 Open "Following" page on Twitter https://twitter.com/following  
 scroll down till all following accounts showed  
@@ -160,7 +196,7 @@ int pdf viewer: file\save as\format\settings\UTF-8\save
     ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 \
     -vf fps=10,scale=320:-1:flags=lanczos,palettegen gifPallet.png
 	
-	ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 -i gifPallet.png -filter_complex \
+    ffmpeg -y -t 10 -i SampleVideo_1080x720_10mb.mp4 -i gifPallet.png -filter_complex \
 	"fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" output2.gif
 	
 #### Restart ui
@@ -786,43 +822,6 @@ ctrl+alt+backspace - kill x-server
     pushd/popd
 
     history, then !*num-in-hist*
-
-## Regex Cheat Sheet
-Characters- | ---------------------------------
------------ | -----------
-.           | any character except newline
-\w \d \s    | word, digit, whitespace
-\W \D \S    | not word, digit, whitespace
-[abc]       | any of a, b, or c
-[^abc]      | not a, b, or c
-[a-g]       | character between a & g
-
-Anchors---- | ---------------------------------
------------ | -----------
-^abc$       | start / end of the string
-\b          | word boundary
-
-Escaped---- | ---------------------------------
------------ | -----------
-\\. \\* \\\ | escaped special characters
-\t \n \r    | tab, linefeed, carriage return
-\u00A9      | unicode escaped ©
-
-Groups----- | ---------------------------------
------------ | -----------
-(abc)       | capture group
-\1          | backreference to group #1
-(?:abc)     | non-capturing group
-(?=abc)     | positive lookahead
-(?!abc)     | negative lookahead
-
-Quantifiers | ---------------------------------
------------ | -----------
-a* a+ a?    | 0 or more, 1 or more, 0 or 1
-a{5} a{2,}  | exactly five, two or more
-a{1,3}      | between one & three
-a+? a{2,}?  | match as few as possible
-ab\|cd      | match ab or cd
 
 //------------------------------------------------------------------------------
 ## FIND
