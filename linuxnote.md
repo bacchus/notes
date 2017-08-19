@@ -134,6 +134,9 @@ scroll down till all following accounts showed
 open developer console(CTRL+SHIFT+C)  
 $('.button-text.unfollow-text').trigger('click');
 
+#### Youtube: search user comments
+    "user" * "weeks ago" site:youtube.com/watch
+
 #### Styling
     brew install astyle
     curl https://raw.githubusercontent.com/sept-en/JUCE-utilities/master/juce_astyle.options > ~/.juce_astyle.options
