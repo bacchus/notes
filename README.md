@@ -15,8 +15,7 @@ inline \``code`\` inside line
 
 ``` cpp
 multiline code(without tab) {
-    //inside ``` block
-    syntax = tip.use();
+    //inside "``` cpp" block
 }
 ```
 - @bacchus mention
@@ -33,9 +32,9 @@ multiline code(without tab) {
 [notelink]: https://github.com/bacchus/notes "notes"
 
 ## \#\#contents
-  * [`* [chapter 1](#chapter-1)`](#chapter-1)
+  * [`* [chapter](#chapter)`](#chapter)
 
-### `### chapter 1 <a id="chapter-1"></a>` <a id="chapter-1"></a>
+### `### chapter <a id="chapter"></a>` <a id="chapter"></a>
 content for chapter one.
 
 | \| table \| | header \| |
