@@ -45,26 +45,26 @@ content for chapter one.
 | \| -: \| | - \| |
 | \| right aligned \| | default \| |
 
-* `*` list a
-  - `-` list b
-    + `+` list c
+* `* list a`
+  - `- list b`
+    + `+ list c`
 
-- [ ] `- [ ]` unchecked
-- [x] `- [x]` checked
+- [ ] `- [ ] unchecked`
+- [x] `- [x] checked`
 
-1. `1.` ordered 1
-1. `1.` ordered 2
-3. `3.` ordered 3
+1. `1. ordered 1`
+1. `1. ordered 2`
+3. `3. ordered 3`
 
-> `>` quote
-> > `> >` quote in a quote
+> `> quote`
+> > `> > quote in a quote`
 
-#       `#` h1
-##      `##` h2
-###     `###` h3
-####    `####` h4
-#####   `#####` h5
-######  `######` h6
+#       `# h1`
+##      `## h2`
+###     `### h3`
+####    `#### h4`
+#####   `##### h5`
+######  `###### h6`
 
 `___` line
 ___
