@@ -1,6 +1,6 @@
+<a id="home"></a>
 # C++11 Thread Library
 
-<a id="home"></a>
 * [Part 1 - threads control         ](#p1)
 * [Part 2 - data share              ](#p2)
 * [Part 3 - threads sync            ](#p3)
