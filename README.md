@@ -38,6 +38,7 @@ multiline code(without tab) {
 ### `### chapter`
 content for chapter one.
 
+## table
 | \| table \| | header \| |
 | -: | - |
 | \| -: \| | - \| |
