@@ -34,7 +34,8 @@ multiline code(without tab) {
 ## \#\#contents
   * [`* [chapter](#chapter)`](#chapter)
 
-### `### chapter <a id="chapter"></a>` <a id="chapter"></a>
+<a id="chapter">\<a id=\"chapter\"\>\<\/a\></a>
+### `### chapter`
 content for chapter one.
 
 | \| table \| | header \| |
