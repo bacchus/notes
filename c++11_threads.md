@@ -1,5 +1,6 @@
 # C++11 Thread Library
 
+<a id="home"></a>
 * [Part 1 - threads control         ](#p1)
 * [Part 2 - data share              ](#p2)
 * [Part 3 - threads sync            ](#p3)
@@ -11,7 +12,7 @@
 * [Part 9 - test and debug          ](#p9)
 
 <a id="p1"></a>
-## Part 1 - threads control
+## Part 1 - threads control [home](#home)
 - concurent tasks vs data  
 - noncopyable: thread, unique_lock, future, promise, packaged_task
 
@@ -147,7 +148,7 @@ bad:
 ***
 
 <a id="p2"></a>
-## Part 2 - data share
+## Part 2 - data share [home](#home)
 
 - race condition - breaks invariant (db-linked list delete el)
 - data race - simultaneously modify same obj
@@ -444,7 +445,7 @@ ok:
 ***
 
 <a id="p3"></a>
-## Part 3 - threads sync
+## Part 3 - threads sync [home](#home)
 forward solution
 
     bool flag;
@@ -903,7 +904,7 @@ instead of use std::async can write own (thread_pool see [Part 9])
 ***
 
 <a id="p4"></a>
-## Part 4 - std::atomic
+## Part 4 - std::atomic [home](#home)
 obj modification order: in what order threads are modifying obj
 
     is_lock_free()
@@ -1444,7 +1445,7 @@ example:
 ***
 
 <a id="p5"></a>
-## Part 5 - structs with locks
+## Part 5 - structs with locks [home](#home)
 - invariant persist from any thread
 - no races
 - exception safe (lock mutex can throw)
@@ -1883,7 +1884,7 @@ data: null    123    456
 ***
 
 <a id="p6"></a>
-## Part 6 - lockfree structs
+## Part 6 - lockfree structs [home](#home)
 - lockfree - every op ends in several steps
 - blocking: mutex, future, condition
 - spinlock_mutex - nonblocking but not lockfree
@@ -2276,7 +2277,7 @@ using internal and external counters by hand (if type too large atomic uses mute
 ***
 
 <a id="p7"></a>
-## Part 7 - parallel program design
+## Part 7 - parallel program design [home](#home)
 paral quicksort: using thread_pool
 
     template<typename T>
@@ -2872,7 +2873,7 @@ if count can be changed (decreased) from any thread
 ***
 
 <a id="p8"></a>
-## Part 8 - thread_pool
+## Part 8 - thread_pool [home](#home)
 
 #### 1st try - the most basic
     class thread_pool {
@@ -3431,7 +3432,7 @@ interrupt handle:
 ***
 
 <a id="p9"></a>
-## Part 9 - test and debug
+## Part 9 - test and debug [home](#home)
 errors:
 1. unwanted blocking
  - deadlock
