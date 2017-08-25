@@ -31,13 +31,9 @@ multiline code(without tab) {
 
 [notelink]: https://github.com/bacchus/notes "notes"
 
-<a id="home">`<a id="home"></a>`</a>
 ### `###contents`
   * [`* [chapter](#chapter)`](#chapter)
-
-<a id="chapter">`<a id="chapter"></a>`</a>
-#### `#### chapter` [`[home](#home)`](#home)
-content for chapter one.
+#### `#### chapter` <a id="chapter">`<a id="chapter"></a>`</a>
 
 ## table
 | \| table \| | header \| |
