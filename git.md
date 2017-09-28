@@ -1,22 +1,5 @@
 ## Git
 
-* [Merge      ](#Merge      )
-* [Rebase     ](#Rebase     )
-* [Remote     ](#Remote     )
-* [Diff       ](#Diff       )
-* [Tags       ](#Tags       )
-* [Clean      ](#Clean      )
-* [Undo       ](#Undo       )
-* [Log        ](#Log        )
-* [Stash      ](#Stash      )
-* [Worktree   ](#Worktree   )
-* [Credentials](#Credentials)
-* [Aliases    ](#Aliases    )
-* [Github     ](#Github     )
-* [Links      ](#Links      )
-
-
-<a id="Merge"></a>
 #### Merge
 merge master into the development first
 so that if there are any conflicts,
@@ -30,7 +13,6 @@ and master remains clean
     git merge --no-ff development (no conflicts)
 
 
-<a id="Rebase"></a>
 #### Rebase
 
 rebase the current branch onto base
@@ -108,8 +90,6 @@ or in config
 
     rebase.autostash
 
-
-<a id="Remote"></a>
 #### Remote
 
 Add remote
@@ -132,13 +112,11 @@ Delete remote branch
     git push [reponame] :[remotebranch]
 
 
-<a id="Diff"></a>
 #### Diff
     git difftool -d master..devel
     git difftool -d [branchname]
 
 
-<a id="Tags"></a>
 #### Tags
     git tag -a v1.4 -m 'my version 1.4'
     git fetch --tags
@@ -146,7 +124,6 @@ Delete remote branch
     git show v1.8.5
 
 
-<a id="Clean"></a>
 #### Clean
 
 ☠ Use with caution: remove not tracked
@@ -174,7 +151,6 @@ remove all the untracked files in your working directory
     git diff --name-status
 
 
-<a id="Undo"></a>
 #### Undo
 
 revert deleted branch
@@ -186,7 +162,6 @@ revert deleted branch
     git branch commit_rescued [commit_chsum]
 
 
-<a id="Log"></a>
 #### Log
 log by files
 
@@ -217,7 +192,6 @@ so either do manual cherry-picks or use rebase
     git blame -C # ignore text moving to other files
 
 
-<a id="Stash"></a>
 #### Stash
     git stash
     git stash list
@@ -232,14 +206,12 @@ stash options
     --include-untracked or -u - +untracked
 
 
-<a id="Worktree"></a>
 #### Worktree
     git worktree add ../folder name-of-branch
     git worktree list
     git worktree prune
 
 
-<a id="Credentials"></a>
 #### Credentials
 cache credentials
 If you’re using a Mac, Git comes with an “osxkeychain” mode
@@ -262,7 +234,6 @@ This is similar to the “osxkeychain” helper described above
     git config --global push.default tracking
 
 
-<a id="Aliases"></a>
 #### Aliases
 in gitconfig
 
@@ -273,7 +244,6 @@ in bashrc
     PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n--> '
 
 
-<a id="Github"></a>
 ## Github
 
 #### URLs
@@ -316,7 +286,6 @@ in bashrc
     PULL_REQUEST_TEMPLATE.md - will show up when
 
 
-<a id="Links"></a>
 #### Links
     https://github.com/search
     https://github.com/explore
