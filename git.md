@@ -117,6 +117,16 @@ Delete remote branch
     git difftool -d [branchname]
 
 
+#### Patch
+make patch
+
+    diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff
+
+apply patch
+
+    patch -Np0 --dry-run < boost-droid-bcpd.diff
+
+
 #### Tags
     git tag -a v1.4 -m 'my version 1.4'
     git fetch --tags
