@@ -255,13 +255,11 @@ f - file, v - verbose
 #### Desktop message
     notify-send "Title" "Text"
 
-#### System Program Problem Detected
-1. disable apport enabled=1 to enabled=0  
+#### crash com.ubuntu.apport-support-gtk-root
     sudo gedit /etc/default/apport
-    sudo restart apport  
-or just reboot  
-2. remove old crash reports  
-    sudo rm /var/crash/*
+    enabled=0
+    sudo rm /var/crash/*    
+    sudo service apport restart
 
 #### Conky
     sudo apt-get remove indicator-appmenu
