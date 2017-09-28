@@ -1,100 +1,36 @@
-#### Aliases
-    alias sag="sudo apt-get install -y"
-    alias gr='git rebase -i upstream/master --autosquash'
-    alias gfu='git fetch upstream develop'
-    alias gup='git checkout develop && git fetch upstream develop && git pull --ff-only upstream develop && git push'
-    alias fresh='git checkout develop && git fetch upstream develop && git pull --ff-only upstream develop && git push && grit fresh '
-    alias rtags="find src/ripple -name \*.h -or -name \*.hpp -or -name \*.cpp | xargs etags"
-    alias gdiff="git diff > /tmp/git.diff"
-    alias sb='source ~/.bashrc'
-    
-//------------------------------------------------------------------------------
-## GIT
-#### Save direct commits history
-    git pull --rebase
-    git fetch origin
-    git status
-    git fsck
-    git reflog
-    git rebase -i HEAD~3
+## Git
 
-git stash -> git pull -> git stash apply -> fix conflicts  
-or just
-    git rebase --autostash  
-or in config  
-rebase.autostash
+* [Merge      ](#Merge      )
+* [Rebase     ](#Rebase     )
+* [Remote     ](#Remote     )
+* [Diff       ](#Diff       )
+* [Tags       ](#Tags       )
+* [Clean      ](#Clean      )
+* [Undo       ](#Undo       )
+* [Log        ](#Log        )
+* [Stash      ](#Stash      )
+* [Worktree   ](#Worktree   )
+* [Credentials](#Credentials)
+* [Aliases    ](#Aliases    )
+* [Github     ](#Github     )
+* [Links      ](#Links      )
 
-#### Add remote
-    git remote add reponame https://github.com/user/repo.git
-    git fetch reponame
-    git checkout branchname
-    git checkout --track reponame/branchname
-    
-###### Push after rebase
-    git push -f reponame branchname
 
-#### Push to remote branch
-    git push [remotename] [localbranch]:[remotebranch]
-
-#### Delete remote branch
-    git push [remotename] :[remotebranch]
-
-#### resolve conflicts
-    git checkout --theirs -- path/to/conflicted-file.txt
-    git checkout --ours -- path/to/conflicted-file.txt
-
-#### Stash
-	git stash
-	git stash list
-	git stash apply stash@{2}
-	git stash drop stash@{0}
-	git stash pop # = apply + drop
-    git stash branch [name] # create branch from stash
-
-stash options   
-
-    --keep-index - not to stash staged  
-    --include-untracked or -u - +untracked
-
-#### Cleaning
-
-☠ Use with caution: remove not tracked
-
-    git clean
-
-safer: remove everything but save it in a stash
-
-    git stash --all
-
-remove all the untracked files in your working directory
-
-    git clean -d
-
--x - remove ignored  
--n - dry run  
--f - force ☠   
--i - interactive
-
-#### List git-ignored files
-    git ls-files . --ignored --exclude-standard --others
-
-#### List untracked files
-    git ls-files . --exclude-standard --others
-    git diff --name-status
-
-#### Tags
-    git tag -a v1.4 -m 'my version 1.4'
-    git fetch --tags
-    git tag -l "v1.8.5*"
-    git show v1.8.5
-
-#### Difftool: meld folders
-    git difftool -d master..devel
-    git difftool -d [branch]
-
+<a id="Merge"></a>
 #### Merge
-    git merge master feature
+merge master into the development first
+so that if there are any conflicts,
+resolve in the development branch itself
+and master remains clean
+--no-ff - to find out, who and when did the actual merge
 
+    (devbranch)$ git merge master
+    (resolve any conflicts)
+    git checkout master
+    git merge --no-ff development (no conflicts)
+
+
+<a id="Rebase"></a>
 #### Rebase
 
 rebase the current branch onto base
@@ -106,17 +42,16 @@ rebase workflow
     git checkout feature
     git checkout -b temporary-branch
     git rebase -i master
-    # clean up the history
     git checkout master
     git merge temporary-branch
 
-rebase of only the last 3 commits
+rebase of only last 3 commits
 
     git rebase -i HEAD~3
 
-returns the commit ID of the original base
+returns the commit id of the original base
 
-    git merge-base test_dev perforce
+    git merge-base dev master
 
 rebase merge conflict
 
@@ -136,14 +71,7 @@ revert rebase, else.. find the head commit, supose it was 'HEAD@{5}'
 
     git reflog
     git reset --hard HEAD@{5}
-    
-revert deleted branch
-    
-    git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline >  lost-found.txt
-    git config --global alias.rescue '!git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt'
-    git cat-file -p [commit_chsum]
-    git log [commit_chsum]
-    git branch commit_rescued [commit_chsum]
+
 
 undo merge: if you haven't done anything else after the merge attempt
 
@@ -153,24 +81,124 @@ undo merge: if you haven't done anything else after the merge attempt
 from which branch we are rebasing - that will be on top
 
     git pull --rebase origin master
-    git push origin feature --force # POZOR
+    git push origin feature --force # ☠
     git pull --rebase origin feature
 
 from master
+
     git merge feature --no-ff
 
 
+###### resolve conflicts
+    git checkout --theirs <conflicted-file>
+    git checkout --ours <conflicted-file>
+
+###### save direct commits history (xz)
+   git pull --rebase -> fetch origin -> status -> fsck -> reflog -> rebase -i HEAD~3
+
+or
+
+    git stash -> git pull -> git stash apply -> fix conflicts
+
+or
+
+    git rebase --autostash
+
+or in config
+
+    rebase.autostash
+
+
+<a id="Remote"></a>
+#### Remote
+
+Add remote
+
+    git remote add reponame https://github.com/user/repo.git
+    git fetch reponame
+    git checkout branchname
+    git checkout --track reponame/branchname
+
+Push after rebase - force
+
+    git push -f <reponame> <branchname>
+
+Push to remote branch
+
+    git push [reponame] [localbranch]:[remotebranch]
+
+Delete remote branch
+
+    git push [reponame] :[remotebranch]
+
+
+<a id="Diff"></a>
+#### Diff
+    git difftool -d master..devel
+    git difftool -d [branchname]
+
+
+<a id="Tags"></a>
+#### Tags
+    git tag -a v1.4 -m 'my version 1.4'
+    git fetch --tags
+    git tag -l "v1.8.5*"
+    git show v1.8.5
+
+
+<a id="Clean"></a>
+#### Clean
+
+☠ Use with caution: remove not tracked
+
+    git clean
+
+safer: remove everything but save it in a stash
+
+    git stash --all
+
+remove all the untracked files in your working directory
+
+    git clean -d
+
+-x - remove ignored
+-n - dry run
+-f - force ☠
+-i - interactive
+
+###### List git-ignored files
+    git ls-files . --ignored --exclude-standard --others
+
+###### List untracked files
+    git ls-files . --exclude-standard --others
+    git diff --name-status
+
+
+<a id="Undo"></a>
+#### Undo
+
+revert deleted branch
+
+    git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline >  lost-found.txt
+    git config --global alias.rescue '!git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt'
+    git cat-file -p [commit_chsum]
+    git log [commit_chsum]
+    git branch commit_rescued [commit_chsum]
+
+
+<a id="Log"></a>
+#### Log
 log by files
 
     git log -- foo.py bar.py
-    
-to apply commit to your current branch: git-cherry-pick  
+
+to apply commit to your current branch: git-cherry-pick
 pick in gitk and cherry-pick them with right-clicks on the commit
 
     git cherry-pick <commit>
 
-If you want to go more automatic (with all its dangers)  
-and assuming all commits since yesterday happened on wss  
+If you want to go more automatic (with all its dangers)
+and assuming all commits since yesterday happened on wss
 you could generate the list of commits using
 
     git log --reverse --since=yesterday --pretty=%H
@@ -179,29 +207,49 @@ you could generate the list of commits using
         git cherry-pick $commit
     done
 
-If something goes wrong here (there is a lot of potential)  
-you are in trouble since this works on the live checkout  
+If something goes wrong here (there is a lot of potential)
+you are in trouble since this works on the live checkout
 so either do manual cherry-picks or use rebase
 
-	git diff $start_commit..$end_commit -- path/to/file
-	git blame -w # ignore whitespaces
-	git blame -M # ignore text moving
-	git blame -C # ignore text moving to other files
-	
-#### Git worktree
+    git diff $start_commit..$end_commit -- path/to/file
+    git blame -w # ignore whitespaces
+    git blame -M # ignore text moving
+    git blame -C # ignore text moving to other files
+
+
+<a id="Stash"></a>
+#### Stash
+    git stash
+    git stash list
+    git stash apply stash@{2}
+    git stash drop stash@{0}
+    git stash pop # = apply + drop
+    git stash branch [name] # create branch from stash
+
+stash options
+
+    --keep-index - not to stash staged
+    --include-untracked or -u - +untracked
+
+
+<a id="Worktree"></a>
+#### Worktree
     git worktree add ../folder name-of-branch
     git worktree list
     git worktree prune
 
-#### cache credentials
-If you’re using a Mac, Git comes with an “osxkeychain” mode  
-, which caches credentials in the secure keychain that’s attached to your system account.  
-This method stores the credentials on disk, and they never expire  
-, but they’re encrypted with the same system that stores HTTPS certificates and Safari auto-fills.  
-  
-If you’re using Windows, you can install a helper called “wincred.”  
-This is similar to the “osxkeychain” helper described above  
-, but uses the Windows Credential Store to control sensitive information.  
+
+<a id="Credentials"></a>
+#### Credentials
+cache credentials
+If you’re using a Mac, Git comes with an “osxkeychain” mode
+, which caches credentials in the secure keychain that’s attached to your system account.
+This method stores the credentials on disk, and they never expire
+, but they’re encrypted with the same system that stores HTTPS certificates and Safari auto-fills.
+
+If you’re using Windows, you can install a helper called “wincred.”
+This is similar to the “osxkeychain” helper described above
+, but uses the Windows Credential Store to control sensitive information.
 
     git config --global credential.helper cache.
     git ls-remote [remote]
@@ -214,33 +262,38 @@ This is similar to the “osxkeychain” helper described above
     git config --global push.default tracking
 
 
+<a id="Aliases"></a>
+#### Aliases
+in gitconfig
 
-## Github tricks
+    hist = log --pretty=format:'%C(yellow)%h %C(cyan)%ad %Creset| %s%C(green)%d %Creset[%an]' --graph --date=short
+
+in bashrc
+
+    PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n--> '
+
+
+<a id="Github"></a>
+## Github
 
 #### URLs
 
 ###### public keys
-
     https://github.com/<user_name>.keys
 
 ###### add .diff or .patch to url
-
     https://github.com/tars/tars/commit/07902a9.diff
 
 ###### permanent link to specific commit file - press 'y'
-
     <permanent link>
 
 ###### diff without whitespaces
-
     ?w=1
 
 ###### block highlight 15 to 17 line
-
     #L15-L17
 
 ###### revision diff
-
     https://github.com/github/linguist/compare/master@%7B2week%7D...master
     master@{1day}...master
 
@@ -256,19 +309,15 @@ This is similar to the “osxkeychain” helper described above
 #### Tickets/pull requests
 
 ###### close issue via commit message use 'fix/resolve/close'
-
     git commit -m "Fix screwup, fix #12"
-
-#### markdown
-
-    - [x] @mentions, #refs, [links]()
-    - [ ] incomplete item
 
 #### Special files
     ISSUE_TEMPLATE.md - opening new ticket
     PULL_REQUEST_TEMPLATE.md - will show up when
 
-#### links
+
+<a id="Links"></a>
+#### Links
     https://github.com/search
     https://github.com/explore
     https://github.com/trending
@@ -286,4 +335,3 @@ This is similar to the “osxkeychain” helper described above
     https://github.com/Kikobeats/awesome-github
     https://git-lfs.github.com - large file storage
     https://github.com/buunguyen/octotree - chrome ext
-
