@@ -1,10 +1,10 @@
 ## Git
 
 #### Merge
-merge master into the development first
-so that if there are any conflicts,
-resolve in the development branch itself
-and master remains clean
+merge master into the development first  
+so that if there are any conflicts,  
+resolve in the development branch itself  
+and master remains clean  
 --no-ff - to find out, who and when did the actual merge
 
     (devbranch)$ git merge master
