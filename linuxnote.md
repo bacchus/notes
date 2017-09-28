@@ -452,11 +452,20 @@ ctrl+alt+backspace - kill x-server
 #### Create qt project from existing source
     qmake -project
 
-#### Qt setting custom makefile
-    -o qMakefile  
-    -f qMakefile
+#### Qt
+instead
 
     pkg-config --cflags --libs opencv
+
+in pro
+
+    CONFIG += link_pkgconfig
+    PKGCONFIG += opencv
+    
+custom makefile name
+
+    -o qMakefile  
+    -f qMakefile
 
     locate libQt5Script.so
 
@@ -944,13 +953,14 @@ OpenGL renderer string: Gallium 0.4 on llvmpipe (LLVM 3.3, 256 bits)
 #### ~/.local/share/applications/DigiaQt-qtcreator-community.desktop
     [Desktop Entry]
     Type=Application
-    Exec=/home/bacchus/install/qt/Tools/QtCreator/bin/qtcreator
+    Exec=/media/bacchus/dubhe/tools/qt/Tools/QtCreator/bin/qtcreator
     Name=Qt Creator (Community)
     GenericName=The IDE of choice for Qt development.
     Icon=QtProject-qtcreator
     Terminal=false
     Categories=Development;IDE;Qt;
-    MimeType=text/x-c++src;...;text/qt-project-file;
+    MimeType=text/x-c++src;text/x-c++hdr;text/x-xsrc;application/x-designer;application/vnd.qt.qmakeprofile;application/vnd.qt.xml.resource;text/x-qml;text/x-qt.qml;text/x-qt.qbs;
+
 
 #### qt-pro.xml
     <?xml version="1.0"?>
