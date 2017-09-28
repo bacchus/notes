@@ -1,14 +1,14 @@
 
 ## Regex Cheat Sheet
-Characters- | --------------------------------- | Anchors---- | ---------------------------------
+Characters | - | Anchors | -
 ----------- | -----------                       | ----------- | -----------
 .           | any character except newline      | ^abc$       | start / end of the string
 \w \d \s    | word, digit, whitespace           | \b          | word boundary
-\W \D \S    | not word, digit, whitespace       | **Escaped**---- | ---------------------------------
+\W \D \S    | not word, digit, whitespace       | **Escaped** | **-**
 [abc]       | any of a, b, or c                 | \\. \\* \\\ | escaped special characters
 [^abc]      | not a, b, or c                    | \t \n \r    | tab, linefeed, carriage return
 [a-g]       | character between a & g           | \u00A9      | unicode escaped ©
-**Groups**----- | --------------------------------- | **Quantifiers** | ---------------------------------
+**Groups** | **-** | **Quantifiers** | **-**
 (abc)       | capture group                     | a* a+ a?    | 0 or more, 1 or more, 0 or 1
 \1          | backreference to group #1         | a{5} a{2,}  | exactly five, two or more
 (?:abc)     | non-capturing group               | a{1,3}      | between one & three
