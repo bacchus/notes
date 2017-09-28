@@ -417,13 +417,6 @@ alt+SysReq+K - for console
 ctrl+alt+backspace - kill x-server
 
 //------------------------------------------------------------------------------
-## Patching
-#### Make patch
-    diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff
-#### Apply patch
-    patch -Np0 --dry-run < boost-droid-bcpd.diff
-
-//------------------------------------------------------------------------------
 #### Show number of CPU cores
     grep -c ^processor /proc/cpuinfo  
 
