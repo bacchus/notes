@@ -81,12 +81,11 @@ Characters | - | Anchors | -
     sudo apt-get upgrade
 
 #### apps
-- nautilus-open-terminal
-- compizconfig-settings-manager
-- ubuntu-restricted-extras
-- chromium-codecs-ffmpeg-extra
-- necessitas qt gnu-octave meld git
-- skype gimp chromium stellarium vlc cheese-webcam guvcview guake
+- nautilus-open-terminal - present by default
+- compizconfig-settings-manager - **dconf-editor** instead
+- ubuntu-restricted-extras, chromium-codecs-ffmpeg-extra - extras
+- necessitas, qt, gnu-octave, meld, git, guake - dev tools
+- skype, gimp, chromium, stellarium, vlc, cheese-webcam, guvcview - madia tools
 
 #### Nautilus
 hotkey | what does  
@@ -106,7 +105,7 @@ super-n         open app in launcher
 super-shift-n   opens app in launcher if already runing  
 super-t         trash  
 alt-f1 	        left toolbar  
-alt-f2		    run
+alt-f2		run
 
 #### Open from terminal
     gnome-open <filename>
