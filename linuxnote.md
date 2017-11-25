@@ -63,6 +63,17 @@ Characters | - | Anchors | -
     ~example.com##*.sponsorad           // exception on example.com
      example.com#@#div.textad           // exceptions
 
+## Disable ads
+#### utorrent
+    utorrent->options->prefs->advanced: filter
+    offers.left_rail_enabled = false
+    offers.sponsored_torrent_offer_enabled = false
+
+#### skype
+    %appdata%/Skype/<skype-username>/config.xml
+    delete all <AdvertPlaceholder>
+
+
 ## Find in files
     grep -rl ‘text’ directory/*
     grep -r word *
