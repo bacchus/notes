@@ -1,5 +1,9 @@
 ## Git
 
+    git add - add file to repo
+    git rm - rm from repo
+    git mv <oldname> <newname>
+
 #### Merge
 merge master into the development first  
 so that if there are any conflicts,  
