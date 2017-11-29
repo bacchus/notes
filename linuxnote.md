@@ -646,6 +646,7 @@ NOT
 #### Generate and set key
     cd ~/.ssh
     ssh-keygen -t rsa
+    ssh-add ~/.ssh/id_rsa
     sftp bacchus@106.125.11.22
     mkdir .ssh
     cd .ssh
