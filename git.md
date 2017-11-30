@@ -122,14 +122,17 @@ Delete remote branch
 
 
 #### Patch
-make patch
+using git
 
-    diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff
+    git diff > mypatch.patch
+    git diff --cached > mypatch.patch # add staged
+    git diff --cached --binary > mypatch.patch # +binaries
+    git apply mypatch.patch
 
-apply patch
+using diff & patch
 
-    patch -Np0 --dry-run < boost-droid-bcpd.diff
-
+    diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff # make patch
+    patch -Np0 --dry-run < boost-droid-bcpd.diff # apply patch
 
 #### Tags
     git tag -a v1.4 -m 'my version 1.4'
