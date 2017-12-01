@@ -82,7 +82,6 @@ instructables.com###header-promo-container
 instructables.com##.bottom-bar
 instructables.com##.bottom
 free-torrents.org##canvas
-free-torrents.org#canvas
 newgrounds.com##.GAR_header_topbar
 love.bigmir.net##.box_info.box_color_full_adv
 dnevnik.bigmir.net###footer
@@ -165,6 +164,7 @@ facebook.com##div.home_right_column
 facebook.com##div#pagelet_rhc_footer
 facebook.com##div#sideNav
 chess.com##ad
+free-torrents.org#canvas
 yandex.ua
 yandex.ru
 ||sat-ellite.net/image/member_site/sprite_fb.png
@@ -198,3 +198,4 @@ infogr.am
 start.parimatch.com
 chess.com#ad
 googleadservices.com
+@@||habrahabr.ru/$document
