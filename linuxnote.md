@@ -75,6 +75,13 @@ Characters | - | Anchors | -
 
 
 ## Find in files
+
+#### silversearcher-ag
+    sudo apt-get install silversearcher-ag
+    gedit .agignore
+    ag <text-to-find>
+
+#### grep
     grep -rl ‘text’ directory/*
     grep -r word *
     grep -rnw 'directory' -e "pattern"
