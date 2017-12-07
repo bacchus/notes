@@ -93,19 +93,23 @@ Characters | - | Anchors | -
 --include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
 --include=\.{c,h}; --exclude=*.o
 
-## Ubuntu
+## Ubuntu first install
     sudo apt-get clean
     sudo apt-get update
     sudo apt-get upgrade
-
+    
 #### apps
-- nautilus-open-terminal - present by default
-- compizconfig-settings-manager - **dconf-editor** instead
+- ~~nautilus-open-terminal~~ - present by default
+- compizconfig-settings-manager - **dconf-editor** instead, but I still use it
 - ubuntu-restricted-extras, chromium-codecs-ffmpeg-extra - extras
-- necessitas, qt, gnu-octave, meld, git, guake - dev tools
-- skype, gimp, chromium, stellarium, vlc, cheese-webcam, guvcview - madia tools
+- meld, git, guake, qt, ~~necessitas~~ - dev tools
+- skype, gimp, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
 
-#### Nautilus
+#### Fixes
+- apport crash report
+- use linux_settings
+
+## Nautilus
 hotkey | what does  
 ---- | ----
 ctrl-pgup(pgdown)   | prev/next tab  
@@ -232,12 +236,9 @@ f - file, v - verbose
     sudo apt-get --force-yes remove <pkgname>
 
 #### dpkg
-###### Install
-    sudo dpkg -i <pkgname>
-###### Remove
-    sudo dpkg -r <pkgname>
-###### Purge
-    sudo dpkg -P <pkgname>
+    sudo dpkg -i <pkgname> # Install
+    sudo dpkg -r <pkgname> # Remove
+    sudo dpkg -P <pkgname> # Purge
 
 #### Hardware info
     lspci - VGA
@@ -274,7 +275,7 @@ f - file, v - verbose
 
 #### crash com.ubuntu.apport-support-gtk-root
     sudo gedit /etc/default/apport
-    enabled=0
+    # enabled=0
     sudo rm /var/crash/*    
     sudo service apport restart
 
