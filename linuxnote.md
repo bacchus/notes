@@ -104,6 +104,8 @@ Characters | - | Anchors | -
 - ubuntu-restricted-extras, chromium-codecs-ffmpeg-extra - extras
 - meld, git, guake, qt, ~~necessitas~~ - dev tools
 - skype, gimp, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
+- krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita - image editor
+    
 
 #### Fixes
 - apport crash report
