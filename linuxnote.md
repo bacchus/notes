@@ -514,6 +514,7 @@ custom makefile name
     rename 's/aa/12/g' *
     rename 's/(\.)(?!png)/_/g' * --dry-run # all '.' to '_' except in '.png'
     sed -i 's/foo/bar/g' *.txt
+    mv filename.{df,txt}
 
 #### delimeters - in: vmlinuz-3.13.0-40-generic; out: 3.13.0-40
     cut -d '-' -f2,3
@@ -851,8 +852,6 @@ tmpfs      /var/tmp     tmpfs   defaults    0   0
 ###### Runs previous command but replacing
     echo no typos
     ^typos^errors
-###### Quickly rename a file
-    mv filename.{old,new}
 ###### List of commands you use most often
     history | awk '{print $2}' | sort | uniq -c | sort -rn | head
 ###### Execute a command without saving it in the history
