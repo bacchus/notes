@@ -119,6 +119,7 @@ Delete remote branch
 #### Diff
     git difftool -d master..devel
     git difftool -d [branchname]
+    git diff -- . ':(exclude)db/irrelevant.cpp'
 
 
 #### Patch
