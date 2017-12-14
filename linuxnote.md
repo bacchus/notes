@@ -132,7 +132,11 @@ alt-f1 	        left toolbar
 alt-f2		run
 
 #### Open from terminal
-    gnome-open <filename>
+~~gnome-open \<filename\>~~
+
+    xdg-open <filename>
+    gvfs-open <filename>
+
 
 #### Unmount tatra
     udisks --unmount /dev/sdb1
