@@ -140,6 +140,7 @@ sat-ellite.net##.b-page__row.b-page__row_optional_sidebar-map
 sat-ellite.net##.b-sticky-panel__container
 sat-ellite.net##.fca-phone.fca-green.fca-show
 sat-ellite.net##.shc.sh_btn.sh_btn_bottom.sh_btn_bottom_right
+shtzrrr.biz
 sourceforge.net###newsletter-floating
 sourceforge.net##.goth-form
 sourceforge.net##.psp_newsletter_subscribe
