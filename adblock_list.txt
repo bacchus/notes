@@ -34,6 +34,7 @@ aliexpress.com##.site-footer
 aliexpress.com##.top-banner-container
 aliexpress.com##.ui-fixed-panel-operation
 aliexpress.com##.ui-fixed-panel-unit.ui-fixed-panel-survey
+alishop2.ru
 ask.audio###overlay
 ask.audio##.toaster.visible
 betsonsport.ru
@@ -44,6 +45,7 @@ bigmir.net##.b-net-preview.g-clearfix
 cas.criteo.com
 chess.com##ad
 chess.com#ad
+deloton.com
 dnevnik.bigmir.net###footer
 dnevnik.bigmir.net###vk_groups
 dnevnik.bigmir.net##.b-banner_sm.g-clearfix
@@ -74,11 +76,15 @@ gasurvey.gemius.com
 gasurvey.gemius.com###survey
 gemius.com
 gemius.pl
+go.onclasrv.com
 googleadservices.com
 holder.com.ua
 hotline.ua##.txt-img
 hudb.pl
 i.holder.com.ua/*
+i3.imageban.ru
+ibn.im
+imageban.ru
 infogr.am
 instructables.com###header-promo-container
 instructables.com##.bottom
@@ -189,6 +195,7 @@ vk.com##.ads_ads_box3.ver.repeat_ver.size_site
 vk.com##.left_menu_nav_wrap
 yandex.ru
 yandex.ua
+yastatic.net
 ||bigmir.net###footer
 ||bigmir.net##.l-footer
 ||h.holder.com.ua
