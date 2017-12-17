@@ -8,6 +8,7 @@
 @@||bitcoinwallet.com/$document
 @@||btcinbtc.com/$document
 @@||faucethub.io/$document
+@@||gpsies.com/$document
 @@||habrahabr.ru/$document
 @@||lun.ua/$document
 @@||maplos.com/$document
@@ -17,6 +18,7 @@
 @@||rieltor.ua/$document
 @@||shoppingcart.aliexpress.com/$document
 @@||tr.anidub.com/$document
+@@||tt.animedia.tv/$document
 @@||ua.m2bomber.com/$document
 abuyer.ru
 aliexpress.com###historyOuterBox
