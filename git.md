@@ -148,10 +148,6 @@ using diff & patch
 
     git clean
 
-safer: remove everything but save it in a stash
-
-    git stash --all
-
 remove all the untracked files in your working directory
 
     git clean -d
@@ -223,6 +219,10 @@ stash options
     --keep-index - not to stash staged
     --include-untracked or -u - +untracked
 
+usage
+    git stash -> git pull -> git stash apply -> fix conflicts   # 1
+    git rebase --autostash                                      # 2
+    rebase.autostash                                    # in config
 
 #### Worktree
     git worktree add ../folder name-of-branch
