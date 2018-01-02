@@ -208,6 +208,7 @@ stash options
     --include-untracked or -u - +untracked
 
 usage
+
     git stash -> git pull -> git stash apply -> fix conflicts   # 1
     git rebase --autostash                                      # 2
     rebase.autostash                                    # in config
