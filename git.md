@@ -82,18 +82,6 @@ from master
 ###### save direct commits history (xz)
    git pull --rebase -> fetch origin -> status -> fsck -> reflog -> rebase -i HEAD~3
 
-or
-
-    git stash -> git pull -> git stash apply -> fix conflicts
-
-or
-
-    git rebase --autostash
-
-or in config
-
-    rebase.autostash
-
 #### Remote
 
 Add remote
