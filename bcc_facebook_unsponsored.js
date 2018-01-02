@@ -3,13 +3,12 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.12.3.2
 // @description  Block Facebook news feed "sponsored" posts
-// @author       bacchus
+// @author       solskido
 // @match        https://www.facebook.com/*
 // @run-at       document-idle
 // @grant        none
 //
 // Thanks to: enm, Mathieu
-// original author: solskido
 // bacchus: only en, add video block
 // ==/UserScript==
 
