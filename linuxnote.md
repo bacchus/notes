@@ -889,6 +889,7 @@ tmpfs      /var/tmp     tmpfs   defaults    0   0
     <ctrl-d>
 ###### Put a console clock in top right corner
     while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
+    tput clear; while sleep 1; do tput sc; tput cup 0 0; <commands>; tput rc; done
 ###### Display the top ten running processes. (Sorted by memory usage)
     ps aux | sort -nk +4 | tail
 ###### 32 bits or 64 bits
