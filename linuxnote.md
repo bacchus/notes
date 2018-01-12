@@ -256,25 +256,25 @@ f - file, v - verbose
     ls -l /dev/disk/by-uuid/
 
 #### System info
-    date - cur date and time  
-    cal - calendar on cur month  
-    uptime - time from boot  
-    w - users online  
-    whoami - login name  
-    uname -a - kernel info  
-    df - discs usage  
-    du - weight of cur dir  
-    du -sh <dir> - weight of <dir> in human readable  
-    free - memory usage and swap  
-    whereis app - location of app  
-    which app - which app will be run
+    uname -r                # kernel version
+    cat /etc/issue.net      # ubuntu version
+    date                    # cur date and time
+    uptime                  # time from boot
+    w                       # users online
+    whoami                  # login name
+    df                      # discs usage  
+    du                      # weight of cur dir  
+    du -sh <dir>            # weight of <dir> in human readable  
+    free                    # memory usage and swap  
+    whereis <app>           # location of <app>  
+    which <app>             # which <app> will be run
 
 #### Commands
-    passwd          change pasword  
-    locate file     find file  
-    dpkg -i pkg.deb install package  
-    gksu            sudo with graphical ui  
-    crontab -e      edit cron tasks
+    passwd                  # change pasword  
+    locate file             # find file  
+    dpkg -i pkg.deb         # install package  
+    gksu                    # sudo with graphical ui  
+    crontab -e              # edit cron tasks
 
 #### Desktop message
     notify-send "Title" "Text"
