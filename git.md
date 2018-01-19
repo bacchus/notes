@@ -152,6 +152,8 @@ remove all the untracked files in your working directory
     git ls-files . --exclude-standard --others
     git diff --name-status
 
+#### Grep
+    git grep -i 'text'
 
 #### Undo
 
