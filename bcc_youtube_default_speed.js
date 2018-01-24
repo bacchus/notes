@@ -17,7 +17,7 @@
 (function () {
     'use strict';
 
-    var RATE_OPTIONS = ["0.25", "0.5", "1", "1.25", "1.5", "2", "2.2", "2.5", "2.7", "3"];
+    var RATE_OPTIONS = ["1.0", "1.25", "1.5"];
     var RETRY_DELAY_IN_MS = 100;
 
     function getElement(query, callback) {
@@ -66,7 +66,8 @@
     }
 
     function injectButtons() {
-        var head = document.getElementById("menu");//yt-masthead-user
+        var head = document.getElementById("container");//yt-masthead-user; menu
+        var end_elm = document.getElementById("end");
         var form = document.createElement("form");
         RATE_OPTIONS.forEach(function (rate) {
             var input = document.createElement("input");
@@ -79,11 +80,13 @@
             label.htmlFor = "playbackRate" + rate;
             label.innerHTML = rate;
             label.style = "margin-right: 5px";
+            label.style.color = "red";
             form.appendChild(input);
             form.appendChild(label);
         });
 
-        head.appendChild(form);
+        form.style = "margin-right: 10px";
+        head.insertBefore(form, end_elm);
     }
 
     function main() {
