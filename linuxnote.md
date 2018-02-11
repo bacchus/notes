@@ -1,4 +1,4 @@
-
+---
 ## Regex Cheat Sheet
 Characters | - | Anchors | -
 ----------- | -----------                       | ----------- | -----------
@@ -15,6 +15,7 @@ Characters | - | Anchors | -
 (?=abc)     | positive lookahead                | a+? a{2,}?  | match as few as possible
 (?!abc)     | negative lookahead                | ab\|cd      | match ab or cd
 
+---
 ## Googling
     ~ [synonym] (~best films -best)
     - [except] (-.ua)
@@ -33,6 +34,7 @@ Characters | - | Anchors | -
     2+2=
     google.com/ncr - really google.com
 
+---
 ## AdBlock rules
     r-click -> menu -> inspect -> adblock -> block elements
 #### rules:
@@ -63,6 +65,7 @@ Characters | - | Anchors | -
     ~example.com##*.sponsorad           // exception on example.com
      example.com#@#div.textad           // exceptions
 
+---
 ## Disable ads
 #### utorrent
     utorrent->options->prefs->advanced: filter
@@ -73,7 +76,39 @@ Characters | - | Anchors | -
     %appdata%/Skype/<skype-username>/config.xml
     delete all <AdvertPlaceholder>
 
+---
+## Chrome
+    chromium
+    chromium-codecs-ffmpeg-extra
 
+#### Ext
+    Adblock Plus, uBlock Origin, Ghostery, Tampermonkey [, CatBlock]
+    SetupVPN, Mail Checker, Octotree, Simple URL Extender
+    Google Arts, Pinterest
+
+#### Old bookmarks man - disble Material Design
+    chrome://flags/#enable-md-bookmarks
+
+#### Enable WebGL
+    chrome://flags - Override software rendering list - Enable
+
+#### Chromium libpepflashplayer.so causing excessive disk writes
+    shift-esc = chrome task manager
+    iotop
+    chrome://flags/Enable Offline Auto-Reload Mode
+    chrome:plugins disable
+    
+- chromoting view (no need accses other computers)
+- pdf viewer (let download pdf)
+- flash (uncheck always allowed to run)
+
+    uninstall pepperflash
+    sudo apt-get remove flashplugin-installer
+    sudo update-pepperflashplugin-nonfree --uninstall
+    /etc/chromium/default config to also add "--disk-cache-dir=/tmp"
+    http://peter.sh/experiments/chromium-command-line-switches
+
+---
 ## Find in files
 
 #### silversearcher-ag
@@ -93,6 +128,9 @@ Characters | - | Anchors | -
 --include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
 --include=\.{c,h}; --exclude=*.o
 
+---
+## TODO:
+---
 ## Ubuntu first install
     sudo apt-get clean
     sudo apt-get update
@@ -106,7 +144,6 @@ Characters | - | Anchors | -
 - skype, gimp, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
 - krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita - image editor
     
-
 #### Fixes
 - apport crash report
 - use linux_settings
@@ -340,20 +377,6 @@ f           fullscreen
 esc         exit fullscreen  
 tab         navigate  
     youtube CTRL + U. CTRL + F. og:image. the link.  
-
-#### Chromium libpepflashplayer.so causing excessive disk writes
-shift-esc = chrome task manager  
-iotop  
-chrome://flags/Enable Offline Auto-Reload Mode  
-chrome:plugins disable  
-- chromoting view (no need accses other computers)  
-- pdf viewer (let download pdf)  
-- flash (uncheck always allowed to run)  
-uninstall pepperflash  
-sudo apt-get remove flashplugin-installer  
-sudo update-pepperflashplugin-nonfree --uninstall  
-/etc/chromium/default config to also add "--disk-cache-dir=/tmp"  
-http://peter.sh/experiments/chromium-command-line-switches
 
 #### Android Studio & ibus-daemon
 1: Force ibus in synchronous mode, Do this preferably before starting Studio  
