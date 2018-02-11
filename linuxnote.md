@@ -66,6 +66,48 @@ Characters | - | Anchors | -
      example.com#@#div.textad           // exceptions
 
 ---
+## tampermonkey
+    https://greasyfork.org/en/scripts/22210-facebook-unsponsored
+    https://greasyfork.org/en/scripts/13807-youtubedefaultspeed
+    https://greasyfork.org/en/scripts/34651-disable-youtube-autoplay
+    https://greasyfork.org/en/scripts/32954-automatic-material-dark-mode-for-youtube
+
+#### facebook-unsponsored
+    -- leave only en
+
+    ++ 'en':        ['Suggested Post', 'Recommended fer ye eye', 'Recommended for you']
+
+    +++
+        }, {
+            // Video
+            'selector': [
+                '.fbUserStory > div > div > div > div > div > div > div > div > div > h5 > span > span > a',
+                'div > div > div > div > div > div > div > div > div > div > h5 > span > span > a',
+                'div > div > div > div > div > div > div > div > div > div > div > h5 > span > span > a',
+                'div > div > div > div > div > div > div > div > div > div > div > div > h5 > span > span > a'
+            ],
+            'content': {
+                'en':        ['video', 'a photo and a video', 'post']
+            }
+    +++
+
+#### youtubedefaultspeed
+    ++ var RATE_OPTIONS = ["1", "1.25", "1.5"];
+
+    -- var head = document.getElementById("yt-masthead-user");
+    ++ var head = document.getElementById("container");
+
+    ++ label.style.color = "red";
+
+    -- head.appendChild(form);
+    +++
+        var end_elm = document.getElementById("end");
+        form.style = "margin-right: 10px";
+        head.insertBefore(form, end_elm);
+    +++
+
+
+---
 ## Disable ads
 #### utorrent
     utorrent->options->prefs->advanced: filter
