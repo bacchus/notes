@@ -123,6 +123,19 @@ Characters | - | Anchors | -
     chromium
     chromium-codecs-ffmpeg-extra
 
+## viber
+settings: ~/.ViberPC/{your-phone-number}/viber.db  
+edit with sqliteman  
+
+Paste below query to query edit area  
+replaces text Documents/ViberDownloads with .viberdownloads  
+in PayloadPath field of messages table
+
+    Update messages set PayloadPath = replace(PayloadPath, "Documents/ViberDownloads", ".viberdownloads") 
+        where PayloadPath is not null and PayloadPath <> '';
+
+    Click Run(F9)
+
 #### Ext
     Adblock Plus, uBlock Origin, Ghostery, Tampermonkey [, CatBlock]
     SetupVPN, Mail Checker, Octotree, Simple URL Extender
