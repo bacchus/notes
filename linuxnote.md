@@ -1087,5 +1087,5 @@ top shows kidle_inject/x 50%+ cpu load
     sudo rmmod intel_powerclamp
     echo "blacklist intel_powerclamp" > /etc/modprobe.d/disable-powerclamp.conf
 
-    
-
+## ERROR: The driver descriptor says the physical block size is 2048 bytes, but Linux says it is 512 bytes.
+    sudo dd if=/dev/zero of=/dev/<disk-like:sdc> bs=2048 count=32
