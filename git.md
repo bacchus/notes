@@ -201,8 +201,9 @@ so either do manual cherry-picks or use rebase
     git stash list
     git stash apply stash@{2}
     git stash drop stash@{0}
-    git stash pop # = apply + drop
-    git stash branch [name] # create branch from stash
+    git stash pop               # = apply + drop
+    git stash branch [name]     # create branch from stash
+    git stash show -p stash@{0} # show diff
 
 stash options
 
