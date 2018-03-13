@@ -976,8 +976,12 @@ tmpfs      /var/tmp     tmpfs   defaults    0   0
     cal 02 1988
 ###### Quick access to the ascii table
     man ascii
-
-
+###### Proc temperature
+    cat /sys/class/thermal/thermal_zone*/temp
+    cat /sys/class/thermal/thermal_zone*/type
+    paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t
+    ${hwmon 2 temp 1}°C     # conky
+    
 #### viewing thread information
     ps -Lf
     ps -T
