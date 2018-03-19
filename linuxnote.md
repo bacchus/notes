@@ -191,11 +191,11 @@ in PayloadPath field of messages table
     sudo apt-get update
     sudo apt-get upgrade
     
-#### apps
+#### tools
 - ~~nautilus-open-terminal~~ - present by default
 - compizconfig-settings-manager - **dconf-editor** instead, but I still use it
 - ubuntu-restricted-extras, chromium-codecs-ffmpeg-extra - extras
-- meld, git, guake, qt, ~~necessitas~~ - dev tools
+- meld, git, guake, qt, cppcheck, cppclean, astyle, ~~necessitas~~ - dev tools
 - skype, gimp, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
 - krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita - image editor
     
