@@ -195,7 +195,7 @@ in PayloadPath field of messages table
 - ~~nautilus-open-terminal~~ - present by default
 - compizconfig-settings-manager - **dconf-editor** instead, but I still use it
 - ubuntu-restricted-extras, chromium-codecs-ffmpeg-extra - extras
-- meld, git, guake, qt, cppcheck, cppclean, astyle, ~~necessitas~~ - dev tools
+- meld, git, guake, qt, cppcheck, cppclean, astyle, ag(the silver searcher), ~~necessitas~~ - dev tools
 - skype, gimp, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
 - krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita - image editor
     
