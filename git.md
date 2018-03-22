@@ -83,25 +83,31 @@ from master
    git pull --rebase -> fetch origin -> status -> fsck -> reflog -> rebase -i HEAD~3
 
 #### Remote
-
-Add remote
-
+###### Add remote
     git remote add reponame https://github.com/user/repo.git
     git fetch reponame
     git checkout branchname
     git checkout --track reponame/branchname
 
-Push after rebase - force
-
+###### Push after rebase - force
     git push -f <reponame> <branchname>
 
-Push to remote branch
-
+###### Push to remote branch
     git push [reponame] [localbranch]:[remotebranch]
 
-Delete remote branch
-
+###### Delete remote branch
     git push [reponame] :[remotebranch]
+
+###### See remote branches  
+1)
+
+    git clone https://android.googlesource.com/platform/manifest.git
+    cd manifest
+    git branch -r
+    
+2)
+
+    git ls-remote -h https://android.googlesource.com/platform/manifest.git
 
 
 #### Diff
