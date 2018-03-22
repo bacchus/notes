@@ -1,3 +1,51 @@
+# New stuff
+
+
+## repo-help
+    curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    chmod a+x ~/bin/repo
+    
+|  commands                 | description                                       |
+| -:                        | -                                                 |
+|  abandon                  | Permanently abandon a development branch          |
+|  | same:                      git branch -D <branch>                          |
+|  branch                   | View current topic branches                       |
+|  branches                 | View current topic branches                       |
+|  checkout                 | Checkout a branch for development                 |
+|  | same: repo                 forall [<project>] -c git checkout <branch>     |
+|  cherry-pick              | Cherry-pick a change by <sha1>                    |
+|  diff                     | Show changes between commit and working tree      |
+|  download                 | Download and checkout a change                    |
+|  forall                   | Run a shell command in each project               |
+|  | -c command             |   (and arguments) to execute                      |
+|  grep                     | Print lines matching a pattern                    |
+|  help <command>           |  Display detailed help on a command               |
+|  init                     | Initialize repo in the current directory          |
+|  | -u URL                     manifest repository location                    |
+|  | -b REVISION                manifest branch or revision                     |
+|  list                     | List projects and their associated directories    |
+|  manifest                 | Manifest inspection utility                       |
+|  prune                    | Prune (delete) already merged topics              |
+|  rebase                   | Rebase local branches on upstream branch          |
+|  selfupdate               | Update repo to the latest version                 |
+|  smartsync                | Update to the latest known good revision          |
+|  stage                    | Stage file(s) for commit                          |
+|  start                    | Start a new branch for development                |
+|  status                   | Show the working tree status                      |
+|  sync                     | Update working tree to the latest revision        |
+|  | -c                         only current branch                             |
+|  | -d, --detach               detach HEAD to manifest                         |
+|  | -f, --force-broken         continue sync even if fails to sync             |
+|  | -l, --local-only           only update working tree, don't fetch           |
+|  | -n, --network-only         fetch only, don't update working tree           |
+|  | --force-sync               ??? force                                       |
+|  upload                   |    Upload changes for code review                 |
+|  version                  |    Display the version of repo                    |
+
+
+--------------------------------------------------------------------------------
+# Old stuff
+
 #### Android Studio
     
 alt+enter   show issue solutions
