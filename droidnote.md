@@ -45,6 +45,18 @@ see: https://source.android.com/setup/using-repo
 |  version                  |    Display the version of repo                    |
 
 
+## adb, minicom permissions
+    who # get user
+    sudo adduser <user> plugdev
+    adb devices
+    lsusb
+    ls -l /dev/bus/usb/<bus>/<dev>
+    gedit /etc/udev/rules.d/51-android.rules
+        SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d002", MODE="0660", GROUP="plugdev", SYMLINK+="android%n"
+    sudo adduser <user> dialout
+    sudo chmod a+rw /dev/ttyUSB0
+
+
 --------------------------------------------------------------------------------
 # Old stuff
 
