@@ -735,6 +735,7 @@ NOT
     ssh [-p port] user@host - connect to host as user on port  
     ssh-copy-id user@host   - add your key to host  
     ssh -nNTL 9999:127.0.0.1:1234 secret_dev - 	port forwarding
+    -v - verbose
 
 #### Generate and set key
     cd ~/.ssh
