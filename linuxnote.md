@@ -135,25 +135,6 @@ Characters | - | Anchors | -
 - Adblock Plus; AdBlock+ Element Hiding Helper; ~~CatBlock~~; Ghostery; 
 - uBlock Origin; Tampermonkey; Simple URL Extender
 
-
-## viber
-settings: ~/.ViberPC/{your-phone-number}/viber.db  
-edit with sqliteman  
-
-Paste below query to query edit area  
-replaces text Documents/ViberDownloads with .viberdownloads  
-in PayloadPath field of messages table
-
-    Update messages set PayloadPath = replace(PayloadPath, "Documents/ViberDownloads", ".viberdownloads") 
-        where PayloadPath is not null and PayloadPath <> '';
-
-    Click Run(F9)
-
-#### Ext
-    Adblock Plus, uBlock Origin, Ghostery, Tampermonkey [, CatBlock]
-    SetupVPN, Mail Checker, Octotree, Simple URL Extender
-    Google Arts, Pinterest
-
 #### Old bookmarks man - disble Material Design
     chrome://flags/#enable-md-bookmarks
 
@@ -175,6 +156,23 @@ in PayloadPath field of messages table
     sudo update-pepperflashplugin-nonfree --uninstall
     /etc/chromium/default config to also add "--disk-cache-dir=/tmp"
     http://peter.sh/experiments/chromium-command-line-switches
+
+
+## viber
+settings: ~/.ViberPC/{your-phone-number}/viber.db  
+edit with sqliteman  
+
+Paste below query to query edit area  
+replaces text Documents/ViberDownloads with .viberdownloads  
+in PayloadPath field of messages table
+
+    Update messages set PayloadPath = replace(PayloadPath, "Documents/ViberDownloads", ".viberdownloads") 
+        where PayloadPath is not null and PayloadPath <> '';
+
+    Click Run(F9)
+
+
+
 
 ---
 ## Find in files
