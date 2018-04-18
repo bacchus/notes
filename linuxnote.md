@@ -123,6 +123,19 @@ Characters | - | Anchors | -
     chromium
     chromium-codecs-ffmpeg-extra
 
+#### Chrome must plugins
+- my tampermonkey scripts
+- Theme: James White
+- ~~Webcam Toy app~~
+- SetupVPN
+- Pinterest Save Button
+- Octotree
+- Google Arts & Culture; Google Mail Checker; Google Search by Image
+- Chrome Apps & Extensions Developer Tool
+- Adblock Plus; AdBlock+ Element Hiding Helper; ~~CatBlock~~; Ghostery; 
+- uBlock Origin; Tampermonkey; Simple URL Extender
+
+
 ## viber
 settings: ~/.ViberPC/{your-phone-number}/viber.db  
 edit with sqliteman  
