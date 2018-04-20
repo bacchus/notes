@@ -301,6 +301,41 @@ in bashrc
     ISSUE_TEMPLATE.md - opening new ticket
     PULL_REQUEST_TEMPLATE.md - will show up when
 
+## gen patch list from commits
+#### gen list
+    git log --pretty=format:'%h %s' > ../list_tmp.txt
+    tac list_tmp.txt > list.txt
+
+#### bcc-gen.sh
+    #!/bin/bash
+
+    pushd <srcdir>
+
+    m_num=$(wc -l ../list.txt | awk '{print $1}')
+    for i in $(seq -w 1 $m_num); do
+        m_line=$(head -$i ../list.txt | tail -1)
+        m_id=$(echo $m_line | awk '{print $1}')
+        m_msg=${m_line:8}
+        echo "$i $m_id $m_msg"
+        git diff-tree -p --pretty=email $m_id > ../patches/$i
+    done
+    popd
+
+#### bcc-apply.sh
+    #!/bin/bash
+
+    pushd <dstdir>
+
+    for i in $(ls ../patches); do
+        m_line=$(head -4 ../patches/$i | tail -1)
+        m_msg=${m_line:9}
+        echo "$i $m_msg"
+        git apply ../patches/$i
+        git add .
+        git commit -am "$m_msg"
+    done
+    popd
+
 
 #### Links
     https://github.com/search
