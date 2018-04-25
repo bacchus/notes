@@ -773,7 +773,6 @@ NOT
 
 //------------------------------------------------------------------------------
 ## Java
-
     \#!/bin/sh  
     \# java install  
     set -e  
@@ -783,8 +782,12 @@ NOT
     sudo apt-get update  
     sudo apt-get install update-sun-jre  
 
-## Installing Oracle Java JDK
+#### icedtea javaws jnlp
+    sudo apt-get install icedtea-netx
+    #sudo apt-get install icedtea-plugin
+    javaws filename.jnlp
 
+## Installing Oracle Java JDK
     http://www.oracle.com/technetwork/java/javase/downloads/index.html  
     download jdk-7u21-linux-i586.tar.gz  
     tar -xf jdk-7u21-linux-i586.tar.gz  
