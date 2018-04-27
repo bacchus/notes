@@ -1,10 +1,11 @@
 ## Git
+    git clone -b <branch> --depth=1 <url.git>   # clone only branch, squashed history ti 1 commit
+    git add                                     # add file to repo
+    git rm                                      # rm from repo, deletes file
+    git mv <oldname> <newname>                  # rename
 
-    git add - add file to repo
-    git rm - rm from repo
-    git mv <oldname> <newname>
-
-#### Merge
+---
+## Merge
 merge master into the development first  
 so that if there are any conflicts,  
 resolve in the development branch itself  
@@ -16,61 +17,50 @@ and master remains clean
     git checkout master
     git merge --no-ff development (no conflicts)
 
+---
+## Rebase
+    git rebase -i master        # rebase current branch onto master (interactive)
 
-#### Rebase
-
-rebase the current branch onto base
-
-    git rebase base
-
-rebase workflow
-
+##### rebase workflow
     git checkout feature
     git checkout -b temporary-branch
     git rebase -i master
     git checkout master
     git merge temporary-branch
 
-rebase of only last 3 commits
+    git rebase -i HEAD~3        # rebase of only last 3 commits
+    git merge-base dev master   # returns commit id of original base
 
-    git rebase -i HEAD~3
-
-returns the commit id of the original base
-
-    git merge-base dev master
-
-rebase merge conflict
-
+##### merge conflict
     git mergetool
     git rebase --continue
 
-reset: --soft --mixed --hard
-
+##### reset: --soft --mixed --hard
     git checkout hotfix
     git reset HEAD~2 //foo.cpp
 
-checkout
+##### checkout
 
     git checkout HEAD~2 //foo.cpp
 
-revert rebase, else.. find the head commit, supose it was 'HEAD@{5}'
+##### revert rebase, else.. find the head commit, supose it was 'HEAD@{5}'
 
     git reflog
     git reset --hard HEAD@{5}
 
 
-undo merge: if you haven't done anything else after the merge attempt
+##### undo merge: if you haven't done anything else after the merge attempt
 
     git reset --hard HEAD@{1}
 
 
-from which branch we are rebasing - that will be on top
+##### from which branch we are rebasing - that will be on top
 
     git pull --rebase origin master
     git push origin feature --force # ☠
     git pull --rebase origin feature
 
-from master
+##### from master
 
     git merge feature --no-ff
 
@@ -82,7 +72,9 @@ from master
 ###### save direct commits history (xz)
    git pull --rebase -> fetch origin -> status -> fsck -> reflog -> rebase -i HEAD~3
 
-#### Remote
+
+---
+## Remote
 ###### Add remote
     git remote add reponame https://github.com/user/repo.git
     git fetch reponame
@@ -110,7 +102,8 @@ from master
     git ls-remote -h https://android.googlesource.com/platform/manifest.git
 
 
-#### Diff
+---
+## Diff
     git difftool -d master..devel
     git difftool -d [branchname]
     git diff -- . ':(exclude)db/irrelevant.cpp'
@@ -129,14 +122,17 @@ using diff & patch
     diff -ruN ../boost_1_52_0 . > ../boost-droid-bcpd.diff # make patch
     patch -Np0 --dry-run < boost-droid-bcpd.diff # apply patch
 
-#### Tags
+
+---
+## Tags
     git tag -a v1.4 -m 'my version 1.4'
     git fetch --tags
     git tag -l "v1.8.5*"
     git show v1.8.5
 
 
-#### Clean
+---
+## Clean
 
 ☠ Use with caution: remove not tracked
 
@@ -172,7 +168,8 @@ revert deleted branch
     git branch commit_rescued [commit_chsum]
 
 
-#### Log
+---
+## Log
 log by files
 
     git log -- foo.py bar.py
@@ -202,7 +199,8 @@ so either do manual cherry-picks or use rebase
     git blame -C # ignore text moving to other files
 
 
-#### Stash
+---
+## Stash
     git stash
     git stash list
     git stash apply stash@{2}
@@ -222,13 +220,16 @@ usage
     git rebase --autostash                                      # 2
     rebase.autostash                                    # in config
 
-#### Worktree
+
+---
+## Worktree
     git worktree add ../folder name-of-branch
     git worktree list
     git worktree prune
 
 
-#### Credentials
+---
+## Credentials
 cache credentials
 If you’re using a Mac, Git comes with an “osxkeychain” mode
 , which caches credentials in the secure keychain that’s attached to your system account.
@@ -250,7 +251,8 @@ This is similar to the “osxkeychain” helper described above
     git config --global push.default tracking
 
 
-#### Aliases
+---
+## Aliases
 in gitconfig
 
     hist = log --pretty=format:'%C(yellow)%h %C(cyan)%ad %Creset| %s%C(green)%d %Creset[%an]' --graph --date=short
@@ -260,6 +262,7 @@ in bashrc
     PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n--> '
 
 
+---
 ## Github
 
 #### URLs
@@ -337,7 +340,8 @@ in bashrc
     popd
 
 
-#### Links
+---
+## Links
     https://github.com/search
     https://github.com/explore
     https://github.com/trending
