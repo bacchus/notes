@@ -194,6 +194,9 @@ in PayloadPath field of messages table
 --include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
 --include=\.{c,h}; --exclude=*.o
 
+#### fast rm
+    rsync -a --delete empty/ <dir>/
+
 ---
 ## TODO:
 ---
