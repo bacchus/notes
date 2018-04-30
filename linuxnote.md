@@ -207,8 +207,8 @@ in PayloadPath field of messages table
 - compizconfig-settings-manager - **dconf-editor** instead, but I still use it
 - ubuntu-restricted-extras, chromium-codecs-ffmpeg-extra - extras
 - meld, git, guake, qt, cppcheck, cppclean, astyle, ag(the silver searcher), ~~necessitas~~ - dev tools
-- skype, gimp, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
-- krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita - image editor
+- skype, gimp, gpick, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
+- ~~krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita~~ - image editor (gimp beter works for me)
     
 #### Fixes
 - apport crash report
