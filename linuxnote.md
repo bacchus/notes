@@ -177,7 +177,7 @@ in PayloadPath field of messages table
 ---
 ## Find in files
 
-### silversearcher-ag
+### ag silversearch
     sudo apt-get install silversearcher-ag
     gedit .agignore
     ag <text-to-find>
