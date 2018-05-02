@@ -310,11 +310,19 @@ int pdf viewer: file\save as\format\settings\UTF-8\save
 	
 #### Restart ui
     sudo service lightdm restart
+
 #### Restart network
     sudo service network-manager restart
+
 #### Disable touchpad (in 14.04 from settings)
     xinput list | grep Touch
     xinput set-prop 13 "Device Enabled" 0
+
+## disable laptop keyboard
+    xinput list
+    > AT Translated Set 2 keyboard  id=17	[slave  keyboard (3)]
+    xinput float 17         # disable
+    xinput reattach 17 3    # enable
 
 #### Tar
 c - create, x - extract  
