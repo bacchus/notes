@@ -177,12 +177,12 @@ in PayloadPath field of messages table
 ---
 ## Find in files
 
-#### silversearcher-ag
+### silversearcher-ag
     sudo apt-get install silversearcher-ag
     gedit .agignore
     ag <text-to-find>
 
-#### grep
+### grep
     grep -rl ‘text’ directory/*
     grep -r word *
     grep -rnw 'directory' -e "pattern"
@@ -194,7 +194,10 @@ in PayloadPath field of messages table
 --include-dir=dir0; --exclude-dir={dir1,dir2,.dst}  
 --include=\.{c,h}; --exclude=*.o
 
-#### fast rm
+### find in pdf
+    find . -iname '*.pdf' -exec pdfgrep <patern> {} +
+    
+### fast rm
     rsync -a --delete empty/ <dir>/
 
 ---
