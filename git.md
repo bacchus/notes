@@ -5,6 +5,35 @@
     git mv <oldname> <newname>                  # rename
 
 ---
+## NEW
+    git diff    --cached                        # diff of added to stage
+                --word-diff                     # by words
+    git diff <id> -- . ':(exclude)<file>'       # exclude file from diff
+    git diff | grep + | grep -v '@@'            # show pure adds
+    git reset -- <file>                         # remove from stage
+    git add --patch                             # add file by parts
+    git add --update                            # only add files indexed by git
+    git commit -v                               # shows diff to be commited
+        --no-edit --amend                       # message stay same
+    git br -m <new_br_name>                     # rename cur branch
+    git reset --hard HEAD~                      # remove last commit
+
+    git stash show --text
+    git blame -b -w <file> -L <line>
+    !!!git clean -Xfd --dry-run
+
+## binary search in git
+    git bisect start
+    git bisect bad
+    git bisect good HEAD~20
+    git bisect reset
+
+## list of patches
+    git am
+    git format-patch <-N>                       # N last commits
+                     R1..R2                     # between R1 & R2
+
+---
 ## Merge
 merge master into the development first  
 so that if there are any conflicts,  
