@@ -132,7 +132,7 @@ Characters | - | Anchors | -
 - Octotree
 - Google Arts & Culture; Google Mail Checker; Google Search by Image
 - Chrome Apps & Extensions Developer Tool
-- Adblock Plus; AdBlock+ Element Hiding Helper; ~~CatBlock~~; Ghostery; 
+- Adblock Plus; AdBlock+ Element Hiding Helper; ~~CatBlock~~; Ghostery; AdNauseam
 - uBlock Origin; Tampermonkey; Simple URL Extender
 
 #### Old bookmarks man - disble Material Design
