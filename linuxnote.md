@@ -134,6 +134,7 @@ Characters | - | Anchors | -
 - Chrome Apps & Extensions Developer Tool
 - Adblock Plus; AdBlock+ Element Hiding Helper; ~~CatBlock~~; Ghostery; AdNauseam
 - uBlock Origin; Tampermonkey; Simple URL Extender
+- grammarly
 
 #### Old bookmarks man - disble Material Design
     chrome://flags/#enable-md-bookmarks
