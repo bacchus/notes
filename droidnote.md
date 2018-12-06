@@ -56,7 +56,23 @@ see: https://source.android.com/setup/using-repo
     sudo adduser <user> dialout
     sudo chmod a+rw /dev/ttyUSB0
 
+## package name from apk
+    aapt list -a /path/to/file.apk
+    aapt dump badging <apk> | grep package
+    pm list packages -f
+    package manifest $<com-package-name>
 
+    package=$(aapt dump badging "$*" | awk '/package/{gsub("name=|'"'"'","");  print $2}')
+    activity=$(aapt dump badging "$*" | awk '/activity/{gsub("name=|'"'"'","");  print $2}')
+    echo "   file : $1"
+    echo "package : $package"
+    echo "activity: $activity"
+
+## start/stop apk
+    adb shell am force-stop com.my.package
+    adb shell am start -n com.my.package/com.my.package.activity
+    
+    
 --------------------------------------------------------------------------------
 # Old stuff
 
