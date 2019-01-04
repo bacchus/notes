@@ -7,6 +7,10 @@ see: https://source.android.com/setup/using-repo
     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
     chmod a+x ~/bin/repo
     
+    repo init -u <path-to-manifest> -b <branch> --depth=1
+    repo sync -j8 -c -d --no-tags --force-sync
+    repo status -j8
+    
 |  commands                 | description                                       |
 | -:                        | -                                                 |
 |  abandon                  | Permanently abandon a development branch          |
