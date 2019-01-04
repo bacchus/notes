@@ -190,10 +190,11 @@ http://www.curious-creature.org/category/android/
 	adb shell data/showfreq 500 ##This is time period to report information
 
 #### Set Property
-in adb shell  
+	# in adb shell
 	getprop "debug.pr.propname"
 	setprop "debug.pr.propname" 1
-in code
+
+	// in code
 	#include "Properties.h"
 	char property[PROPERTY_VALUE_MAX];
 	property_get("debug.pr.propname", property, "0");
