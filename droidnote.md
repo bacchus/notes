@@ -75,8 +75,11 @@ see: https://source.android.com/setup/using-repo
 ## start/stop apk
     adb shell am force-stop com.my.package
     adb shell am start -n com.my.package/com.my.package.activity
-    
-    
+
+## mirror android screen (to-slow)
+    adb shell screenrecord --size 640x480 --bit-rate 500000 --output-format=h264 - | ffplay -
+
+
 --------------------------------------------------------------------------------
 # Old stuff
 
