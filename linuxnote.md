@@ -135,6 +135,7 @@ Characters | - | Anchors | -
 - Adblock Plus; AdBlock+ Element Hiding Helper; ~~CatBlock~~; Ghostery; AdNauseam
 - uBlock Origin; Tampermonkey; Simple URL Extender
 - grammarly
+- Stylish - Custom themes for any website
 
 #### Old bookmarks man - disble Material Design
     chrome://flags/#enable-md-bookmarks
@@ -147,10 +148,9 @@ Characters | - | Anchors | -
     iotop
     chrome://flags/Enable Offline Auto-Reload Mode
     chrome:plugins disable
-    
-- chromoting view (no need accses other computers)
-- pdf viewer (let download pdf)
-- flash (uncheck always allowed to run)
+    - chromoting view (no need accses other computers)
+    - pdf viewer (let download pdf)
+    - flash (uncheck always allowed to run)
 
     uninstall pepperflash
     sudo apt-get remove flashplugin-installer
