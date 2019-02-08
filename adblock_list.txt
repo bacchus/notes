@@ -1,3 +1,11 @@
+[Adblock Plus 2.0]
+! Title: Bacchus list
+! Expires: 3 days (update frequency)
+! Version: 20190209
+! Shared Link: https://raw.githubusercontent.com/bacchus/notes/master/adblock_list.txt
+! GitHub Repository: https://github.com/bacchus/notes/blob/master/adblock_list.txt
+! Maintainer: bacchus
+
 @@||acomics.ru/$document
 @@||anidub.com/$document
 @@||avast.ua/$document
