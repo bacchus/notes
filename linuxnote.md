@@ -172,8 +172,9 @@ in PayloadPath field of messages table
 
     Click Run(F9)
 
-
-
+## ln -s args order
+    cp    existing_thing new_thing
+    ln -s existing_thing new_thing
 
 ---
 ## Find in files
