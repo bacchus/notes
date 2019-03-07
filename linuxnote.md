@@ -543,6 +543,9 @@ alt+SysReq+K - for console
 ctrl+alt+backspace - kill x-server
 
 //------------------------------------------------------------------------------
+# Oneliners
+    yes 'c=(╱ ╲);printf ${c[RANDOM%2]}'|bash
+
 #### Show number of CPU cores
     grep -c ^processor /proc/cpuinfo  
 
