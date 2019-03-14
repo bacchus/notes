@@ -545,6 +545,10 @@ ctrl+alt+backspace - kill x-server
 //------------------------------------------------------------------------------
 # Oneliners
     yes 'c=(╱ ╲);printf ${c[RANDOM%2]}'|bash
+    
+    getfattr -dRhm- /home 2>/dev/null >./getfattr.log
+    setfattr -hx name /path/to/comrade/major.png
+
 
 #### Show number of CPU cores
     grep -c ^processor /proc/cpuinfo  
