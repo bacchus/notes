@@ -259,6 +259,11 @@ alt-f2		run
     sort -k 2,2 m_Photos1.txt > m_Photos.txt
     rm m_Photos1.txt
 
+#### rsync to android
+    cd /run/user/1000/gvfs/mtp:host=Xiaomi_MI_6_49fad438/Internal shared storage
+    rsync --verbose --progress --omit-dir-times --no-perms --recursive --inplace --ignore-existing \
+    <from>/ ./<to>/
+
 #### Dropbox encfs
     sudo apt-get install encfs
     #sudo addgroup <username> fuse
