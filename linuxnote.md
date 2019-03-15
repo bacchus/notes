@@ -218,6 +218,7 @@ in PayloadPath field of messages table
 - skype, gimp, gpick, chromium, ~~stellarium~~, vlc, cheese-webcam, guvcview - madia tools
 - ~~krita: sudo add-apt-repository ppa:kubuntu-ppa/backports; sudo apt-get install krita~~ - image editor (gimp beter works for me)
 - git-recall
+- Jupyter Notebook vs PyCharm
     
 #### Fixes
 - apport crash report
