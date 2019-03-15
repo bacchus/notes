@@ -8,8 +8,9 @@
 ## NEW
     git diff    --cached                        # diff of added to stage
                 --word-diff                     # by words
-    git diff <id> -- . ':(exclude)<file>'       # exclude file from diff
+    git diff <id> -- . ':(exclude)<file>' ':(exclude)<file2>'   # exclude files from diff
     git diff | grep + | grep -v '@@'            # show pure adds
+    
     git reset -- <file>                         # remove from stage
     git add --patch                             # add file by parts
     git add --update                            # only add files indexed by git
