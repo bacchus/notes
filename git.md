@@ -19,7 +19,6 @@
     git br -m <new_br_name>                     # rename cur branch
     git reset --hard HEAD~                      # remove last commit
 
-    git stash show --text
     git blame -b -w <file> -L <line>
     !!!git clean -Xfd --dry-run
 
@@ -29,10 +28,20 @@
     git bisect good HEAD~20
     git bisect reset
 
-## list of patches
+## list of patches: am format-patch
     git am
     git format-patch <-N>                       # N last commits
                      R1..R2                     # between R1 & R2
+
+    git am < my_new_feature.patch
+    git apply --reject --whitespace=fix my_new_feature.patch
+    git status
+    gedit my_conflicting_file.c*
+    find . -name "*.rej" -delete
+    git add .
+    git am --resolved
+    git am --continue
+
 
 ---
 ## Merge
@@ -231,24 +240,29 @@ so either do manual cherry-picks or use rebase
 
 ---
 ## Stash
-    git stash
-    git stash list
-    git stash apply stash@{2}
-    git stash drop stash@{0}
+    git stash save "coment"     # with coment
+    git stash list              # list
+    git stash apply stash@{2}   # apply
+    git stash drop stash@{0}    # remove
     git stash pop               # = apply + drop
-    git stash branch [name]     # create branch from stash
+    git stash branch <name>     # create branch from stash
     git stash show -p stash@{0} # show diff
 
 stash options
 
-    --keep-index - not to stash staged
-    --include-untracked or -u - +untracked
+    --keep-index                # not to stash staged
+    --include-untracked or -u   # +untracked
 
 usage
 
     git stash -> git pull -> git stash apply -> fix conflicts   # 1
     git rebase --autostash                                      # 2
     rebase.autostash                                    # in config
+
+alias
+
+    sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+    sapply = "!f() { git stash apply stash^{/$*}; }; f"
 
 
 ---
