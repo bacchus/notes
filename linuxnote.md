@@ -216,7 +216,7 @@ in PayloadPath field of messages table
 + [x] youtube freze: flags - Override software rendering list - true
 + [x] kidle_inject: find smw here
 + [x] unplug tatra: udisksctl power-off -b /dev/sdc
-- [ ] when delete, don't ask to undo: I'm Sorry Dave, I'm afraid I can't do that.
+- [ ] when delete, don't ask to undo: I'm sorry Dave, I'm afraid I can't do that.
 
 ---
 ## TODO:
