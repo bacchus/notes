@@ -198,9 +198,25 @@ in PayloadPath field of messages table
 
 ### find in pdf
     find . -iname '*.pdf' -exec pdfgrep <patern> {} +
+    pdfgrep -irn <text>
     
 ### fast rm
     rsync -a --delete empty/ <dir>/
+
+## ubuntu 18.04 problems
++ [x] turn off display changes resoution: xset dpms force off
++ [x] set lang shortcut to caps: use gnome-tweak-tool
++ [x] guake to f1, disable system f1, add to startup: just in guake set f1, startapps
++ [x] mount tatra on boot: use Disks  
+    /etc/fstab; blkid
+    UUID=225cad76-baf5-49f9-b49d-e7eeb113aae8 /media/bacchus/alcor \
+    ext4 errors=remount-ro,auto,user,exec,rw 0 0
++ [x] enable wifi on boot: /etc/NetworkManager/system-connections/Hotspot: autoconnect=true
++ [x] test keys: xev
++ [x] youtube freze: flags - Override software rendering list - true
++ [x] kidle_inject: find smw here
++ [x] unplug tatra: udisksctl power-off -b /dev/sdc
+- [ ] when delete, don't ask to undo: I'm Sorry Dave, I'm afraid I can't do that.
 
 ---
 ## TODO:
