@@ -172,6 +172,13 @@ in PayloadPath field of messages table
 
     Click Run(F9)
 
+## split flac
+    sudo apt install cuetools shntool flac wavpack                              # install tools
+    cuebreakpoints *.cue | shnsplit -o flac -f *.cue  -t "%n - %t" *.flac ;     # split
+    cuetag *.cue split-track*.flac ;                                            # add tags
+    shntool conv -o flac *.ape                                                  # convert ape to flac
+    iconv -f Windows-1251 Windows_file.txt > UTF8_file.txt                      # convert to utf8
+
 ## ln -s args order
     cp    existing_thing new_thing
     ln -s existing_thing new_thing
