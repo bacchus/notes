@@ -23,7 +23,6 @@
 
 # ------------------------------------------------------------------------------
 # 01-vndk
-
     usage: vndk_definition_tool.py [-h]
     vndk            --system --vendor
                     --aosp-system --load-extra-deps
