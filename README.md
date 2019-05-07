@@ -1,4 +1,4 @@
-# Markdown cheat-sheet
+# Markdown cheatsheet
 
 **`**bold**`**  
 _`_italic_`_  
