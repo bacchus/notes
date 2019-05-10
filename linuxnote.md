@@ -233,6 +233,8 @@ in PayloadPath field of messages table
     sudo apt-get update
     sudo apt-get upgrade
     
+    sudo apt-get purge <pack> # remove pack
+    
 #### tools
 - ~~nautilus-open-terminal~~ - present by default
 - compizconfig-settings-manager - **dconf-editor** instead, but I still use it
