@@ -268,6 +268,7 @@ super-shift-n   opens app in launcher if already runing
 super-t         trash  
 alt-f1 	        left toolbar  
 alt-f2		run
+ctrl-s/ctrl-q	bash pause/resume
 
 #### Open from terminal
 ~~gnome-open \<filename\>~~
