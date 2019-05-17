@@ -89,6 +89,9 @@ see: https://source.android.com/setup/using-repo
     adb exec-out screenrecord --bit-rate=16m --output-format=h264 --size 800x600 - | \
     ffplay -framerate 60 -framedrop -bufsize 16M -
     # test flags: -fast -infbuf
+    
+    screenrecord --bugreport --verbose --time-limit 10 /sdcard/test.mp4
+    am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/test.mp4
 
 ## decompile
     decompileandroid.com
