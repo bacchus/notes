@@ -85,8 +85,10 @@ see: https://source.android.com/setup/using-repo
     adb shell stop
     adb shell start
 
-## mirror android screen (to-slow)
-    adb shell screenrecord --size 640x480 --bit-rate 500000 --output-format=h264 - | ffplay -
+## mirror android screen (ok)
+    adb exec-out screenrecord --bit-rate=16m --output-format=h264 --size 800x600 - | \
+    ffplay -framerate 60 -framedrop -bufsize 16M -
+    # test flags: -fast -infbuf
 
 ## decompile
     decompileandroid.com
