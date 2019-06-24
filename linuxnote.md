@@ -214,6 +214,7 @@ in PayloadPath field of messages table
 + [x] turn off display changes resoution: xset dpms force off
 + [x] set lang shortcut to caps: use gnome-tweak-tool
 + [x] guake to f1, disable system f1, add to startup: just in guake set f1, startapps
++     if not: compizconfig -> comands -> guake -t -> bind to f1
 + [x] mount tatra on boot: use Disks  
     /etc/fstab; blkid
     UUID=225cad76-baf5-49f9-b49d-e7eeb113aae8 /media/bacchus/alcor \
