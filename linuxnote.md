@@ -33,6 +33,7 @@ Characters | - | Anchors | -
     translate [word] into [lang]
     2+2=
     google.com/ncr - really google.com
+    google.com/advanced_search - advanced
 
 ---
 ## AdBlock rules
