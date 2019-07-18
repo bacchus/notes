@@ -178,6 +178,8 @@ also you might submit an on-device bug report Quick Settings tile
     python ~/Android/Sdk/platform-tools/systrace/systrace.py -o ~/logs/systr/disp2.html \
     am binder_driver camera dalvik freq gfx hal idle input res sched view wm
 
+    python systrace.py --list-categories
+
 ## tags
 - adb - ADB
 - aidl - AIDL calls
