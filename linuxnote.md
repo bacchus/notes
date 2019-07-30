@@ -1165,7 +1165,7 @@ top shows kidle_inject/x 50%+ cpu load
     sudo dd if=/dev/zero of=/dev/<disk-like:sdc> bs=2048 count=32
 
 # ------------------------------------------------------------------------------
-# GCC
+## GCC
     sudo update-alternatives --remove-all gcc 
     sudo update-alternatives --remove-all g++
 
@@ -1181,3 +1181,33 @@ top shows kidle_inject/x 50%+ cpu load
 
     sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
     sudo update-alternatives --set c++ /usr/bin/g++
+
+# ------------------------------------------------------------------------------
+## CPU temp
+    sudo apt install lm-sensors hddtemp
+    sudo sensors-detect
+    sensors
+
+# ------------------------------------------------------------------------------
+## Add/del/change user
+    adduser <newuser>
+    groups <newuser>
+    usermod -aG sudo <newuser>
+    
+    deluser --remove-home <olduser>
+    
+    # from start screen Ctrl+Alt+F1, login
+    sudo passwd root # unlock the root
+    ...
+    exit
+    # login as root
+    usermod -l <newname> -d /home/<newname> -m <oldname>
+    groupmod -n <newgroup> <oldgroup>
+    passwd -l root # lock the root
+    # if using ecryptfs:
+    # - mount: ecryptfs-recover-private
+    # - edit: <mountpoint>/.ecryptfs/Private.mnt
+    exit
+    # go to ui Ctrl+Alt+F7
+    
+
