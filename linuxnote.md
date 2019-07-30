@@ -1163,3 +1163,21 @@ top shows kidle_inject/x 50%+ cpu load
 
 ## ERROR: The driver descriptor says the physical block size is 2048 bytes, but Linux says it is 512 bytes.
     sudo dd if=/dev/zero of=/dev/<disk-like:sdc> bs=2048 count=32
+
+# ------------------------------------------------------------------------------
+# GCC
+    sudo update-alternatives --remove-all gcc 
+    sudo update-alternatives --remove-all g++
+
+    sudo apt install gcc-5 g++-5
+
+    sudo update-alternatives --config gcc
+
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 10
+    sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 10
+
+    sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 30
+    sudo update-alternatives --set cc /usr/bin/gcc
+
+    sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 30
+    sudo update-alternatives --set c++ /usr/bin/g++
