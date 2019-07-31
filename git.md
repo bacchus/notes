@@ -385,6 +385,15 @@ in bashrc
 
 
 ---
+## archive git repo
+    git bundle create mybundle --all
+    git bundle unbundle mybundle
+    git clone mybundle
+    git ls-remote mybundle
+
+    git archive -o latest.zip HEAD # contents of latest commit on current branch
+    
+---
 ## Links
     https://github.com/search
     https://github.com/explore
