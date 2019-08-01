@@ -150,7 +150,6 @@ popup.taboola.com
 prog3.com/creatives/fortunecoins11.jpeg
 prog3.com/creatives/fortunecoins16.jpeg
 prog3.com/creatives/fortunecoins*.jpeg
-qaru.site
 rutracker.org##.tCenter.nowrap
 rutrk.org/240x800/
 rutrk.org/iframe/
