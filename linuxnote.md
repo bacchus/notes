@@ -1210,4 +1210,5 @@ top shows kidle_inject/x 50%+ cpu load
     exit
     # go to ui Ctrl+Alt+F7
     
+    adduser $USER <group>
 
