@@ -15,6 +15,7 @@
 - 17-tombstone
 - 18-ftrace
 - 19-gdb
+- 20-strace
 
 # ------------------------------------------------------------------------------
 # 01-vndk
@@ -580,4 +581,15 @@ type <cmd> # check alias
     python: hook events to invoke python functions using gdb.events.stop.connect
     gcc’s -g and -O are orthogonal
 
+
+# ------------------------------------------------------------------------------
+# strace
+    strace ls
+    strace -f -e open <cmd> 
+    # -e - events: write read connect sendto recvfrom execve
+    # -f - subprcs
+    # -p <pid>
+    # -s 100 - strings strip to 100
+    # -o <file> - write to file
+    # -y - show file names instead of id
 
