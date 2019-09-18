@@ -227,6 +227,7 @@ in PayloadPath field of messages table
 + [x] unplug tatra: udisksctl power-off -b /dev/sdc
 - [ ] when delete, don't ask to undo: I'm sorry Dave, I'm afraid I can't do that.
 + [x] (16.04) wallpaper is not changing: gsettings set org.gnome.settings-daemon.plugins.background active true
+- [ ] typing text in nautilus execute search in all subfolders
 
 ---
 ## TODO:
