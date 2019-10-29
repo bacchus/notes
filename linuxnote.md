@@ -1213,3 +1213,10 @@ top shows kidle_inject/x 50%+ cpu load
     
     adduser $USER <group>
 
+
+------------------------------------------------------------------------------
+## remove image metadata
+    identify -verbose image.jpg
+    exiftool -all= image.jpg
+ 
+ 
