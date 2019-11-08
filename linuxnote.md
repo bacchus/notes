@@ -138,6 +138,8 @@ Characters | - | Anchors | -
 - grammarly
 - Stylish - Custom themes for any website
 
+- flags -> Tab Hover Cards -> disable
+
 #### Old bookmarks man - disble Material Design
     chrome://flags/#enable-md-bookmarks
 
