@@ -847,7 +847,8 @@ NOT
 #### icedtea javaws jnlp
     sudo apt-get install icedtea-netx
     #sudo apt-get install icedtea-plugin
-    javaws filename.jnlp
+    javaws start.jnlp
+    javaws -nosecurity start.jnlp
 
 ## Installing Oracle Java JDK
     http://www.oracle.com/technetwork/java/javase/downloads/index.html  
