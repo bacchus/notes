@@ -27,8 +27,6 @@ Characters | - | Anchors | -
     links: [to site]
     filetype: [extension]
     cached: [cached pages]
-    time [city]
-    weather [city]
     1 kg in pounds; 1 usd in uah
     translate [word] into [lang]
     2+2=
