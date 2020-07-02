@@ -16,6 +16,7 @@
 - 18-ftrace
 - 19-gdb
 - 20-strace
+- 21-vscode
 
 # ------------------------------------------------------------------------------
 # 01-vndk
@@ -592,4 +593,14 @@ type <cmd> # check alias
     # -s 100 - strings strip to 100
     # -o <file> - write to file
     # -y - show file names instead of id
+
+# ------------------------------------------------------------------------------
+# 21-vscode
+https://source.android.com/devices/tech/debug/gdb#vscode
+
+    adb forward tcp:5039 tcp:5039
+    python development/scripts/gdbclient.py [ -p pid | -n proc-name | -r cmd ] --setup-forwarding vscode
+
+
+
 
