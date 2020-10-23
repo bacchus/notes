@@ -778,7 +778,8 @@ NOT
     exit
 
 #### mount remote ssh dir: sshfs *ssh-dir* *local-dir*
-    sshfs bacchus@106.125.11.22:/share/dir ~/share/dir
+    sshfs bacchus@10.0.0.2:/<dir> <dir>
+    fusermount -u <dir>
 
 #### reverse ssh tuneling
     # dest(192.168.20.55) <- NAT <- src(138.47.99.99) [<- Bob's server]
