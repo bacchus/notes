@@ -128,6 +128,8 @@ a wrapper script to launch its executable (e.g. Firefox, Chrome and many others)
     # Debugger -> GDB -> Additional Startup Commands:
         set serial baud 115200
         directory $workspace
+        enable-pretty-printing
+        set solib-search-path $workspace/out/target/product/$board/symbols
 
     su 0 gdbserver64 --attach tcp:5039 `pidof <procs>`
     adb forward tcp:5039 tcp:5039
