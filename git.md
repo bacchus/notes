@@ -22,6 +22,17 @@
     git blame -b -w <file> -L <line>
     !!!git clean -Xfd --dry-run
 
+    git log -p <file>                           # hist for file
+    git log -S'<pattern>'                       # search hist for pattern
+    git add -p                                  # interactive add
+    git rm –cached <file>                       # rm from staging, not from disk
+    git log ..<branch>                          # commits in branch, not in HEAD
+    git branch --no-merged                      # unmerged
+    git branch –contains <sha>                  # branches with commit
+    git status -s                               # less verbose
+    git reflog                                  # history of operations !!!
+    git shortlog -sn                            # list of contributors, sorted by commits
+
 ## binary search in git
     git bisect start
     git bisect bad
@@ -317,6 +328,7 @@ in bashrc
 
 ###### add .diff or .patch to url
     https://github.com/tars/tars/commit/07902a9.diff
+    https://github.com/tars/tars/commit/07902a9.patch
 
 ###### permanent link to specific commit file - press 'y'
     <permanent link>
@@ -324,17 +336,22 @@ in bashrc
 ###### diff without whitespaces
     ?w=1
 
-###### block highlight 15 to 17 line
+###### block highlight 15 to 17 line, or press SHIFT
     #L15-L17
 
 ###### revision diff
     https://github.com/github/linguist/compare/master@%7B2week%7D...master
     master@{1day}...master
+    master@{1.day.ago}...master
+    master@{1.day.ago}...master.patch
+    ?author=<name>
 
 #### Hotkeys
     '?' - show all hotkeys
     't' - file search
     'l' - go to line
+    'w' - branches
+    
 
     'gp' - go pull-requests
     'gi' - go issues
@@ -402,7 +419,7 @@ in bashrc
     https://status.github.com
     https://gist.github.com - drafts
     https://help.github.com
-    https://github.com/github/hub
+    https://github.com/github/hub - command line github
     https://habrahabr.ru/post/129343/ - user scripts
     https://greasyfork.org/en/scripts/by-site/github.com
     https://github.com/jerone/UserScripts/tree/master/Github_Commit_Whitespace
