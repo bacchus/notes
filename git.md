@@ -241,6 +241,7 @@ so either do manual cherry-picks or use rebase
 ---
 ## Stash
     git stash save "coment"     # with coment
+    git stash save -u "coment"  # with untracked
     git stash list              # list
     git stash apply stash@{2}   # apply
     git stash drop stash@{0}    # remove
