@@ -11,7 +11,7 @@
     git diff <id> -- . ':(exclude)<file>' ':(exclude)<file2>'   # exclude files from diff
     git diff | grep + | grep -v '@@'            # show pure adds
     
-    git reset -- <file>                         # remove from stage
+    git reset -- <file>                         # unstage
     git add --patch                             # add file by parts
     git add --update                            # only add files indexed by git
     git commit -v                               # shows diff to be commited
